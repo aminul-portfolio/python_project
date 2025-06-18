@@ -1,31 +1,18 @@
-# 🔹 Python bytecode
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
-
-# 🔹 Virtual environment
+*.sqlite3
+*.env
 env/
 venv/
 
-# 🔹 Django database & settings
-*.sqlite3
+# VSCode
+.vscode/
+
+# Django
+staticfiles/
 db.sqlite3
 
-# 🔹 Logs
-*.log
-
-# 🔹 Static and media files (generated)
-staticfiles/
-media/
-
-# 🔹 VSCode & PyCharm settings
-.vscode/
-.idea/
-
-# 🔹 System files
+# System
 .DS_Store
-Thumbs.db
-
-# 🔹 Migrations (optional to ignore)
-**/migrations/*.pyc
-**/migrations/__pycache__/
+*.log
