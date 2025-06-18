@@ -59,9 +59,8 @@ Here’s a preview of the Django portfolio layout including sidebar navigation, 
   </tbody>
 </table>
 
----
 
-📝 _All images are stored inside the `/images` folder. You can adjust width values (e.g., 250 or 300) to fit your layout preferences._
+
 
 
 ## 🚀 Key Features
