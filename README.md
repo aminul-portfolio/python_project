@@ -11,21 +11,58 @@ This project demonstrates real-world Python logic, Django rendering, dynamic qui
 
 ## 📸 Screenshots
 
-| Sidebar Navigation | Content Pages | Interactive Views |
-|--------------------|---------------|-------------------|
-| ![Sidebar](images/sidebar_page01.jpg) | ![Functions Page](images/sidebar_page02.jpg) | ![Code Page](images/html_page01.jpg) |
-| ![Main Sidebar](images/sidebarmain01.jpg) | ![Quiz Page](images/quiz_form.jpg) | ![Comments](images/comments_form.jpg) |
-| ![Home View](images/home_page01.jpg) | ![Home Alt](images/home_page02.jpg) | ![Full View](images/sidebar_page04.jpg) |
+Here’s a preview of the Django portfolio layout including sidebar navigation, dynamic content pages, and interactive components.
+
+<table>
+  <thead>
+    <tr>
+      <th>📂 Sidebar Navigation</th>
+      <th>📄 Content Pages</th>
+      <th>🧩 Interactive Views</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="images/sidebar_page01.jpg" width="250" alt="Sidebar"/></td>
+      <td><img src="images/sidebar_page02.jpg" width="250" alt="Functions Page"/></td>
+      <td><img src="images/html_page01.jpg" width="250" alt="Code Page"/></td>
+    </tr>
+    <tr>
+      <td><img src="images/sidebarmain01.jpg" width="250" alt="Main Sidebar"/></td>
+      <td><img src="images/quiz_form.jpg" width="250" alt="Quiz Page"/></td>
+      <td><img src="images/comments_form.jpg" width="250" alt="Comments"/></td>
+    </tr>
+    <tr>
+      <td><img src="images/home_page01.jpg" width="250" alt="Home View"/></td>
+      <td><img src="images/home_page02.jpg" width="250" alt="Home Alt"/></td>
+      <td><img src="images/sidebar_page04.jpg" width="250" alt="Full View"/></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
 ## 📜 Certifications
 
-| Python Certificate | Django Certificate |
-|--------------------|--------------------|
-| ![Python Cert](images/certificate_python.jpg) | ![Django Cert](images/certificate_django.jpg) |
+<table>
+  <thead>
+    <tr>
+      <th>📘 Python Certificate</th>
+      <th>🌐 Django Certificate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="images/certificate_python.jpg" width="300" alt="Python Certificate"/></td>
+      <td><img src="images/certificate_django.jpg" width="300" alt="Django Certificate"/></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
+
+📝 _All images are stored inside the `/images` folder. You can adjust width values (e.g., 250 or 300) to fit your layout preferences._
+
 
 ## 🚀 Key Features
 
