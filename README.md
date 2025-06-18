@@ -1,98 +1,64 @@
 # 🧠 Python Django Portfolio Project
 
-Welcome to my personal **Python Django Portfolio Project**, built to showcase my skills in full-stack web development using Django. This project includes custom apps, clean UI design, and will eventually be deployed online using Render.
+![GitHub last commit](https://img.shields.io/github/last-commit/aminul-portfolio/python-portfolio?style=flat-square)
+![GitHub Repo stars](https://img.shields.io/github/stars/aminul-portfolio/python-portfolio?style=flat-square)
+![GitHub forks](https://img.shields.io/github/forks/aminul-portfolio/python-portfolio?style=flat-square)
+
+Welcome to **Aminul Islam's Professional Python & Django Portfolio**.  
+This project demonstrates real-world Python logic, Django rendering, dynamic quizzes, comment integration, and beautiful UI — perfect for learning or showcasing to employers.
 
 ---
 
-## 🚀 Live Demo
+## 📸 Screenshots
 
-🔗 Coming soon via [Render](https://dashboard.render.com/)  
-💡 GitHub Repo: [aminul-portfolio/python_project](https://github.com/aminul-portfolio/python_project)
-
----
-
-## 🛠️ Tech Stack
-
-- **Backend**: Python 3, Django  
-- **Frontend**: HTML5, CSS3, Bootstrap 5  
-- **Deployment**: GitHub, Render  
-- **Tools**: VSCode, Git, pip, virtualenv
+| Sidebar Navigation | Content Pages | Interactive Views |
+|--------------------|---------------|-------------------|
+| ![Sidebar](images/sidebar_page01.jpg) | ![Functions Page](images/sidebar_page02.jpg) | ![Code Page](images/html_page01.jpg) |
+| ![Main Sidebar](images/sidebarmain01.jpg) | ![Quiz Page](images/quiz_form.jpg) | ![Comments](images/comments_form.jpg) |
+| ![Home View](images/home_page01.jpg) | ![Home Alt](images/home_page02.jpg) | ![Full View](images/sidebar_page04.jpg) |
 
 ---
 
-## 📁 Project Structure
+## 📜 Certifications
 
-python_project/
-├── manage.py
-├── requirements.txt
-├── python_portfolio/ # Main Django project folder
-│ ├── init.py
-│ ├── settings.py
-│ ├── urls.py
-│ └── wsgi.py
-├── core/ # Main Django app
-│ ├── models.py
-│ ├── views.py
-│ ├── admin.py
-│ ├── forms.py
-│ └── ...
-├── templates/
-├── staticfiles/
-├── db.sqlite3
-├── env/ # Virtual environment (not pushed to GitHub)
-└── .gitignore
-
-yaml
-Copy
-Edit
+| Python Certificate | Django Certificate |
+|--------------------|--------------------|
+| ![Python Cert](images/certificate_python.jpg) | ![Django Cert](images/certificate_django.jpg) |
 
 ---
 
-## 🧰 Features
+## 🚀 Key Features
 
-- ✅ Django project with modular structure  
-- ✅ Homepage, app logic, static file handling  
-- ✅ Virtual environment & clean dependency management  
-- 🔒 Secure `.env` setup ready for deployment  
-- 🔜 Future Additions: Contact form, blog, project gallery
+- ✅ Real-world Python examples with inline explanation
+- ✅ Interactive quizzes powered by JavaScript
+- ✅ Dynamic comment submission per example
+- ✅ Bootstrap 5-based responsive layout
+- ✅ Sidebar navigation with collapsible folders
+- ✅ Centralized quiz logic via shared JS
+- ✅ GitHub-ready project structure
 
 ---
 
-## ⚙️ Setup Instructions
+## 🛠 Tech Stack
 
-### 🔃 Clone the repository
+- **Python 3**
+- **Django 4**
+- **HTML5, CSS3, Bootstrap 5**
+- **JavaScript (Quiz Logic)**
+- **SQLite 3**, Git & GitHub
+
+---
+
+## 🧪 Folder Structure
 
 ```bash
-git clone https://github.com/aminul-portfolio/python_project.git
-cd python_project
-📦 Create and activate virtual environment
-bash
-Copy
-Edit
-python -m venv env
-env\Scripts\activate         # On Windows
-# source env/bin/activate    # On macOS/Linux
-📥 Install dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-🚀 Run the development server
-bash
-Copy
-Edit
-python manage.py runserver
-Open in browser: http://127.0.0.1:8000/
-
-📷 Screenshots
-Add screenshots inside a /images folder and update the section below:
-
-scss
-Copy
-Edit
-![Homepage Screenshot](images/homepage.png)
-🧑‍💻 Author
-Aminul Islam Sumon
-🔗 GitHub: aminul-portfolio
-🌍 Portfolio: Coming Soon
-
+python-portfolio/
+├── images/                  # UI & certificate screenshots
+├── python_portfolio/        # Django app
+│   ├── core/                # App logic, views, templates
+│   ├── static/              # CSS/JS
+│   ├── templates/           # HTML pages
+│   ├── views.py, urls.py
+├── requirements.txt
+├── manage.py
+└── README.md
