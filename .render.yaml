@@ -3,11 +3,12 @@ services:
     name: python-portfolio
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt
+    rootDir: python_project/python_portfolio  # ✅ Add this line
+    buildCommand: pip install -r ../../requirements.txt  # ✅ Go back to root to install reqs
     startCommand: gunicorn python_portfolio.wsgi
     autoDeploy: true
     envVars:
       - key: DJANGO_SECRET_KEY
         value: django-insecure-s2w3sjw_8pjp1f-67!sx(vzoj_pdwmr*v2!v6)p-)_m9fn^u=^
       - key: DEBUG
-        value: False
+        value: false  # ✅ Use lowercase "false" as string
