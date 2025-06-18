@@ -3,7 +3,8 @@ services:
     name: python-portfolio
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn python_portfolio.wsgi:application
+    startCommand: gunicorn python_portfolio.python_portfolio.wsgi:application
+
     autoDeploy: true
     envVars:
       - key: DJANGO_SECRET_KEY
