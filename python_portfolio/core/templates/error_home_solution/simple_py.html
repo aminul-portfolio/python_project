@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">📜 Simple Python Scripts and Testing</h1>
+    <p class="fs-5 text-muted"><strong>Explore simple Python files, script organization, and unit testing with real examples.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4 justify-content-center">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#examples">Examples <span class="badge bg-secondary ms-1" id="exampleCount">4</span></button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#quiz">Quiz <span class="badge bg-secondary ms-1" id="quizCountText">5</span></button></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-info text-white fw-bold">1️⃣ Capitalize Function (cap.py)</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">def cap_text(text):
+    return text.title()  # replace .capitalize() with .title()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> title()</li>
+              <li>📘 <strong>Learned:</strong> Title-case conversion of text</li>
+              <li>♻️ <strong>Reusability:</strong> Used in formatting inputs for display</li>
+              <li>💬 <strong>Comments:</strong> Use title() for multi-word capitalization</li>
+            </ul></div>
+        </div>
+
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ Correct Script (simple1.py)</div>
+          <div class="card-body">
+            <pre><code class="language-python">def myfunc():
+    first = 1
+    second = 2
+    print(first)
+    print(second)
+
+myfunc()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> print()</li>
+              <li>📘 <strong>Learned:</strong> Calling functions and printing variables</li>
+              <li>♻️ <strong>Reusability:</strong> Base for any beginner function demo</li>
+              <li>💬 <strong>Comments:</strong> Keep functions readable and self-contained</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ Unused Variable Example (simple2.py)</div>
+          <div class="card-body">
+            <pre><code class="language-python">def myfunc():
+    first = 1
+    second = 2
+    print(first)
+    print('second')
+
+myfunc()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> print('string')</li>
+              <li>📘 <strong>Learned:</strong> Using literals instead of variables causes bugs</li>
+              <li>♻️ <strong>Reusability:</strong> Shows debugging use cases</li>
+              <li>💬 <strong>Comments:</strong> Always print the variable, not the label</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ Unit Testing Script (test_cap.py)</div>
+          <div class="card-body">
+            <pre><code class="language-python">import unittest
+import cap
+
+class TestCap(unittest.TestCase):
+    def test_one_word(self):
+        self.assertEqual(cap.cap_text('python'), 'Python')
+    def test_multiple_words(self):
+        self.assertEqual(cap.cap_text('monty python'), 'Monty Python')
+    def test_with_apostrophes(self):
+        self.assertEqual(cap.cap_text("monty python's flying circus"), "Monty Python's Flying Circus")
+
+if __name__ == '__main__':
+    unittest.main()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> unittest</li>
+              <li>📘 <strong>Learned:</strong> Writing tests for multiple input conditions</li>
+              <li>♻️ <strong>Reusability:</strong> Essential for reusable modules</li>
+              <li>💬 <strong>Comments:</strong> Unit tests help catch errors early</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').textContent = count;
+    loadQuizData('simple_py');
+  });
+</script>
+{% endblock %}

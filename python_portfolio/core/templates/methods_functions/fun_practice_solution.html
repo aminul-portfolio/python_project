@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🔁 Python Functions Practice + Solutions</h1>
+  <p class="lead">Explore reusable blocks of logic with Python functions using practical examples and real-world exercises.</p>
+
+  <!-- SECTION 1: Real-World Function Examples -->
+  <hr>
+  <h3 class="text-success text-center">💡 10 Real-World Function Examples</h3>
+  <hr>
+
+  <div id="exampleCards">
+    <div class="card mb-3">
+      <div class="card-header bg-primary text-white fw-bold">1️⃣ Greet a User</div>
+      
+
+  <div class="mt-5"></div><div class="card-body">
+        <pre><code class="language-python">def greet(name):
+    return f"Hello, {name}!"</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> greet(name)</li>
+          <li>📘 <strong>Learned:</strong> How to define a function that returns a greeting message.</li>
+          <li>♻️ <strong>Reusability:</strong> Can be used in any user-interaction system.</li>
+          <li>💬 <strong>Comments:</strong> Returns a formatted string with the user's name.</li>
+        </ul></div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-success text-white fw-bold">2️⃣ Add Two Numbers</div>
+      <div class="card-body">
+        <pre><code class="language-python">def add(a, b):
+    return a + b</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> add(a, b)</li>
+          <li>📘 <strong>Learned:</strong> Using a function to sum two values.</li>
+          <li>♻️ <strong>Reusability:</strong> Common in calculators and numeric applications.</li>
+          <li>💬 <strong>Comments:</strong> Returns the result of a + b.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-info text-white fw-bold">3️⃣ Calculate Area of a Circle</div>
+      <div class="card-body">
+        <pre><code class="language-python">def area_circle(radius):
+    pi = 3.1416
+    return pi * radius**2</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> area_circle(radius)</li>
+          <li>📘 <strong>Learned:</strong> Applying math operations in functions.</li>
+          <li>♻️ <strong>Reusability:</strong> Useful in geometry, physics, and simulations.</li>
+          <li>💬 <strong>Comments:</strong> Multiplies π with the square of the radius.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-warning text-white fw-bold">4️⃣ Check Even or Odd</div>
+      <div class="card-body">
+        <pre><code class="language-python">def is_even(num):
+    return num % 2 == 0</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> is_even(num)</li>
+          <li>📘 <strong>Learned:</strong> Using modulus operator to check for even numbers.</li>
+          <li>♻️ <strong>Reusability:</strong> Helpful in filters and loops.</li>
+          <li>💬 <strong>Comments:</strong> Returns True if number is divisible by 2.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-danger text-white fw-bold">5️⃣ Count Vowels in a String</div>
+      <div class="card-body">
+        <pre><code class="language-python">def count_vowels(text):
+    return sum(1 for char in text.lower() if char in 'aeiou')</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> count_vowels(text)</li>
+          <li>📘 <strong>Learned:</strong> Iterate through strings and check character properties.</li>
+          <li>♻️ <strong>Reusability:</strong> Can be used in text analysis or NLP preprocessing.</li>
+          <li>💬 <strong>Comments:</strong> Converts text to lowercase and counts vowels.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-secondary text-white fw-bold">6️⃣ Convert Celsius to Fahrenheit</div>
+      <div class="card-body">
+        <pre><code class="language-python">def to_fahrenheit(c):
+    return (c * 9/5) + 32</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> to_fahrenheit(c)</li>
+          <li>📘 <strong>Learned:</strong> Applying temperature conversion logic in a function.</li>
+          <li>♻️ <strong>Reusability:</strong> Great for weather apps and scientific calculations.</li>
+          <li>💬 <strong>Comments:</strong> Uses formula (c * 9/5) + 32 to convert.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-dark text-white fw-bold">7️⃣ Find Max in List</div>
+      <div class="card-body">
+        <pre><code class="language-python">def max_in_list(lst):
+    return max(lst)</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> max_in_list(lst)</li>
+          <li>📘 <strong>Learned:</strong> Find the largest number in a collection.</li>
+          <li>♻️ <strong>Reusability:</strong> Common in data analysis and ranking algorithms.</li>
+          <li>💬 <strong>Comments:</strong> Uses Python’s built-in max() function.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-primary text-white fw-bold">8️⃣ Reverse a String</div>
+      <div class="card-body">
+        <pre><code class="language-python">def reverse_string(s):
+    return s[::-1]</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> reverse_string(s)</li>
+          <li>📘 <strong>Learned:</strong> Reverse strings using slicing.</li>
+          <li>♻️ <strong>Reusability:</strong> Useful in palindromes, encoders, and data transformation.</li>
+          <li>💬 <strong>Comments:</strong> s[::-1] reverses the characters of the string.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-success text-white fw-bold">9️⃣ Check Prime</div>
+      <div class="card-body">
+        <pre><code class="language-python">def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5)+1):
+        if n % i == 0:
+            return False
+    return True</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> is_prime(n)</li>
+          <li>📘 <strong>Learned:</strong> How to check for prime numbers using loops and conditions.</li>
+          <li>♻️ <strong>Reusability:</strong> Fundamental in math-related programming.</li>
+          <li>💬 <strong>Comments:</strong> Returns False if divisible by any number other than 1 and itself.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-info text-white fw-bold">🔟 Capitalize Each Word</div>
+      <div class="card-body">
+        <pre><code class="language-python">def title_case(sentence):
+    return sentence.title()</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> title_case(sentence)</li>
+          <li>📘 <strong>Learned:</strong> Apply title formatting to strings.</li>
+          <li>♻️ <strong>Reusability:</strong> Common in formatting names and titles.</li>
+          <li>💬 <strong>Comments:</strong> Uses Python's built-in .title() method.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ SECTION -->
+  <hr>
+  <h3 class="text-warning text-center">🧠 Functions Quiz</h3>
+  <div id="quizBox" class="mt-4"></div>
+  <div id="quizSummary" class="mt-4"></div>
+  <p class="text-end">🔢 Total Examples: <span id="exampleCount"></span></p>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+{% load static %}
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const exampleCards = document.querySelectorAll("#exampleCards .card").length;
+  document.getElementById("exampleCount").textContent = exampleCards;
+  loadQuizData("functions");
+});
+</script>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🧾 Python Lists</h1>
+  <p class="lead">Lists are ordered, mutable collections in Python used to store multiple items.</p>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mt-4" id="quizTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content mt-3" id="quizTabContent">
+
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+        <!-- 🛒 Example 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">1⃣ Shopping Cart</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">cart = ["milk", "bread", "eggs"]
+cart.append("butter")
+print(cart)  # ['milk', 'bread', 'eggs', 'butter']</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> append()</li>
+                <li>📘 <strong>Learned:</strong> Add items dynamically to a list</li>
+                <li>♻️ <strong>Reusability:</strong> eCommerce shopping logic</li>
+                <li>💬 <strong>Comments:</strong> Great for dynamic data addition</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- 🧺 Example 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2⃣ Remove Out-of-Stock Item</div>
+            <div class="card-body">
+              <pre><code class="language-python">cart.remove("eggs")
+print(cart)  # ['milk', 'bread', 'butter']</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> remove()</li>
+                <li>📘 <strong>Learned:</strong> Remove specific values</li>
+                <li>♻️ <strong>Reusability:</strong> Inventory adjustments</li>
+                <li>💬 <strong>Comments:</strong> Removes first matching element</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 💰 Example 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">3⃣ Sorting Prices</div>
+            <div class="card-body">
+              <pre><code class="language-python">prices = [12.5, 5.0, 9.99]
+prices.sort()
+print(prices)  # [5.0, 9.99, 12.5]</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> sort()</li>
+                <li>📘 <strong>Learned:</strong> Sort numerical data</li>
+                <li>♻️ <strong>Reusability:</strong> Price filtering, data prep</li>
+                <li>💬 <strong>Comments:</strong> Sorts in-place</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🔁 Example 4 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">4⃣ Reversing Order</div>
+            <div class="card-body">
+              <pre><code class="language-python">names = ["Sumon", "Rahim", "Karim"]
+names.reverse()
+print(names)  # ['Karim', 'Rahim', 'Sumon']</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> reverse()</li>
+                <li>📘 <strong>Learned:</strong> Reverse list contents</li>
+                <li>♻️ <strong>Reusability:</strong> UI logic, history display</li>
+                <li>💬 <strong>Comments:</strong> Modifies original list</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div class="mt-4" id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<!-- Quiz Engine + Audio -->
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+{% block extra_js %}
+<script>
+  loadQuizData("lists");
+</script>
+{% endblock %}
+{% endblock %}

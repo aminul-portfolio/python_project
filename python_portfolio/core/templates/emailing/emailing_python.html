@@ -1,0 +1,115 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold text-primary">📧 Sending and Receiving Emails with Python</h1>
+        <p class="fs-5 text-muted"><strong>Master email automation in Python using smtplib, imaplib, and email modules.</strong></p>
+    </div>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">Examples <span class="badge bg-secondary" id="exampleCount">3</span></button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">Quiz <span class="badge bg-info text-dark" id="quizCountText">5</span></button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+        <!-- Examples Tab -->
+        <div class="tab-pane fade show active" id="examples" role="tabpanel">
+            <div id="exampleCards">
+                <!-- Example 1 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-success text-white fw-bold">1️⃣ Sending Emails Using smtplib</div>
+                    
+
+  <div class="mt-5"></div><div class="card-body">
+<pre><code class="language-python">import smtplib
+from email.message import EmailMessage
+
+msg = EmailMessage()
+msg['Subject'] = 'Hello!'
+msg['From'] = 'you@example.com'
+msg['To'] = 'friend@example.com'
+msg.set_content('This is a test email')
+
+with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+    smtp.starttls()
+    smtp.login('you@example.com', 'yourpassword')
+    smtp.send_message(msg)</code></pre>
+                        <ul class="list-unstyled mt-3">
+                            <li>🔹 <strong>Function Used:</strong> smtplib.SMTP</li>
+                            <li>📘 <strong>Learned:</strong> How to send an email using SMTP with Python.</li>
+                            <li>♻️ <strong>Reusability:</strong> Great for automating email alerts or notifications.</li>
+                            <li>💬 <strong>Comments:</strong> Uses TLS to secure email sending via Gmail SMTP.</li>
+                        </ul></div>
+                </div>
+
+                <!-- Example 2 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-warning text-dark fw-bold">2️⃣ Reading Emails with imaplib</div>
+                    <div class="card-body">
+<pre><code class="language-python">import imaplib
+import email
+
+mail = imaplib.IMAP4_SSL('imap.gmail.com')
+mail.login('you@example.com', 'yourpassword')
+mail.select('inbox')
+
+status, messages = mail.search(None, 'ALL')
+for num in messages[0].split():
+    status, data = mail.fetch(num, '(RFC822)')
+    message = email.message_from_bytes(data[0][1])
+    print('Subject:', message['subject'])</code></pre>
+                        <ul class="list-unstyled mt-3">
+                            <li>🔹 <strong>Function Used:</strong> imaplib.IMAP4_SSL</li>
+                            <li>📘 <strong>Learned:</strong> How to connect to an inbox and read email subjects.</li>
+                            <li>♻️ <strong>Reusability:</strong> Useful for building email dashboards or bots.</li>
+                            <li>💬 <strong>Comments:</strong> Make sure IMAP is enabled in Gmail settings.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Example 3 -->
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white fw-bold">3️⃣ Exercise: Daily Email Summary Bot</div>
+                    <div class="card-body">
+                        <p>Write a Python script that logs into your Gmail, checks for new unread emails, and summarizes them in one email to send to yourself or others.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li>🔹 <strong>Functions Used:</strong> imaplib, smtplib, email.message</li>
+                            <li>📘 <strong>Learned:</strong> Applying both email sending and reading in a real-world task.</li>
+                            <li>♻️ <strong>Reusability:</strong> Great for daily briefings, reminders, or reporting.</li>
+                            <li>💬 <strong>Comments:</strong> Add a scheduler like cron or `schedule` in Python to run it daily.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Tab -->
+        <div class="tab-pane fade" id="quiz" role="tabpanel">
+            <div id="quizBox"></div>
+            <div id="quizSummary" class="mt-4"></div>
+        </div>
+    </div>
+
+    <!-- Sounds -->
+    <audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+    <audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("exampleCount").innerText = document.querySelectorAll("#exampleCards .card").length;
+        loadQuizData("emailing_python");
+    });
+</script>
+{% endblock %}

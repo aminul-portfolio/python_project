@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid py-4">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🎮 Tic Tac Toe</h1>
+    <p class="fs-5 text-muted"><strong>Challenge your friend in this classic 3x3 Tic Tac Toe game!</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="numbersTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="numbersTabsContent">
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ Game Initialization</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">board = ["", "", "", "", "", "", "", "", ""]
+currentPlayer = "X"
+gameActive = True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> List, String Assignment</li>
+                <li>📘 <strong>Learned:</strong> Initialize variables and game board</li>
+                <li>♻️ <strong>Reusability:</strong> Used in any board game logic</li>
+                <li>💬 <strong>Comments:</strong> Sets up the game environment</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Win Conditions</div>
+            <div class="card-body">
+              <pre><code class="language-python">winConditions = [
+  [0,1,2], [3,4,5], [6,7,8],
+  [0,3,6], [1,4,7], [2,5,8],
+  [0,4,8], [2,4,6]
+]</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> List of Lists</li>
+                <li>📘 <strong>Learned:</strong> How to define game win logic</li>
+                <li>♻️ <strong>Reusability:</strong> All grid-based logic games</li>
+                <li>💬 <strong>Comments:</strong> Defines the win logic for each pattern</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more examples as needed -->
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll("#exampleCards .card");
+    document.getElementById("exampleCount").textContent = cards.length;
+    loadQuizData("tic_tac_toe");
+  });
+</script>
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+{% endblock %}

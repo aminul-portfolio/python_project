@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🂡 Milestone Project 2: Blackjack Full Solution</h1>
+    <p class="fs-5 text-muted"><strong>This solution implements a complete text-based Blackjack game using Python classes for cards, decks, players, and game logic.</strong></p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4 justify-content-center" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button">🧪 Examples <span class="badge bg-secondary ms-1" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button">🧠 Quiz <span class="badge bg-secondary ms-1" id="quizCountText">5</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+        <!-- Example 1 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ Card Class</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">class Card:
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+        self.value = values[rank]
+
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>__init__, __str__</code></li>
+              <li>📘 <strong>Learned:</strong> Object initialization and display formatting</li>
+              <li>♻️ <strong>Reusability:</strong> Reusable for any card-based games or simulations</li>
+              <li>💬 <strong>Comments:</strong> Defines a card with suit, rank, and printable representation</li>
+            </ul></div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ Deck Class</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Deck:
+    def __init__(self):
+        self.all_cards = [Card(suit, rank) for suit in suits for rank in ranks]
+
+    def shuffle(self):
+        random.shuffle(self.all_cards)
+
+    def deal_one(self):
+        return self.all_cards.pop()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>shuffle(), pop()</code></li>
+              <li>📘 <strong>Learned:</strong> Deck setup, card dealing</li>
+              <li>♻️ <strong>Reusability:</strong> Card games, simulations needing a queue system</li>
+              <li>💬 <strong>Comments:</strong> Builds and manages a full 52-card deck</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ Player Class</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Player:
+    def __init__(self, name):
+        self.name = name
+        self.hand = []
+        self.aces = 0
+        self.value = 0
+
+    def add_card(self, card):
+        self.hand.append(card)
+        self.value += card.value
+        if card.rank == 'Ace':
+            self.aces += 1
+
+    def adjust_for_ace(self):
+        while self.value > 21 and self.aces:
+            self.value -= 10
+            self.aces -= 1</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>append(), while loop, if condition</code></li>
+              <li>📘 <strong>Learned:</strong> Managing special rules (Ace handling)</li>
+              <li>♻️ <strong>Reusability:</strong> Player tracking in any scoring-based game</li>
+              <li>💬 <strong>Comments:</strong> Tracks cards, values, and ace logic for a player</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ Chips Class</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Chips:
+    def __init__(self, total=100):
+        self.total = total
+        self.bet = 0
+
+    def win_bet(self):
+        self.total += self.bet
+
+    def lose_bet(self):
+        self.total -= self.bet</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>+=, -=</code></li>
+              <li>📘 <strong>Learned:</strong> Bankroll logic for betting</li>
+              <li>♻️ <strong>Reusability:</strong> Any game involving score or currency management</li>
+              <li>💬 <strong>Comments:</strong> Manages player chips, bets, wins, and losses</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-secondary text-white fw-bold">5️⃣ Main Game Logic</div>
+          <div class="card-body">
+            <pre><code class="language-python">while playing:
+    hit_or_stand(deck, player_hand)
+    show_some(player_hand, dealer_hand)
+
+    if player_hand.value > 21:
+        player_busts()
+        break
+
+while dealer_hand.value < 17:
+    hit(deck, dealer_hand)
+
+show_all(player_hand, dealer_hand)
+
+if dealer_hand.value > 21:
+    dealer_busts()
+elif dealer_hand.value > player_hand.value:
+    dealer_wins()
+elif dealer_hand.value < player_hand.value:
+    player_wins()
+else:
+    push()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>loops, conditions, function calls</code></li>
+              <li>📘 <strong>Learned:</strong> Control flow for gameplay, decision-making</li>
+              <li>♻️ <strong>Reusability:</strong> Reuse in turn-based simulations or interactive programs</li>
+              <li>💬 <strong>Comments:</strong> Implements full game loop and win/loss evaluation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+
+  <!-- Quiz Sound and Count -->
+  <audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+  <audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  function countExampleCards() {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').innerText = count;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    countExampleCards();
+    loadQuizData("blackjack_solution");
+  });
+</script>
+{% endblock %}

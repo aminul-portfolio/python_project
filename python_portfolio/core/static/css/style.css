@@ -1,0 +1,179 @@
+/* === LAYOUT === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+#sidebar {
+    width: 280px;
+    background-color: #212529;
+    color: white;
+    flex-shrink: 0;
+    padding-top: 1rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+#main-content {
+    margin-left: 280px;
+    padding: 2rem;
+    width: 100%;
+}
+.rotate-icon {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+button[aria-expanded="true"] .rotate-icon {
+    transform: rotate(90deg);
+}
+
+/* === SIDEBAR BUTTONS === */
+.sidebar-folder {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.sidebar-folder:hover {
+    background-color: #343a40;
+    cursor: pointer;
+}
+
+.folder-emoji {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.folder-label {
+  font-weight: 600;
+  font-size: 16.5px;
+  color: #d1fafa;
+}
+
+.rotate-icon {
+    transition: transform 0.3s ease;
+    margin-left: auto;
+}
+
+/* Rotate icon when open */
+.sidebar-folder[aria-expanded="true"] .rotate-icon {
+    transform: rotate(90deg);
+}
+
+/* === SUB-LINKS === */
+.nav-link {
+    display: block;
+    padding: 0.5rem 2.5rem;
+    color: #adb5bd;
+    font-size: 15px;
+    transition: color 0.2s ease, background 0.2s ease;
+    border-radius: 6px;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background-color: #0d6efd;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: #fff;
+    background-color: #0d6efd;
+    font-weight: bold;
+}
+
+/* === HOME BUTTON STYLE === */
+.nav-link.home-link {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #0d6efd;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 0 1rem 1.5rem;
+    display: block;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.nav-link.home-link:hover {
+    background-color: #0b5ed7;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 100%;
+        position: relative;
+    }
+
+    #main-content {
+        margin-left: 0;
+    }
+}
+.folder-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
+
+.folder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+.folder-card .card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0077cc;
+}
+
+.folder-card .card-text {
+    font-size: 0.95rem;
+}
+#commentBox:focus {
+    box-shadow: 0 0 5px 2px #0d6efd66;
+    border-color: #0d6efd;
+}
+.bg-teal {
+  background-color: #20c997 !important;  /* Bootstrap teal */
+}
+
+.border-teal {
+  border-color: #20c997 !important;
+}
+.home-nav-link {
+  display: block;
+  font-size: 1.2rem;                  /* Slightly larger */
+  font-weight: 600;                   /* Semi-bold */
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);  /* Blue gradient */
+  padding: 12px 24px;
+  margin: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);  /* soft glow */
+  transition: all 0.3s ease;
+}
+
+.home-nav-link:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);  /* deeper blue */
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35);         /* brighter glow */
+  color: #f0f9ff;
+}

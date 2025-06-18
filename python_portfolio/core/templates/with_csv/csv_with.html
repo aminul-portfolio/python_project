@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">Working with CSV Files</h1>
+    <p class="fs-5 text-muted"><strong>Explore essential methods for reading and writing CSV files using Python's csv module.</strong></p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#examples">📘 Examples <span class="badge bg-secondary" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#quiz">📝 Quiz <span class="badge bg-info" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+
+        <!-- Example Cards -->
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ pwd</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code>!pwd</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> pwd</li>
+              <li>📘 <strong>Learned:</strong> Check current working directory to verify CSV file path.</li>
+              <li>♻️ <strong>Reusability:</strong> Always use when file path is uncertain.</li>
+              <li>💬 <strong>Comments:</strong> Helps debug file location issues in notebooks.</li>
+            </ul></div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ import csv</div>
+          <div class="card-body">
+            <pre><code>import csv</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</strong> import csv</li>
+              <li>📘 Learned:</li> Import Python's built-in CSV handling module.</li>
+              <li>♻️ Reusability:</strong> Use when manually processing CSVs.</li>
+              <li>💬 Comments:</strong> Core requirement for CSV manipulation in Python.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ open(..., encoding='utf-8')</div>
+          <div class="card-body">
+            <pre><code>with open('example.csv', encoding='utf-8') as f:
+    data = f.read()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> open(..., encoding='utf-8')</li>
+              <li>📘 Learned:</li> Ensures proper reading of special characters in files.</li>
+              <li>♻️ Reusability:</li> Always specify encoding for reliable reads.</li>
+              <li>💬 Comments:</li> Avoids common Unicode decode errors.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ csv.reader()</div>
+          <div class="card-body">
+            <pre><code>csv_data = csv.reader(data.splitlines())</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> csv.reader()</li>
+              <li>📘 Learned:</li> Parses CSV row-by-row for Python processing.</li>
+              <li>♻️ Reusability:</li> For looping or incremental data handling.</li>
+              <li>💬 Comments:</li> Common for reading rows without using pandas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-info text-white fw-bold">5️⃣ list(csv_data)</div>
+          <div class="card-body">
+            <pre><code>data_lines = list(csv_data)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> list(csv_data)</li>
+              <li>📘 Learned:</li> Converts reader object into list of rows.</li>
+              <li>♻️ Reusability:</li> Handy for preview or indexed access.</li>
+              <li>💬 Comments:</li> Can be memory-heavy for large files.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-secondary text-white fw-bold">6️⃣ next(csv_reader)</div>
+          <div class="card-body">
+            <pre><code>next(csv_reader)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> next(csv_reader)</li>
+              <li>📘 Learned:</li> Skips header row when needed.</li>
+              <li>♻️ Reusability:</li> Common before row iteration.</li>
+              <li>💬 Comments:</li> Prevents headers from polluting your data.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-dark text-white fw-bold">7️⃣ for row in csv_reader</div>
+          <div class="card-body">
+            <pre><code>for row in csv_reader:
+    print(row)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> for row in csv_reader</li>
+              <li>📘 Learned:</li> Iterates CSV content one row at a time.</li>
+              <li>♻️ Reusability:</li> Effective for large file handling.</li>
+              <li>💬 Comments:</li> Avoids memory overload vs. casting to list.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white fw-bold">8️⃣ open(..., 'w', newline='')</div>
+          <div class="card-body">
+            <pre><code>with open('output.csv', 'w', newline='') as f:
+    writer = csv.writer(f)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> open(..., 'w', newline='')</li>
+              <li>📘 Learned:</li> Writes CSV cleanly, avoids extra line breaks.</li>
+              <li>♻️ Reusability:</li> Always use newline='' when writing CSVs.</li>
+              <li>💬 Comments:</li> Resolves formatting issues with blank rows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white fw-bold">9️⃣ csv.writer()</div>
+          <div class="card-body">
+            <pre><code>writer = csv.writer(f)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> csv.writer()</li>
+              <li>📘 Learned:</li> Creates a writer object to output data.</li>
+              <li>♻️ Reusability:</li> Ideal for saving to new CSV files.</li>
+              <li>💬 Comments:</li> Required before using writerow().</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-warning text-white fw-bold">🔟 writer.writerow()</div>
+          <div class="card-body">
+            <pre><code>writer.writerow(['Name', 'Age', 'Country'])</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used:</li> writer.writerow()</li>
+              <li>📘 Learned:</li> Writes a single row into the CSV.</li>
+              <li>♻️ Reusability:</li> Useful for headers or row insertion.</li>
+              <li>💬 Comments:</li> Can be used in loops for multiple records.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="my-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<!-- Sounds and Script -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  function countExampleCards() {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').innerText = count;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    countExampleCards();
+    loadQuizData("csv_with");
+  });
+</script>
+{% endblock %}

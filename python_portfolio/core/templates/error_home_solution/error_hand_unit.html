@@ -1,0 +1,230 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🛠️ Real-World Python Error Handling Examples</h1>
+    <p class="fs-5 text-muted"><strong>Explore common Python exceptions with real-life code and test your knowledge with a 10-question quiz.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="contentTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">Examples <span class="badge bg-secondary" id="exampleCount"></span></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">Quiz <span class="badge bg-info" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="tabContent">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-danger text-white fw-bold">1️⃣ ZeroDivisionError</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code>try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("You can't divide by zero!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> try-except block</li>
+                <li>📘 <strong>Learned:</strong> Catching division by zero</li>
+                <li>♻️ <strong>Reusability:</strong> Useful in math-based user input</li>
+                <li>💬 <strong>Comments:</strong> Prevents app crash from divide-by-zero</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-warning text-white fw-bold">2️⃣ ValueError</div>
+            <div class="card-body">
+              <pre><code>try:
+    num = int("abc")
+except ValueError:
+    print("Invalid conversion from string to int")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> int()</li>
+                <li>📘 <strong>Learned:</strong> Handling bad type conversion</li>
+                <li>♻️ <strong>Reusability:</strong> Common in form input validation</li>
+                <li>💬 <strong>Comments:</strong> Guides users on expected input</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-secondary text-white fw-bold">3️⃣ FileNotFoundError</div>
+            <div class="card-body">
+              <pre><code>try:
+    with open("file.txt") as f:
+        content = f.read()
+except FileNotFoundError:
+    print("File not found!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> open()</li>
+                <li>📘 <strong>Learned:</strong> How to catch missing files</li>
+                <li>♻️ <strong>Reusability:</strong> File management apps</li>
+                <li>💬 <strong>Comments:</strong> Avoids crashes due to missing files</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-success text-white fw-bold">4️⃣ KeyError</div>
+            <div class="card-body">
+              <pre><code>try:
+    name = data["name"]
+except KeyError:
+    print("Key does not exist!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Dictionary access</li>
+                <li>📘 <strong>Learned:</strong> Detecting missing dictionary keys</li>
+                <li>♻️ <strong>Reusability:</strong> Used in API data handling</li>
+                <li>💬 <strong>Comments:</strong> Helpful for debugging missing keys</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-primary text-white fw-bold">5️⃣ IndexError</div>
+            <div class="card-body">
+              <pre><code>try:
+    value = my_list[10]
+except IndexError:
+    print("Index out of range!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> List indexing</li>
+                <li>📘 <strong>Learned:</strong> Handling list boundaries</li>
+                <li>♻️ <strong>Reusability:</strong> Data extraction in loops</li>
+                <li>💬 <strong>Comments:</strong> Prevents app from crashing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-dark text-white fw-bold">6️⃣ ImportError</div>
+            <div class="card-body">
+              <pre><code>try:
+    from my_module import something
+except ImportError:
+    print("Module or object not found!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Import</li>
+                <li>📘 <strong>Learned:</strong> Missing module handling</li>
+                <li>♻️ <strong>Reusability:</strong> Safe dependency loading</li>
+                <li>💬 <strong>Comments:</strong> Helps during deployment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-info text-white fw-bold">7️⃣ AssertionError</div>
+            <div class="card-body">
+              <pre><code>try:
+    assert 2 + 2 == 5
+except AssertionError:
+    print("Assertion failed!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> assert</li>
+                <li>📘 <strong>Learned:</strong> Logical validation</li>
+                <li>♻️ <strong>Reusability:</strong> Testing and debugging</li>
+                <li>💬 <strong>Comments:</strong> Helps verify assumptions</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-warning text-dark fw-bold">8️⃣ AttributeError</div>
+            <div class="card-body">
+              <pre><code>try:
+    x = None
+    x.strip()
+except AttributeError:
+    print("Object has no attribute!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Object method access</li>
+                <li>📘 <strong>Learned:</strong> Safe method calls</li>
+                <li>♻️ <strong>Reusability:</strong> Prevents NoneType bugs</li>
+                <li>💬 <strong>Comments:</strong> Important in form handlers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-secondary text-white fw-bold">9️⃣ ValueError</div>
+            <div class="card-body">
+              <pre><code>try:
+    int('123.45')
+except ValueError:
+    print("Float string to int conversion error!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> int()</li>
+                <li>📘 <strong>Learned:</strong> Parsing errors</li>
+                <li>♻️ <strong>Reusability:</strong> File parsing, input handling</li>
+                <li>💬 <strong>Comments:</strong> Avoid bad type conversion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-danger text-white fw-bold">🔟 Custom Exception</div>
+            <div class="card-body">
+              <pre><code>try:
+    raise Exception("Custom error raised!")
+except Exception as e:
+    print(f"Error: {e}")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> raise Exception()</li>
+                <li>📘 <strong>Learned:</strong> Throwing your own error</li>
+                <li>♻️ <strong>Reusability:</strong> Application-specific messages</li>
+                <li>💬 <strong>Comments:</strong> Useful in business rules</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.getElementById("exampleCount").innerText = document.querySelectorAll("#exampleCards .card").length;
+  loadQuizData("error_hand_unit");
+</script>
+{% endblock %}

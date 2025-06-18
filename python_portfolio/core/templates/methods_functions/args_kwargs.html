@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🔣 *args and **kwargs in Python</h1>
+  <p class="lead">Understand how to accept variable numbers of arguments using <code>*args</code> and <code>**kwargs</code> in function definitions.</p>
+
+  <!-- *args Examples -->
+  <hr>
+  <h3 class="text-success text-center">📘 Real-World Examples with *args</h3>
+  <hr>
+
+  <h5>1️⃣ Sum All Numbers</h5>
+  <pre><code class="language-python">def sum_all(*args):
+    return sum(args)
+
+print(sum_all(2, 3, 4))  # Output: 9</code></pre>
+
+  <h5>2️⃣ Multiply All Numbers</h5>
+  <pre><code class="language-python">def multiply_all(*args):
+    result = 1
+    for num in args:
+        result *= num
+    return result
+
+print(multiply_all(2, 3, 4))  # Output: 24</code></pre>
+
+  <h5>3️⃣ Display All Arguments</h5>
+  <pre><code class="language-python">def show_args(*args):
+    for i in args:
+        print(i)
+
+show_args('Python', 101, True)</code></pre>
+
+  <h5>4️⃣ Combine with Required Arguments</h5>
+  <pre><code class="language-python">def greet(greeting, *names):
+    for name in names:
+        print(f"{greeting}, {name}!")
+
+greet("Hello", "Sumon", "Joy", "Tamim")</code></pre>
+
+  <!-- **kwargs Examples -->
+  <hr>
+  <h3 class="text-info text-center">📙 Real-World Examples with **kwargs</h3>
+  <hr>
+
+  <h5>5️⃣ Display Keyword Arguments</h5>
+  <pre><code class="language-python">def print_details(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_details(name="Sumon", age=30)</code></pre>
+
+  <h5>6️⃣ Build a User Profile</h5>
+  <pre><code class="language-python">def build_profile(**kwargs):
+    return kwargs
+
+profile = build_profile(name="Sumon", role="Developer")
+print(profile)</code></pre>
+
+  <h5>7️⃣ Combine *args and **kwargs</h5>
+  <pre><code class="language-python">def full_demo(*args, **kwargs):
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+full_demo(1, 2, 3, name="Sumon", age=30)</code></pre>
+
+  <h5>8️⃣ Pass **kwargs to Format Strings</h5>
+  <pre><code class="language-python">def greeting(**kwargs):
+    print("Hello, {name}! You are a {title}.".format(**kwargs))
+
+greeting(name="Sumon", title="Pythonista")</code></pre>
+
+  <!-- QUIZ -->
+  <hr>
+  <h3 class="text-warning text-center">🧠 *args and **kwargs Quiz</h3>
+  <div id="quizBox" class="mt-4"></div>
+  <div id="quizSummary" class="mt-4"></div>
+</div>
+
+<script>
+const quizQuestions = [
+  {
+    question: "What does *args allow in a function?",
+    options: ["Keyword arguments", "Variable number of positional arguments", "Only strings", "Only numbers"],
+    answer: "Variable number of positional arguments"
+  },
+  {
+    question: "What does **kwargs collect?",
+    options: ["Any variables", "List of args", "Named keyword arguments", "All imports"],
+    answer: "Named keyword arguments"
+  },
+  {
+    question: "What will sum_all(1, 2, 3) return if sum_all uses *args?",
+    options: ["6", "3", "Error", "[1,2,3]"],
+    answer: "6"
+  },
+  {
+    question: "What data type is *args?",
+    options: ["Tuple", "List", "Dict", "String"],
+    answer: "Tuple"
+  },
+  {
+    question: "**kwargs are stored as:",
+    options: ["List", "Tuple", "Dict", "String"],
+    answer: "Dict"
+  },
+  {
+    question: "Can you combine *args and **kwargs in a function?",
+    options: ["Yes", "No", "Only in Python 2", "Only in classes"],
+    answer: "Yes"
+  },
+  {
+    question: "What will print_details(name='Sumon') display?",
+    options: ["['Sumon']", "name: Sumon", "{'name': 'Sumon'}", "Sumon: name"],
+    answer: "name: Sumon"
+  },
+  {
+    question: "What order must *args and **kwargs appear?",
+    options: ["kwargs then args", "args then kwargs", "any", "alphabetical"],
+    answer: "args then kwargs"
+  },
+  {
+    question: "Which call is valid?\n\nfull_demo(1,2,name='Sumon')",
+    options: ["Yes", "No", "Only if args empty", "Error"],
+    answer: "Yes"
+  },
+  {
+    question: "What keyword is used for dictionary unpacking?",
+    options: ["*", "**", "=>", "//"],
+    answer: "**"
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let userAnswers = [];
+
+function loadQuestion() {
+  const qBox = document.getElementById('quizBox');
+  const q = quizQuestions[currentQuestion];
+
+  let html = `<h5><strong>Q${currentQuestion + 1}/10:</strong> ${q.question}</h5><form id="quizForm">`;
+
+  q.options.forEach((opt, idx) => {
+    html += `
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="answer" id="q${currentQuestion}_opt${idx}" value="${opt}">
+        <label class="form-check-label" for="q${currentQuestion}_opt${idx}">${opt}</label>
+      </div>
+    `;
+  });
+
+  html += `<button type="button" class="btn btn-primary mt-3" onclick="submitAnswer()">Submit</button></form>`;
+  qBox.innerHTML = html;
+  document.getElementById('quizSummary').innerHTML = `<p class="text-muted">Progress: ${currentQuestion + 1}/10</p>`;
+}
+
+function submitAnswer() {
+  const selected = document.querySelector('input[name="answer"]:checked');
+  const q = quizQuestions[currentQuestion];
+  const qBox = document.getElementById('quizBox');
+
+  if (!selected) {
+    alert("Please select an answer before submitting.");
+    return;
+  }
+
+  const userAnswer = selected.value;
+  const isCorrect = userAnswer === q.answer;
+
+  userAnswers.push({
+    question: q.question,
+    selected: userAnswer,
+    correct: q.answer,
+    result: isCorrect ? '✅ Correct' : '❌ Incorrect'
+  });
+
+  if (isCorrect) score++;
+
+  let resultHtml = `
+    <div class="alert ${isCorrect ? 'alert-success' : 'alert-danger'} mt-3">
+      ${isCorrect ? '✅ Correct!' : `❌ Wrong!`} <br>
+      <strong>Correct Answer:</strong> ${q.answer}
+    </div>
+  `;
+  resultHtml += `<button class="btn btn-success" onclick="nextQuestion()">Next</button>`;
+  qBox.innerHTML = resultHtml;
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizQuestions.length) {
+    loadQuestion();
+  } else {
+    showFinalScore();
+  }
+}
+
+function showFinalScore() {
+  let result = `<h4 class="text-success">🎉 Quiz Complete!</h4>`;
+  result += `<p>You got <strong>${score}/10</strong> correct.</p>`;
+  result += `<h5 class="mt-4">🧾 Review:</h5><ul class="list-group">`;
+
+  userAnswers.forEach((item, i) => {
+    result += `
+      <li class="list-group-item">
+        <strong>Q${i + 1}:</strong> ${item.question}<br>
+        <span class="${item.result.includes('✅') ? 'text-success' : 'text-danger'}">${item.result}</span><br>
+        <strong>Your Answer:</strong> ${item.selected} <br>
+        <strong>Correct Answer:</strong> ${item.correct}
+      </li>`;
+  });
+
+  result += `</ul>
+    <button class="btn btn-primary mt-4" onclick="restartQuiz()">Try Again</button>
+  `;
+  document.getElementById('quizBox').innerHTML = result;
+  document.getElementById('quizSummary').innerHTML = '';
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  userAnswers = [];
+  loadQuestion();
+}
+
+window.onload = loadQuestion;
+</script>
+{% endblock %}

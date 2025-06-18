@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/all_child_style.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🐍 Python Tuples</h1>
+  <p class="lead">Tuples are immutable, ordered collections used to store multiple items. They are useful when your data shouldn't change.</p>
+
+  <!-- Navigation Tabs -->
+  <ul class="nav nav-tabs mt-4" id="tupleTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content mt-3" id="tupleTabsContent">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+
+        <!-- Example 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">1️⃣ Coordinate System</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">location = (51.5074, 0.1278)
+print("Latitude:", location[0])
+print("Longitude:", location[1])</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Indexing tuple</li>
+                <li>📘️ <strong>Learned:</strong> How to store GPS coordinates</li>
+                <li>♻️ <strong>Reusability:</strong> Mapping, navigation apps</li>
+                <li>💬 <strong>Comments:</strong> Tuples maintain order</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Return Multiple Values</div>
+            <div class="card-body">
+              <pre><code class="language-python">def get_user():
+    return ("Sumon", 30)
+
+name, age = get_user()
+print(name, age)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Tuple return and unpacking</li>
+                <li>📘️ <strong>Learned:</strong> Functions can return multiple values</li>
+                <li>♻️ <strong>Reusability:</strong> APIs, DB queries</li>
+                <li>💬 <strong>Comments:</strong> Simplifies value grouping</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">3️⃣ Immutable Data</div>
+            <div class="card-body">
+              <pre><code class="language-python">colors = ("red", "green", "blue")
+# colors[0] = "yellow" ❌ TypeError</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Tuple immutability</li>
+                <li>📘️ <strong>Learned:</strong> Tuples cannot be changed</li>
+                <li>♻️ <strong>Reusability:</strong> Fixed configuration</li>
+                <li>💬 <strong>Comments:</strong> Great for constant data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">4️⃣ Tuple Packing & Unpacking</div>
+            <div class="card-body">
+              <pre><code class="language-python">data = ("Python", 3.12)
+language, version = data
+print(language, version)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Tuple unpacking</li>
+                <li>📘️ <strong>Learned:</strong> Extract values from tuples</li>
+                <li>♻️ <strong>Reusability:</strong> Return parsing</li>
+                <li>💬 <strong>Comments:</strong> Makes code cleaner</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div class="progress my-4">
+        <div id="progressBar" class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 0%">0%</div>
+      </div>
+      <div class="mt-4" id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    loadQuizData("tuples");
+
+    const count = document.querySelectorAll("#exampleCards .col").length;
+    document.getElementById("exampleCount").textContent = count;
+
+    const quizTab = document.querySelector('#quiz-tab');
+    quizTab.addEventListener('shown.bs.tab', () => {
+      if (typeof loadQuestion === 'function') {
+        loadQuestion();
+      }
+    });
+  });
+</script>
+{% endblock %}

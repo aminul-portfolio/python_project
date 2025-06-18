@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🧩 17 - Bonus: Widget Interactivity and Styling</h1>
+    <p class="fs-5 text-muted"><strong>Explore advanced usage of widgets in Python using ipywidgets for UI in Jupyter notebooks.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="widgetTab" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">Examples <span class="badge bg-secondary ms-1" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">Quiz <span class="badge bg-secondary ms-1" id="quizCountText">5</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div id="exampleCards">
+
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white fw-bold">1️⃣ Interactive Math Operation</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code># Widgets to adjust parameters
+from ipywidgets import interactive
+def f(x, y):
+    return x * y
+
+interactive(f, x=10, y=5)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> interactive()</li>
+              <li>📘 <strong>Learned:</strong> Create dynamic user inputs with real-time function feedback</li>
+              <li>♻️ <strong>Reusability:</strong> Parameter tuning for models or calculators</li>
+              <li>💬 <strong>Comments:</strong> Ideal for math apps or simulations in notebooks</li>
+            </ul></div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-info text-white fw-bold">2️⃣ Dynamic Text Input</div>
+          <div class="card-body">
+            <pre><code>import ipywidgets as widgets
+widgets.Text(value='Hello', placeholder='Type something', description='Text:')</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> widgets.Text()</li>
+              <li>📘 <strong>Learned:</strong> Create basic user input fields for text data</li>
+              <li>♻️ <strong>Reusability:</strong> Forms, dashboards, or chatbot UIs</li>
+              <li>💬 <strong>Comments:</strong> Acts like a simple text box component</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ Custom Layout with VBox</div>
+          <div class="card-body">
+            <pre><code>from ipywidgets import Button, VBox
+button1 = Button(description="Click 1")
+button2 = Button(description="Click 2")
+VBox([button1, button2])</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> VBox()</li>
+              <li>📘 <strong>Learned:</strong> Stack UI components vertically</li>
+              <li>♻️ <strong>Reusability:</strong> UI menus, dashboards</li>
+              <li>💬 <strong>Comments:</strong> Useful for simple layout control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-secondary text-white fw-bold">4️⃣ Event Handler for Buttons</div>
+          <div class="card-body">
+            <pre><code>def on_click(b):
+    print("Button clicked!")
+
+button = widgets.Button(description="Click Me")
+button.on_click(on_click)
+button</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> on_click()</li>
+              <li>📘 <strong>Learned:</strong> Capture button press actions</li>
+              <li>♻️ <strong>Reusability:</strong> User controls, submissions, games</li>
+              <li>💬 <strong>Comments:</strong> Common in quiz apps or UI confirmations</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+
+  <audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+  <audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  function countExampleCards() {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').innerText = count;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    countExampleCards();
+    loadQuizData("widget_bonus");
+  });
+</script>
+{% endblock %}

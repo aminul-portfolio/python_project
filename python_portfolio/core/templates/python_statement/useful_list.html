@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🛠 Useful Operators & List Comprehensions</h1>
+    <p class="fs-5 text-muted">This page includes efficient Python tools and patterns that simplify iteration, searching, and data transformation.</p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="statementTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">10</span>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row" id="exampleCards">
+
+        <!-- EXAMPLES -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">1️⃣ Using range() in a loop</h5>
+              <pre><code class="language-python">for i in range(1, 6):
+    print(i)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> range()</li>
+                <li>📘 <strong>Learned:</strong> Iterating through a sequence of numbers.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in loops or numeric calculations.</li>
+                <li>💬 <strong>Comments:</strong> Simple counting from 1 to 5.</li>
+              </ul></div>
+          
+
+  <div class="mt-5"></div></div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">2️⃣ Using enumerate()</h5>
+              <pre><code class="language-python">names = ['Alice', 'Bob', 'Charlie']
+for index, name in enumerate(names):
+    print(f"{index}: {name}")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> enumerate()</li>
+                <li>📘 <strong>Learned:</strong> Getting index and value together.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in loops with tracking index.</li>
+                <li>💬 <strong>Comments:</strong> Helps when position matters.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">3️⃣ Using zip()</h5>
+              <pre><code class="language-python">users = ['Tom', 'Jerry']
+ids = [101, 102]
+for user, uid in zip(users, ids):
+    print(f"{user} has ID {uid}")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> zip()</li>
+                <li>📘 <strong>Learned:</strong> Combining two lists into pairs.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in report generation and pairing data.</li>
+                <li>💬 <strong>Comments:</strong> Makes element-wise combination easy.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">4️⃣ Using 'in' keyword</h5>
+              <pre><code class="language-python">if 'apple' in ['apple', 'banana', 'cherry']:
+    print("Found apple!")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> in</li>
+                <li>📘 <strong>Learned:</strong> Checking for membership.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in conditions, loops, filtering.</li>
+                <li>💬 <strong>Comments:</strong> Checks whether value exists in list.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">5️⃣ Find min and max</h5>
+              <pre><code class="language-python">scores = [88, 95, 70, 100]
+print("Min:", min(scores))
+print("Max:", max(scores))</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> min(), max()</li>
+                <li>📘 <strong>Learned:</strong> Finding smallest and largest values.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in data analysis, comparisons.</li>
+                <li>💬 <strong>Comments:</strong> Works on any iterable with comparable values.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">6️⃣ Import and use random</h5>
+              <pre><code class="language-python">import random
+print(random.randint(1, 10))</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> random.randint()</li>
+                <li>📘 <strong>Learned:</strong> Generating a random integer.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in games, simulations, randomness.</li>
+                <li>💬 <strong>Comments:</strong> Provides a number between bounds (inclusive).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">7️⃣ Shuffle a list</h5>
+              <pre><code class="language-python">import random
+cards = ['A', 'K', 'Q', 'J']
+random.shuffle(cards)
+print(cards)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> random.shuffle()</li>
+                <li>📘 <strong>Learned:</strong> Randomizing list order in-place.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in card games or list randomization.</li>
+                <li>💬 <strong>Comments:</strong> Modifies the list without returning a new one.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">8️⃣ Get a random item</h5>
+              <pre><code class="language-python">import random
+fruits = ['apple', 'banana', 'cherry']
+print(random.choice(fruits))</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> random.choice()</li>
+                <li>📘 <strong>Learned:</strong> Selecting a random element from list.</li>
+                <li>♻️ <strong>Reusability:</strong> Use in games, selections, simulations.</li>
+                <li>💬 <strong>Comments:</strong> Returns a value without modifying list.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- END EXAMPLES -->
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4">Loading quiz...</div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+
+<script>
+  loadQuizData("useful_list_comprehension");
+  document.addEventListener("DOMContentLoaded", () => {
+    const exampleCards = document.querySelectorAll("#exampleCards .col-md-6").length;
+    const exampleCountEl = document.getElementById("exampleCount");
+    if (exampleCountEl) exampleCountEl.textContent = exampleCards;
+  });
+</script>
+{% endblock %}

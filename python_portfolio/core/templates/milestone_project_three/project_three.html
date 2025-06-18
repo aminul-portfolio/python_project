@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🎓 Final Capstone Project: Interactive Portfolio Analyzer</h1>
+    <p class="fs-5 text-muted"><strong>Integrate Python file handling, CSV processing, and logic control to simulate a real-world asset analysis tool.</strong></p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4 justify-content-center" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button">
+        🧪 Examples <span class="badge bg-secondary ms-1" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button">
+        🧠 Quiz <span class="badge bg-secondary ms-1" id="quizCountText">5</span>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+        <!-- Example 1 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ CSV File Reading with Try/Except</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">import csv
+
+def load_portfolio_data(file_path):
+    data = []
+    with open(file_path, mode='r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            try:
+                asset = {
+                    'symbol': row['Symbol'],
+                    'quantity': int(row['Quantity']),
+                    'price': float(row['Price']),
+                    'sector': row['Sector']
+                }
+                data.append(asset)
+            except Exception as e:
+                print(f"Skipping row due to error: {e}")
+    return data</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>csv.DictReader(), open(), try/except</code></li>
+              <li>📘 <strong>Learned:</strong> Load and parse CSV safely into a list of dictionaries</li>
+              <li>♻️ <strong>Reusability:</strong> Can be reused in any CSV-driven data analysis tool</li>
+              <li>💬 <strong>Comments:</strong> Handles invalid rows gracefully with try-except block</li>
+            </ul></div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ Total Portfolio Value Calculation</div>
+          <div class="card-body">
+            <pre><code class="language-python">def total_value(portfolio):
+    return sum(asset['quantity'] * asset['price'] for asset in portfolio)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>sum(), generator expression</code></li>
+              <li>📘 <strong>Learned:</strong> Aggregate data using concise Python expressions</li>
+              <li>♻️ <strong>Reusability:</strong> Works for any portfolio of priced quantities</li>
+              <li>💬 <strong>Comments:</strong> Quickly evaluates total monetary value</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ Most Expensive Asset</div>
+          <div class="card-body">
+            <pre><code class="language-python">def most_expensive_asset(portfolio):
+    return max(portfolio, key=lambda x: x['price'])</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>max(), lambda</code></li>
+              <li>📘 <strong>Learned:</strong> Efficiently locate max values from complex structures</li>
+              <li>♻️ <strong>Reusability:</strong> Can be reused to rank any numeric metric</li>
+              <li>💬 <strong>Comments:</strong> Finds the most valuable asset by price</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ Grouping by Sector</div>
+          <div class="card-body">
+            <pre><code class="language-python">def group_by_sector(portfolio):
+    sector_map = {}
+    for asset in portfolio:
+        sector = asset['sector']
+        if sector not in sector_map:
+            sector_map[sector] = []
+        sector_map[sector].append(asset)
+    return sector_map</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>dictionary grouping</code></li>
+              <li>📘 <strong>Learned:</strong> Group data items by categorical keys</li>
+              <li>♻️ <strong>Reusability:</strong> Can be applied to any grouping or clustering logic</li>
+              <li>💬 <strong>Comments:</strong> Efficient way to group assets by sector</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-secondary text-white fw-bold">5️⃣ Sample Usage</div>
+          <div class="card-body">
+            <pre><code class="language-python">portfolio = load_portfolio_data('assets.csv')
+print("Total Value:", total_value(portfolio))
+print("Top Asset:", most_expensive_asset(portfolio))
+print("Grouped by Sector:", group_by_sector(portfolio))</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>print(), function chaining</code></li>
+              <li>📘 <strong>Learned:</strong> Combine modular functions for end-to-end processing</li>
+              <li>♻️ <strong>Reusability:</strong> Full workflow usable in CLI or backend dashboards</li>
+              <li>💬 <strong>Comments:</strong> Demonstrates complete execution of all utility functions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+      <div class="tab-pane fade" id="quiz">
+        <div id="quizBox" class="mt-4"></div>
+        <div id="quizSummary" class="mt-4"></div>
+      </div>
+  </div>
+
+  <!-- Audio -->
+  <audio id="correctSound" src="{% static 'audio/correct.mp3' %}"></audio>
+  <audio id="wrongSound" src="{% static 'audio/wrong.mp3' %}"></audio>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const exampleCount = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById("exampleCount").innerText = exampleCount;
+    loadQuizData("project_three");
+  });
+</script>
+{% endblock %}

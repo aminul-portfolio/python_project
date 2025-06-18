@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🧪 Functions and Methods Homework</h1>
+  <p class="lead">Practice with string methods, list operations, and basic function concepts.</p>
+
+  <hr>
+  <h3 class="text-success">📘 Homework Problems</h3>
+
+  <h5>1️⃣ Use .lower() to convert 'Hello World' to lowercase</h5>
+  <pre><code class="language-python">s = 'Hello World'
+print(s.lower())</code></pre>
+
+  <h5>2️⃣ Use .split() to split a string by whitespace</h5>
+  <pre><code class="language-python">s = 'Hello World'
+print(s.split())</code></pre>
+
+  <h5>3️⃣ Use .split() to split string by a specific character</h5>
+  <pre><code class="language-python">print('Hello World'.split('o'))</code></pre>
+
+  <h5>4️⃣ Use .format() to print 'The result is 10'</h5>
+  <pre><code class="language-python">result = 10
+print("The result is {}".format(result))</code></pre>
+
+  <h5>5️⃣ Find the index of 'needle' in list</h5>
+  <pre><code class="language-python">lst = ['hay', 'stack', 'needle']
+print(lst.index('needle'))</code></pre>
+
+  <hr>
+  <h3 class="text-info">✅ Solutions</h3>
+
+  <h5>1️⃣ Solution: Lowercase string</h5>
+  <pre><code class="language-python">s = 'Hello World'
+print(s.lower())  # Output: hello world</code></pre>
+
+  <h5>2️⃣ Solution: Split by whitespace</h5>
+  <pre><code class="language-python">s = 'Hello World'
+print(s.split())  # Output: ['Hello', 'World']</code></pre>
+
+  <h5>3️⃣ Solution: Split by character</h5>
+  <pre><code class="language-python">print('Hello World'.split('o'))  # Output: ['Hell', ' W', 'rld']</code></pre>
+
+  <h5>4️⃣ Solution: Format string</h5>
+  <pre><code class="language-python">result = 10
+print("The result is {}".format(result))  # Output: The result is 10</code></pre>
+
+  <h5>5️⃣ Solution: Index lookup</h5>
+  <pre><code class="language-python">lst = ['hay', 'stack', 'needle']
+print(lst.index('needle'))  # Output: 2</code></pre>
+
+  <hr>
+  <h3 class="text-warning text-center">🧠 Homework Quiz</h3>
+  <div id="quizBox" class="mt-4"></div>
+  <div id="quizSummary" class="mt-4"></div>
+</div>
+
+<script>
+const quizQuestions = [
+  {
+    question: "What does s.lower() do?",
+    options: ["Converts to uppercase", "Converts to lowercase", "Splits string", "Removes whitespace"],
+    answer: "Converts to lowercase"
+  },
+  {
+    question: "Which method splits a string by spaces?",
+    options: ["split(' ')", "split()", "break()", "divide()"],
+    answer: "split()"
+  },
+  {
+    question: "What does 'hello world'.split('o') return?",
+    options: ["['hell', ' w', 'rld']", "['hello', 'world']", "['h', 'e', 'l']", "Error"],
+    answer: "['hell', ' w', 'rld']"
+  },
+  {
+    question: "What will '{} is fun'.format('Python') print?",
+    options: ["Python is fun", "{Python is fun}", "{} is fun", "Error"],
+    answer: "Python is fun"
+  },
+  {
+    question: "What method finds an item index in a list?",
+    options: ["find()", "search()", "index()", "position()"],
+    answer: "index()"
+  },
+  {
+    question: "What does .upper() return?",
+    options: ["Uppercase", "Lowercase", "Original", "Error"],
+    answer: "Uppercase"
+  },
+  {
+    question: "Which is valid: 'Hello'.split()?",
+    options: ["Yes", "No", "Only on lists", "Only on numbers"],
+    answer: "Yes"
+  },
+  {
+    question: "What does print('A B C'.split()) return?",
+    options: ["['A', 'B', 'C']", "['ABC']", "['A B C']", "['A','BC']"],
+    answer: "['A', 'B', 'C']"
+  },
+  {
+    question: "How to print string with variable result = 100?",
+    options: ["print(f'Result is {result}')", "print('result')", "print(result)", "All work"],
+    answer: "print(f'Result is {result}')"
+  },
+  {
+    question: "Which is a string method?",
+    options: ["lower()", "sum()", "append()", "pop()"],
+    answer: "lower()"
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let userAnswers = [];
+
+function loadQuestion() {
+  const qBox = document.getElementById('quizBox');
+  const q = quizQuestions[currentQuestion];
+
+  let html = `<h5><strong>Q${currentQuestion + 1}/10:</strong> ${q.question}</h5><form id="quizForm">`;
+
+  q.options.forEach((opt, idx) => {
+    html += `
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="answer" id="q${currentQuestion}_opt${idx}" value="${opt}">
+        <label class="form-check-label" for="q${currentQuestion}_opt${idx}">${opt}</label>
+      </div>
+    `;
+  });
+
+  html += `<button type="button" class="btn btn-primary mt-3" onclick="submitAnswer()">Submit</button></form>`;
+  qBox.innerHTML = html;
+  document.getElementById('quizSummary').innerHTML = `<p class="text-muted">Progress: ${currentQuestion + 1}/10</p>`;
+}
+
+function submitAnswer() {
+  const selected = document.querySelector('input[name="answer"]:checked');
+  const q = quizQuestions[currentQuestion];
+  const qBox = document.getElementById('quizBox');
+
+  if (!selected) {
+    alert("Please select an answer before submitting.");
+    return;
+  }
+
+  const userAnswer = selected.value;
+  const isCorrect = userAnswer === q.answer;
+
+  userAnswers.push({
+    question: q.question,
+    selected: userAnswer,
+    correct: q.answer,
+    result: isCorrect ? '✅ Correct' : '❌ Incorrect'
+  });
+
+  if (isCorrect) score++;
+
+  let resultHtml = `
+    <div class="alert ${isCorrect ? 'alert-success' : 'alert-danger'} mt-3">
+      ${isCorrect ? '✅ Correct!' : `❌ Wrong!`} <br>
+      <strong>Correct Answer:</strong> ${q.answer}
+    </div>
+  `;
+  resultHtml += `<button class="btn btn-success" onclick="nextQuestion()">Next</button>`;
+  qBox.innerHTML = resultHtml;
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizQuestions.length) {
+    loadQuestion();
+  } else {
+    showFinalScore();
+  }
+}
+
+function showFinalScore() {
+  let result = `<h4 class="text-success">🎉 Quiz Complete!</h4>`;
+  result += `<p>You got <strong>${score}/10</strong> correct.</p>`;
+  result += `<h5 class="mt-4">🧾 Review:</h5><ul class="list-group">`;
+
+  userAnswers.forEach((item, i) => {
+    result += `
+      <li class="list-group-item">
+        <strong>Q${i + 1}:</strong> ${item.question}<br>
+        <span class="${item.result.includes('✅') ? 'text-success' : 'text-danger'}">${item.result}</span><br>
+        <strong>Your Answer:</strong> ${item.selected} <br>
+        <strong>Correct Answer:</strong> ${item.correct}
+      </li>`;
+  });
+
+  result += `</ul>
+    <button class="btn btn-primary mt-4" onclick="restartQuiz()">Try Again</button>
+  `;
+  document.getElementById('quizBox').innerHTML = result;
+  document.getElementById('quizSummary').innerHTML = '';
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  userAnswers = [];
+  loadQuestion();
+}
+
+window.onload = loadQuestion;
+</script>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🎮 Tic Tac Toe: Code Walk-through & Play</h1>
+    <p class="fs-5 text-muted"><strong>Step-by-step walkthrough with interactive example and quiz</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="numbersTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="numbersTabContent">
+    <!-- ✅ Examples Section -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ Game Setup and Play Function</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+<pre><code class="language-python"># Cup Game Logic with Shuffle and Result
+let cups = [' ', 'O', ' '];
+
+function shuffleList(arr) {
+  return arr
+    .map(v => ({ v, r: Math.random() }))
+    .sort((a, b) => a.r - b.r)
+    .map(x => x.v);
+}
+
+function makeGuess(guess) {
+  const shuffled = shuffleList([...cups]);
+  const resultEl = document.getElementById('gameResult');
+  if (shuffled[guess] === 'O') {
+    resultEl.textContent = `✅ You found it! It was under cup ${guess}.`;
+    resultEl.className = 'text-success h4 mt-3';
+  } else {
+    resultEl.textContent = `❌ Nope! It was under cup ${shuffled.indexOf('O')}.`;
+    resultEl.className = 'text-danger h4 mt-3';
+  }
+}</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> shuffleList, makeGuess</li>
+                <li>📘 <strong>Learned:</strong> Shuffle array and DOM manipulation for feedback</li>
+                <li>♻️ <strong>Reusability:</strong> Great for randomization in games or simulations</li>
+                <li>💬 <strong>Comments:</strong> Simple logic, fun interactivity, and copy feature</li>
+              </ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ✅ Quiz Section -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+
+  <h2 class="text-success mt-5 mb-3 text-center">▶ Play the Game Here</h2>
+  <div class="text-center mb-2">
+    <button class="btn btn-outline-primary m-1" onclick="makeGuess(0)">🥤 Cup 0</button>
+    <button class="btn btn-outline-primary m-1" onclick="makeGuess(1)">🥤 Cup 1</button>
+    <button class="btn btn-outline-primary m-1" onclick="makeGuess(2)">🥤 Cup 2</button>
+  </div>
+  <div id="gameResult" class="text-center h4 mt-3"></div>
+</div>
+  {% include 'includes/comment_form.html' %}
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+
+
+{% block extra_js %}
+  <script src="{% static 'js/quiz_engine.js' %}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const count = document.querySelectorAll("#exampleCards .card").length;
+      document.getElementById("exampleCount").textContent = count;
+      loadQuizData("all_in_one");
+    });
+  </script>
+{% endblock %}
+{% endblock %}

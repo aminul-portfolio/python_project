@@ -1,0 +1,9 @@
+This project demonstrates how to split a Python program into modules.
+
+- `one.py` contains utility functions like greeting, addition, and checking even numbers.
+- `two.py` imports these functions and uses them inside a main() function.
+- This modular structure improves code reusability and organization.
+
+To run this project:
+1. Ensure both files are in the same directory.
+2. Run `two.py` using a Python interpreter.

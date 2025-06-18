@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">⛓️ Chained Comparison Operators</h1>
+  <p class="lead">Chained comparisons in Python let you check multiple conditions in a single, readable line.</p>
+
+  <!-- Tabs for switching between examples and quiz -->
+  <ul class="nav nav-tabs mt-4" id="chainedTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-4" id="chainedTabsContent">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel" aria-labelledby="examples-tab">
+      <div class="row" id="exampleCards">
+        <div class="col-md-6 mb-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5>1️⃣ Age Between Range</h5>
+              <pre><code>age = 25
+print(18 <= age <= 30)  # Output: True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> <= (less than or equal)</li>
+                <li>📘 <strong>Learned:</strong> Check if a value is in a range</li>
+                <li>♻️ <strong>Reusability:</strong> Validating age limits</li>
+                <li>💬 <strong>Comments:</strong> Clean readable comparisons</li>
+              </ul></div>
+          
+
+  <div class="mt-5"></div></div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5>2️⃣ Score Range Validation</h5>
+              <pre><code>score = 82
+print(60 <= score <= 100)  # Output: True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> <= comparison</li>
+                <li>📘 <strong>Learned:</strong> Check if score is valid</li>
+                <li>♻️ <strong>Reusability:</strong> Exams, evaluations</li>
+                <li>💬 <strong>Comments:</strong> Compact and clear logic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5>3️⃣ Temperature Comfort Check</h5>
+              <pre><code>temp = 21
+print(20 <= temp <= 25)  # Output: True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> <= operator</li>
+                <li>📘 <strong>Learned:</strong> Determine comfortable range</li>
+                <li>♻️ <strong>Reusability:</strong> Thermostat or climate control</li>
+                <li>💬 <strong>Comments:</strong> Chain of range validation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5>4️⃣ Salary Tier</h5>
+              <pre><code>salary = 5000
+print(3000 < salary < 7000)  # Output: True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> < operator</li>
+                <li>📘 <strong>Learned:</strong> Detect salary range</li>
+                <li>♻️ <strong>Reusability:</strong> Job filtering, classification</li>
+                <li>💬 <strong>Comments:</strong> Easy way to validate salary bands</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Fix: Count cards, not .col
+    const exampleCards = document.querySelectorAll("#exampleCards .card").length;
+    document.getElementById("exampleCount").textContent = exampleCards;
+
+    // Load quiz questions
+    loadQuizData("chained_comparison");
+
+    // Quiz tab activation
+    const quizTab = document.querySelector('#quiz-tab');
+    if (quizTab) {
+      quizTab.addEventListener('shown.bs.tab', () => {
+        if (typeof loadQuestion === 'function') {
+          loadQuestion();
+        }
+      });
+    }
+  });
+</script>
+
+{% endblock %}

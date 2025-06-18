@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🔁 For & While Loops</h1>
+    <p class="fs-5 text-muted">Loops are fundamental to automating repetitive tasks. Below are real-world use cases using both <strong>for</strong> and <strong>while</strong> loops.</p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="statementTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row" id="exampleCards">
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🛒 Loop through a shopping list</h5>
+              <pre><code>items = ['Milk', 'Eggs', 'Bread']
+for item in items:
+    print("Buy:", item)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> for loop</li>
+                <li>📘 <strong>Learned:</strong> Iterating over list items</li>
+                <li>♻️ <strong>Reusability:</strong> Inventory or task automation</li>
+                <li>💬 <strong>Comments:</strong> Simple list processing with loop</li>
+              </ul></div>
+          
+
+  <div class="mt-5"></div></div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">➗ Print even numbers in a range</h5>
+              <pre><code>for num in range(2, 11, 2):
+    print(num)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> range with step</li>
+                <li>📘 <strong>Learned:</strong> Custom step iteration</li>
+                <li>♻️ <strong>Reusability:</strong> Pattern generation, filtering</li>
+                <li>💬 <strong>Comments:</strong> Efficient numeric filtering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">➕ Sum values from a list</h5>
+              <pre><code>prices = [10, 15, 20]
+total = 0
+for price in prices:
+    total += price
+print("Total:", total)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> Accumulator with for loop</li>
+                <li>📘 <strong>Learned:</strong> Summing list elements</li>
+                <li>♻️ <strong>Reusability:</strong> Financial calculators</li>
+                <li>💬 <strong>Comments:</strong> Common in billing or checkout</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔤 Display characters in a name</h5>
+              <pre><code>name = "Sumon"
+for char in name:
+    print(char)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> for loop on string</li>
+                <li>📘 <strong>Learned:</strong> String iteration</li>
+                <li>♻️ <strong>Reusability:</strong> Text processing, validation</li>
+                <li>💬 <strong>Comments:</strong> Useful in string parsing tasks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔢 Count down from 5</h5>
+              <pre><code>count = 5
+while count > 0:
+    print(count)
+    count -= 1</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> while loop with decrement</li>
+                <li>📘 <strong>Learned:</strong> Controlled countdown</li>
+                <li>♻️ <strong>Reusability:</strong> Timers, retries, delays</li>
+                <li>💬 <strong>Comments:</strong> Perfect for game logic or delays</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔐 Password retry attempt</h5>
+              <pre><code>password = ""
+while password != "admin123":
+    password = input("Enter password: ")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> while with input check</li>
+                <li>📘 <strong>Learned:</strong> Loop until condition met</li>
+                <li>♻️ <strong>Reusability:</strong> Security & login forms</li>
+                <li>💬 <strong>Comments:</strong> Mimics real-world authentication logic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">⏳ Wait for condition to become true</h5>
+              <pre><code>ready = False
+while not ready:
+    user_input = input("Type 'yes' when ready: ")
+    if user_input == 'yes':
+        ready = True</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> while + conditional break</li>
+                <li>📘 <strong>Learned:</strong> Wait loops</li>
+                <li>♻️ <strong>Reusability:</strong> Readiness or polling check</li>
+                <li>💬 <strong>Comments:</strong> Great for controlled flow</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">🔍 Validate user input</h5>
+              <pre><code>age = -1
+while age < 0:
+    age = int(input("Enter a valid age: "))</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> Input validation loop</li>
+                <li>📘 <strong>Learned:</strong> Validation logic</li>
+                <li>♻️ <strong>Reusability:</strong> User form processing</li>
+                <li>💬 <strong>Comments:</strong> Helps sanitize user input</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  loadQuizData("for_while_loops");
+  document.addEventListener("DOMContentLoaded", () => {
+    const exampleCards = document.querySelectorAll("#exampleCards .col-md-6").length;
+    const exampleCountEl = document.getElementById("exampleCount");
+    if (exampleCountEl) exampleCountEl.textContent = exampleCards;
+  });
+</script>
+{% endblock %}

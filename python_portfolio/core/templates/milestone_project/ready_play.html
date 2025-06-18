@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid px-4">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🎮 Smart AI Tic Tac Toe</h1>
+    <p class="fs-5 text-muted"><strong>This page demonstrates an interactive JavaScript-powered Tic Tac Toe game with a smart AI opponent.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="exampleQuizTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">Examples <span class="badge bg-secondary" id="exampleCount">1</span></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">Quiz <span class="badge bg-secondary" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="exampleQuizTabsContent">
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div id="exampleCards">
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ JavaScript Game Logic</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-javascript">// Sample from JavaScript Tic Tac Toe
+function makeMove(index) {
+  if (!gameActive || board[index]) return;
+  board[index] = currentPlayer;
+  updateBoard();
+  if (checkWin(currentPlayer)) {
+    document.getElementById("gameStatus").innerText = `${currentPlayer} wins! 🎉`;
+    gameActive = false;
+    return;
+  }
+  if (board.every(cell => cell !== '')) {
+    document.getElementById("gameStatus").innerText = `It's a draw! 🤝`;
+    gameActive = false;
+    return;
+  }
+  currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+}</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>makeMove()</code>, <code>checkWin()</code>, <code>updateBoard()</code></li>
+              <li>📘 <strong>Learned:</strong> How to apply user interaction, game state checks, and control flow for a board game.</li>
+              <li>♻️ <strong>Reusability:</strong> Can be reused in any turn-based game logic with modification.</li>
+              <li>💬 <strong>Comments:</strong> Combines DOM manipulation with core game logic and decision making.</li>
+            </ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+
+  <audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+  <audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const exampleCount = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').textContent = exampleCount;
+    loadQuizData("ready_play");
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,359 @@
+{% load static %}
+<h4 class="fw-bold text-info mb-4">📘 Python Portfolio</h4>
+<a href="{% url 'home' %}" class="home-nav-link">🏠 Home</a>
+
+
+<!-- Section 00 - Object & Data Structures -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse" data-bs-target="#sidebarCollapse0"
+        aria-expanded="false" aria-controls="sidebarCollapse0">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label">Object & Data Structures</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+<div id="sidebarCollapse0" class="collapse {% if request.path in '/numbers/ /variable-assignment/ /strings/ /lists/ /tuples/ /dictionaries/ /sets-booleans/ /files/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/numbers/' %}active{% endif %}" href="{% url 'numbers' %}">🔢 Numbers</a>
+  <a class="nav-link {% if request.path == '/variable-assignment/' %}active{% endif %}" href="{% url 'variable_assignment' %}">✍️ Variables</a>
+  <a class="nav-link {% if request.path == '/strings/' %}active{% endif %}" href="{% url 'strings' %}">🧵 Strings</a>
+  <a class="nav-link {% if request.path == '/lists/' %}active{% endif %}" href="{% url 'lists' %}">📋 Lists</a>
+  <a class="nav-link {% if request.path == '/tuples/' %}active{% endif %}" href="{% url 'tuples' %}">📌 Tuples</a>
+  <a class="nav-link {% if request.path == '/dictionaries/' %}active{% endif %}" href="{% url 'dictionaries' %}">📖 Dictionaries</a>
+  <a class="nav-link {% if request.path == '/sets-booleans/' %}active{% endif %}" href="{% url 'sets_booleans' %}">🔣 Sets & Booleans</a>
+  <a class="nav-link {% if request.path == '/files/' %}active{% endif %}" href="{% url 'files' %}">📋File Handling</a>
+</div>
+<!-- Section 01 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse1"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse1">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Comparison Operators</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse1" class="collapse {% if request.path in '/comparison-operators/ /chained-comparisons/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/comparison-operators/' %}active{% endif %}" href="{% url 'comparison_operators' %}">⚖️ Comparisons</a>
+  <a class="nav-link {% if request.path == '/chained-comparisons/' %}active{% endif %}" href="{% url 'chained_comparisons' %}">⛓️ Chained</a>
+</div>
+
+<!-- Section 02 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse2"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse2">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Python Statement</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse2" class="collapse {% if request.path in '/python-statement/ /if-elif-else/ /for-while-loops/' %} show{% endif %} ps-4">
+ <a class="nav-link{% if request.path == '/python-statement/' %} active{% endif %}" href="{% url 'python_statement' %}">📜 Overview</a>
+  <a class="nav-link{% if request.path == '/if-elif-else/' %} active{% endif %}" href="{% url 'if_elif_else' %}">🔀 If-Elif-Else</a>
+  <a class="nav-link{% if request.path == '/for-while-loops/' %} active{% endif %}" href="{% url 'for_while_loops' %}">🔄 Loops</a>
+  <a class="nav-link{% if request.path == '/useful-list/' %} active{% endif %}" href="{% url 'useful_list' %}">🧰 Useful List</a>
+  <a class="nav-link{% if request.path == '/test-solutions/' %} active{% endif %}" href="{% url 'test_solutions' %}">🧪 Test Solutions</a>
+  <a class="nav-link{% if request.path == '/guess-challenge-solution/' %} active{% endif %}" href="{% url 'guess_challenge_solution' %}">🎯 Guess Challenge</a>
+</div>
+
+<!-- Section 03: Methods & Functions -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse3"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse3">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Methods & Functions</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse3" class="collapse{% if request.path == '/methods/' or request.path == '/fun-practice-solution/' or request.path == '/lambda/' or request.path == '/nested-scope/' or request.path == '/args-kwargs/' or request.path == '/fun-methods-homeworks/' or request.path == '/all-in-one/' %} show{% endif %} ps-4">
+
+  <a class="nav-link{% if request.path == '/methods/' %} active{% endif %}" href="{% url 'methods' %}">🧠 Functions</a>
+  <a class="nav-link{% if request.path == '/fun-practice-solution/' %} active{% endif %}" href="{% url 'fun_practice_solution' %}">✅ Practice Solution</a>
+  <a class="nav-link{% if request.path == '/lambda/' %} active{% endif %}" href="{% url 'lambda' %}">⚡ Lambda</a>
+  <a class="nav-link{% if request.path == '/nested-scope/' %} active{% endif %}" href="{% url 'nested_scope' %}">🌲 Nested Scope</a>
+  <a class="nav-link{% if request.path == '/args-kwargs/' %} active{% endif %}" href="{% url 'args_kwargs' %}">🔣 *args/**kwargs</a>
+  <a class="nav-link{% if request.path == '/fun-methods-homeworks/' %} active{% endif %}" href="{% url 'fun_methods_homeworks' %}">📝 Homework</a>
+  <a class="nav-link{% if request.path == '/all-in-one/' %} active{% endif %}" href="{% url 'all_in_one' %}">📘 All-in-One</a>
+
+</div>
+
+<!-- Section 04 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse4"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse4">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Milestone Project 1</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse4" class="collapse{% if request.path == '/warm-project/' or request.path == '/assignment-walkthrough-complete/' or request.path == '/tic-tac-toe/' or request.path == '/play-game/' or request.path == '/ready-play/' %} show{% endif %} ps-4">
+
+  <a class="nav-link{% if request.path == '/warm-project/' %} active{% endif %}" href="{% url 'warm_project' %}">🧪 Warm-up Project</a>
+  <a class="nav-link{% if request.path == '/assignment-walkthrough-complete/' %} active{% endif %}" href="{% url 'assignment_walkthrough_complete' %}">📘 Walkthrough</a>
+  <a class="nav-link{% if request.path == '/tic-tac-toe/' %} active{% endif %}" href="{% url 'tic_tac_toe' %}">🎮 Tic Tac Toe</a>
+  <a class="nav-link{% if request.path == '/play-game/' %} active{% endif %}" href="{% url 'play_game' %}">▶️ Play Game</a>
+  <a class="nav-link{% if request.path == '/ready-play/' %} active{% endif %}" href="{% url 'ready_play' %}">🎯 Ready to Play</a>
+
+</div>
+
+
+<!-- Section 05 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse5"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse5">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">OOP in Python</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse5" class="collapse{% if request.path == '/object/' or request.path == '/obj-homework/' or request.path == '/oop-che-sol/' %} show{% endif %} ps-4">
+
+  <a class="nav-link{% if request.path == '/object/' %} active{% endif %}" href="{% url 'object' %}">🏗️ OOP Concepts</a>
+  <a class="nav-link{% if request.path == '/obj-homework/' %} active{% endif %}" href="{% url 'obj_homework' %}">📝 OOP Homework</a>
+  <a class="nav-link{% if request.path == '/oop-che-sol/' %} active{% endif %}" href="{% url 'oop_che_sol' %}">✅ OOP Challenge Solution</a>
+
+</div>
+
+<!-- Section 06 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse6"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse6">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Modules & Packages</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse6" class="collapse{% if "/mod-pack" in request.path or "/modules-all-in-one" in request.path %} show{% endif %} ps-4">
+  <a class="nav-link{% if request.path == '/mod-pack/' %} active{% endif %}" href="{% url 'mod_pack' %}">📦 Modules</a>
+  <a class="nav-link{% if request.path == '/modules-all-in-one/' %} active{% endif %}" href="{% url 'all_in_one_modules' %}">🗂️ All In One</a>
+</div>
+
+
+<!-- Section 07 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse7"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse7">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Error & Exception</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse7" class="collapse {% if request.path == '/error-hand-unit/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/error-hand-unit/' %}active{% endif %}" href="{% url 'error_hand_unit' %}">⚠️ Try/Except</a>
+  <a class="nav-link{% if request.path == '/simple-python/' %} active{% endif %}" href="{% url 'simple_python' %}">🧪 Simple Python Fix</a>
+</div>
+
+<!-- Section 08 -->
+<!-- Section 08 -->
+<!-- Section 08 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse8"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse8">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Milestone Project 2</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse8" class="collapse{% if request.path == '/blackjack-walkthrough/' or request.path == '/blackjack-solution/' or request.path == '/project-three/' %} show{% endif %} ps-4">
+
+  <a class="nav-link{% if request.path == '/blackjack-walkthrough/' %} active{% endif %}" href="{% url 'blackjack_walkthrough' %}">🃏 Blackjack Walkthrough</a>
+  <a class="nav-link{% if request.path == '/blackjack-solution/' %} active{% endif %}" href="{% url 'blackjack_solution' %}">✅ Final Blackjack Solution</a>
+  <a class="nav-link{% if request.path == '/project-three/' %} active{% endif %}" href="{% url 'project_three' %}">🚀 Final Project 3</a>
+
+</div>
+
+<!-- Section 09 -->
+<!-- Section 09: Math, Time, Debug & Built-ins -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse9"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse9">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Math, Time, Debug & Built-ins</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse9" class="collapse{% if request.path == '/math-datetime-open-collect/' or request.path == '/deb-regular-timing-code/' or request.path == '/empty-section-all/' or request.path == '/build-in-solution/' %} show{% endif %} ps-4">
+  <a class="nav-link{% if request.path == '/math-datetime-open-collect/' %} active{% endif %}" href="{% url 'math_datetime_open_collect' %}">🧮 Math/Open/Datetime</a>
+  <a class="nav-link{% if request.path == '/deb-regular-timing-code/' %} active{% endif %}" href="{% url 'deb_regular_timing_code' %}">⏱️ Debug/Regex/Timing</a>
+  <a class="nav-link{% if request.path == '/empty-section-all/' %} active{% endif %}" href="{% url 'all_empty_all' %}">🚧 Placeholder</a>
+  <a class="nav-link{% if request.path == '/build-in-solution/' %} active{% endif %}" href="{% url 'build_in_solution' %}">🧩 Built-in Solution</a>
+</div>
+
+
+<!-- Section 10 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse10"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse10">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Decorators</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse10" class="collapse {% if request.path == '/home-decorator/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/home-decorator/' %}active{% endif %}" href="{% url 'home_decorator' %}">🧠 Decorators</a>
+</div>
+<!-- Section 11 -->
+
+<!-- Section 12 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse12"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse12">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Advanced Modules</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse12" class="collapse {% if request.path == '/pods-advanced-all-in-one/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/pods-advanced-all-in-one/' %}active{% endif %}" href="{% url 'pods_advanced_all_in_one' %}">⚙️ Modules</a>
+</div>
+
+<!-- Section 13 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse13"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse13">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Web Scraping</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse13" class="collapse {% if request.path == '/scraping-web/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/scraping-web/' %}active{% endif %}" href="{% url 'scraping_web' %}">🌐 BeautifulSoup</a>
+</div>
+
+<!-- Section 14 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse14"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse14">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Images</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse14" class="collapse {% if request.path == '/image-working/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/image-working/' %}active{% endif %}" href="{% url 'image_working' %}">🖼️ PIL</a>
+</div>
+<!-- Section 15 -->
+<!-- Section 15 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse15"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse15">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label">PDFs & Excel</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse15" class="collapse{% if request.path == '/csv-with/' or request.path == '/some-practice/' %} show{% endif %} ps-4">
+  <a class="nav-link{% if request.path == '/csv-with/' %} active{% endif %}" href="{% url 'csv_with' %}">🧾 CSV Reading</a>
+  <a class="nav-link{% if request.path == '/some-practice/' %} active{% endif %}" href="{% url 'some_practice' %}">📄 File Tasks</a>
+</div>
+
+<!-- Section 16 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse16"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse16">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label">Emailing</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse16" class="collapse {% if request.path == '/emailing-python/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/emailing-python/' %}active{% endif %}" href="{% url 'emailing_python' %}">📧 SMTP</a>
+</div>
+
+<!-- Section 17 -->
+<!-- Section 17 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse17"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse17">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label fw-semibold">Advanced Python Objects</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse17" class="collapse{% if request.path == '/advanced-solution/' or request.path == '/pods-advanced-all/' %} show{% endif %} ps-4">
+
+
+  <a class="nav-link{% if request.path == '/advanced-solution/' %} active{% endif %}" href="{% url 'advanced_solution' %}">🔍 Advanced</a>
+  <a class="nav-link{% if request.path == '/pods-advanced-all/' %} active{% endif %}" href="{% url 'pods_advanced_all_in_one' %}">📦 All-in-One PODs</a>
+</div>
+
+
+<!-- Section 18 -->
+<button class="sidebar-folder btn w-100 text-start d-flex align-items-center justify-content-between px-3 py-2"
+        data-bs-toggle="collapse"
+        data-bs-target="#sidebarCollapse18"
+        aria-expanded="false"
+        aria-controls="sidebarCollapse18">
+  <span class="d-flex align-items-center gap-2">
+    <span class="folder-emoji">📂</span>
+    <span class="folder-label">GUI Projects</span>
+  </span>
+  <span class="rotate-icon">▶️</span>
+</button>
+
+<div id="sidebarCollapse18" class="collapse {% if request.path == '/widget-bonus/' %} show{% endif %} ps-4">
+  <a class="nav-link {% if request.path == '/widget-bonus/' %}active{% endif %}" href="{% url 'widget_bonus' %}">🧩 GUI Widgets</a>
+</div>

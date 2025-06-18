@@ -1,0 +1,155 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">📘 Advanced Python Objects & Context Managers</h1>
+    <p class="fs-5 text-muted"><strong>Learn powerful Python techniques with real-world examples of data structures, dictionary manipulation, and context managers.</strong></p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4 justify-content-center" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button">
+        🧪 Examples <span class="badge bg-secondary ms-1" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button">
+        🧠 Quiz <span class="badge bg-secondary ms-1" id="quizCountText">5</span>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+        <!-- Example 1 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ Square Even Numbers</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">def square_evens(nums):
+    return [x**2 for x in nums if x % 2 == 0]
+
+print(square_evens([1, 2, 3, 4]))  # ➞ [4, 16]</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>list comprehension, modulus</code></li>
+              <li>📘 <strong>Learned:</strong> Filtering and transforming collections in one line</li>
+              <li>♻️ <strong>Reusability:</strong> Data cleaning, math filtering, batch processing</li>
+              <li>💬 <strong>Comments:</strong> Squares even numbers from a list using one-liner logic</li>
+            </ul></div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ Word Frequency Counter</div>
+          <div class="card-body">
+            <pre><code class="language-python">def word_count(text):
+    result = {}
+    for word in text.split():
+        result[word] = result.get(word, 0) + 1
+    return result
+
+print(word_count("hello world hello"))  # ➞ {'hello': 2, 'world': 1}</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>split(), get()</code></li>
+              <li>📘 <strong>Learned:</strong> Dictionary construction and safe updates</li>
+              <li>♻️ <strong>Reusability:</strong> Natural language processing, logging, frequency analysis</li>
+              <li>💬 <strong>Comments:</strong> Efficiently builds a word frequency dictionary</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ Reverse Dictionary</div>
+          <div class="card-body">
+            <pre><code class="language-python">def reverse_dict(d):
+    return {v: k for k, v in d.items()}
+
+print(reverse_dict({'a': 1, 'b': 2}))  # ➞ {1: 'a', 2: 'b'}</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>dict comprehension, items()</code></li>
+              <li>📘 <strong>Learned:</strong> Reversing key/value pairs elegantly</li>
+              <li>♻️ <strong>Reusability:</strong> Data mapping, reverse lookup utilities</li>
+              <li>💬 <strong>Comments:</strong> Inverts keys and values in a dictionary</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ Zip with List Comprehension</div>
+          <div class="card-body">
+            <pre><code class="language-python">names = ['Alice', 'Bob']
+scores = [85, 90]
+result = [f"{n} scored {s}" for n, s in zip(names, scores)]
+print(result)  # ➞ ['Alice scored 85', 'Bob scored 90']</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>zip(), f-string, list comprehension</code></li>
+              <li>📘 <strong>Learned:</strong> Combining lists into formatted output</li>
+              <li>♻️ <strong>Reusability:</strong> Report generation, summaries, UI formatting</li>
+              <li>💬 <strong>Comments:</strong> Combines name-score pairs into readable text</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-secondary text-white fw-bold">5️⃣ With Statement & Context Manager</div>
+          <div class="card-body">
+            <pre><code class="language-python">with open('sample.txt', 'r') as file:
+    content = file.read()
+    print(content)</code></pre>
+            <pre><code class="language-python">class OpenUpper:
+    def __init__(self, filename):
+        self.file = open(filename, 'r')
+    def __enter__(self):
+        return self.file
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.file.close()
+
+with OpenUpper('sample.txt') as f:
+    print(f.read())</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>with, __enter__, __exit__</code></li>
+              <li>📘 <strong>Learned:</strong> Safe file handling with context managers</li>
+              <li>♻️ <strong>Reusability:</strong> File operations, database connections, logging</li>
+              <li>💬 <strong>Comments:</strong> Automates cleanup using built-in and custom context logic</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+
+  <audio id="correctSound" src="{% static 'audio/correct.mp3' %}"></audio>
+  <audio id="wrongSound" src="{% static 'audio/wrong.mp3' %}"></audio>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  function countExampleCards() {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').innerText = count;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    countExampleCards();
+    loadQuizData("python_context_managers");
+  });
+</script>
+{% endblock %}

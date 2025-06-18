@@ -1,0 +1,4518 @@
+{
+  "all_in_one": [
+    {
+      "question": "Which function removes surrounding whitespace and capitalizes the first letter?",
+      "options": [
+        "lower()",
+        "strip()",
+        "clean_name()",
+        "title()"
+      ],
+      "answer": "clean_name()"
+    },
+    {
+      "question": "What does average([10, 20, 30]) return?",
+      "options": [
+        "60",
+        "20",
+        "10",
+        "None"
+      ],
+      "answer": "20"
+    },
+    {
+      "question": "Which method splits a sentence into words?",
+      "options": [
+        "split()",
+        "strip()",
+        "title()",
+        "format()"
+      ],
+      "answer": "split()"
+    },
+    {
+      "question": "What does map() function do?",
+      "options": [
+        "Iterates manually",
+        "Applies a function to each item",
+        "Sorts a list",
+        "None"
+      ],
+      "answer": "Applies a function to each item"
+    },
+    {
+      "question": "Which is used for filtering even numbers?",
+      "options": [
+        "map()",
+        "filter()",
+        "lambda x: x**2",
+        "sum()"
+      ],
+      "answer": "filter()"
+    },
+    {
+      "question": "What does *args allow?",
+      "options": [
+        "Named arguments",
+        "Flexible number of positional arguments",
+        "Loops",
+        "List unpacking"
+      ],
+      "answer": "Flexible number of positional arguments"
+    },
+    {
+      "question": "What is LEGB in Python?",
+      "options": [
+        "Function types",
+        "Scope resolution order",
+        "Error system",
+        "Loop structure"
+      ],
+      "answer": "Scope resolution order"
+    },
+    {
+      "question": "How do you access enclosing variables in nested functions?",
+      "options": [
+        "use global",
+        "use inner()",
+        "refer to variable directly",
+        "use nonlocal"
+      ],
+      "answer": "refer to variable directly"
+    },
+    {
+      "question": "Which built-in method gives the index of an item in list?",
+      "options": [
+        "position()",
+        "index()",
+        "find()",
+        "get()"
+      ],
+      "answer": "index()"
+    },
+    {
+      "question": "What keyword starts a lambda expression?",
+      "options": [
+        "lambda",
+        "def",
+        "function",
+        "map"
+      ],
+      "answer": "lambda"
+    }
+  ],
+  "assignment_walkthrough_complete": [
+    {
+      "question": "What does the shuffleList function return?",
+      "options": [
+        "An alphabetically sorted list",
+        "A new shuffled list using Math.random",
+        "The original list unchanged",
+        "A list sorted in descending order"
+      ],
+      "answer": "A new shuffled list using Math.random"
+    },
+    {
+      "question": "What symbol hides the ball under the cup?",
+      "options": [
+        "'O'",
+        "'X'",
+        "'cup'",
+        "' '"
+      ],
+      "answer": "'O'"
+    },
+    {
+      "question": "Which HTML element shows game result?",
+      "options": [
+        "#gameResult",
+        "#resultText",
+        "#guessMessage",
+        ".card-header"
+      ],
+      "answer": "#gameResult"
+    },
+    {
+      "question": "What action triggers the makeGuess function?",
+      "options": [
+        "Page load",
+        "Clicking any cup button",
+        "Hovering over the cups",
+        "Form submission"
+      ],
+      "answer": "Clicking any cup button"
+    },
+    {
+      "question": "What does navigator.clipboard.writeText do?",
+      "options": [
+        "Executes Python code",
+        "Prints text to console",
+        "Copies text to clipboard",
+        "Downloads the file"
+      ],
+      "answer": "Copies text to clipboard"
+    },
+    {
+      "question": "How is the game outcome displayed to the user?",
+      "options": [
+        "In a browser alert",
+        "As an image",
+        "Via console log",
+        "By updating textContent of result div"
+      ],
+      "answer": "By updating textContent of result div"
+    },
+    {
+      "question": "Which library is used to highlight Python syntax?",
+      "options": [
+        "Bootstrap",
+        "jQuery",
+        "Highlight.js",
+        "Syntaxify"
+      ],
+      "answer": "Highlight.js"
+    },
+    {
+      "question": "What happens after clicking '📋 Copy'?",
+      "options": [
+        "Text gets deleted",
+        "Clipboard copies the code block text",
+        "The game restarts",
+        "HTML reloads"
+      ],
+      "answer": "Clipboard copies the code block text"
+    },
+    {
+      "question": "What color style is applied when a player wins?",
+      "options": [
+        "text-warning",
+        "text-danger",
+        "text-success",
+        "text-info"
+      ],
+      "answer": "text-success"
+    },
+    {
+      "question": "How are the cup positions randomized?",
+      "options": [
+        "Sorting alphabetically",
+        "Using Math.random in shuffleList",
+        "Looping from 0 to 2",
+        "Replacing list with fixed positions"
+      ],
+      "answer": "Using Math.random in shuffleList"
+    }
+  ],
+  "chained_comparison": [
+    {
+      "question": "What is the result of 3 < 5 < 10?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True",
+      "hint": "Both comparisons must be true for the whole expression to be true."
+    },
+    {
+      "question": "What will 10 < 5 < 3 evaluate to?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "False",
+      "hint": "The first comparison already fails."
+    },
+    {
+      "question": "What is returned from: 5 > 2 > 1?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True",
+      "hint": "Both parts of the chain are true."
+    },
+    {
+      "question": "Which is a valid chained comparison?",
+      "options": [
+        "a > b > c",
+        "a == b == c",
+        "a <= b < c",
+        "All of the above"
+      ],
+      "answer": "All of the above",
+      "hint": "Python supports chaining all comparison operators."
+    },
+    {
+      "question": "What is the result of 10 > 5 > 8?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "False",
+      "hint": "Check both comparisons one after another."
+    },
+    {
+      "question": "What does 5 == 5 == 5 return?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True",
+      "hint": "All values are equal in the chain."
+    },
+    {
+      "question": "Which chained comparison is correct?",
+      "options": [
+        "3 < 4 < 2",
+        "7 >= 6 >= 5",
+        "8 == 8 > 9",
+        "4 < 3 == 3"
+      ],
+      "answer": "7 >= 6 >= 5",
+      "hint": "Evaluate each part in the chain logically."
+    },
+    {
+      "question": "Which of the following is invalid?",
+      "options": [
+        "x < y < z",
+        "x == y != z",
+        "x = y < z",
+        "x > y > z"
+      ],
+      "answer": "x = y < z",
+      "hint": "Assignment is not allowed in a comparison chain."
+    },
+    {
+      "question": "True or False: 5 < 10 > 7",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "hint": "Each side of the chain is evaluated correctly."
+    },
+    {
+      "question": "Which one returns False?",
+      "options": [
+        "4 < 5 < 6",
+        "10 > 9 > 8",
+        "3 < 3 < 5",
+        "1 <= 2 <= 3"
+      ],
+      "answer": "3 < 3 < 5",
+      "hint": "Check if 3 < 3 is valid first."
+    }
+  ],
+  "comparison_operators": [
+    {
+      "question": "What is the result of 3 < 5 < 10?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "What will 10 < 5 < 3 evaluate to?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "False"
+    },
+    {
+      "question": "What is returned from: 5 > 2 > 1?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Which is a valid chained comparison?",
+      "options": [
+        "a > b > c",
+        "a == b == c",
+        "a <= b < c",
+        "All of the above"
+      ],
+      "answer": "All of the above"
+    },
+    {
+      "question": "What is the result of 10 > 5 > 8?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "False"
+    },
+    {
+      "question": "What does 5 == 5 == 5 return?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Which chained comparison is correct?",
+      "options": [
+        "3 < 4 < 2",
+        "7 >= 6 >= 5",
+        "8 == 8 > 9",
+        "4 < 3 == 3"
+      ],
+      "answer": "7 >= 6 >= 5"
+    },
+    {
+      "question": "Which of the following is invalid?",
+      "options": [
+        "x < y < z",
+        "x == y != z",
+        "x = y < z",
+        "x > y > z"
+      ],
+      "answer": "x = y < z"
+    },
+    {
+      "question": "True or False: 5 < 10 > 7",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Which one returns False?",
+      "options": [
+        "4 < 5 < 6",
+        "10 > 9 > 8",
+        "3 < 3 < 5",
+        "1 <= 2 <= 3"
+      ],
+      "answer": "3 < 3 < 5"
+    }
+  ],
+  "dictionaries": [
+    {
+      "question": "What data type is used to store key-value pairs?",
+      "options": [
+        "List",
+        "Tuple",
+        "Dictionary",
+        "Set"
+      ],
+      "answer": "Dictionary"
+    },
+    {
+      "question": "How do you access a value by key in a dictionary?",
+      "options": [
+        "dict.value(key)",
+        "dict[key]",
+        "dict.getValue(key)",
+        "dict->key"
+      ],
+      "answer": "dict[key]"
+    },
+    {
+      "question": "What does .get('key') do if the key doesn't exist?",
+      "options": [
+        "Throws error",
+        "Returns 0",
+        "Returns None",
+        "Adds the key"
+      ],
+      "answer": "Returns None"
+    },
+    {
+      "question": "Which method returns all keys in a dictionary?",
+      "options": [
+        "keys()",
+        "get_keys()",
+        "dict_keys()",
+        "items()"
+      ],
+      "answer": "keys()"
+    },
+    {
+      "question": "What will len({'a':1, 'b':2}) return?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "answer": "2"
+    },
+    {
+      "question": "How do you remove a key from a dictionary?",
+      "options": [
+        "pop()",
+        "del",
+        "remove()",
+        "Both A and B"
+      ],
+      "answer": "Both A and B"
+    },
+    {
+      "question": "Which returns all key-value pairs?",
+      "options": [
+        "keys()",
+        "values()",
+        "items()",
+        "entries()"
+      ],
+      "answer": "items()"
+    },
+    {
+      "question": "What is the output of {'a':1}['a']?",
+      "options": [
+        "1",
+        "'a'",
+        "Error",
+        "None"
+      ],
+      "answer": "1"
+    },
+    {
+      "question": "Which is true about dictionary keys?",
+      "options": [
+        "Must be unique",
+        "Can be mutable",
+        "Can be duplicated",
+        "All of the above"
+      ],
+      "answer": "Must be unique"
+    },
+    {
+      "question": "What type is returned by dict.keys()?",
+      "options": [
+        "list",
+        "dict_keys",
+        "set",
+        "array"
+      ],
+      "answer": "dict_keys"
+    }
+  ],
+  "file_handling": [
+    {
+      "question": "Which mode is used to read a file?",
+      "options": [
+        "'r'",
+        "'w'",
+        "'a'",
+        "'x'"
+      ],
+      "answer": "'r'",
+      "hint": "Reading mode is represented by a single letter."
+    },
+    {
+      "question": "What does 'w' mode do in Python file handling?",
+      "options": [
+        "Reads a file",
+        "Appends to a file",
+        "Overwrites file",
+        "Creates a directory"
+      ],
+      "answer": "Overwrites file",
+      "hint": "This mode erases any existing content before writing."
+    },
+    {
+      "question": "Which method reads the entire content of a file at once?",
+      "options": [
+        "read()",
+        "readline()",
+        "readlines()",
+        "fetch()"
+      ],
+      "answer": "read()",
+      "hint": "It's a common method used with open files."
+    },
+    {
+      "question": "What does 'a' mode do when opening a file?",
+      "options": [
+        "Replaces file",
+        "Reads file",
+        "Appends content",
+        "Deletes content"
+      ],
+      "answer": "Appends content",
+      "hint": "It adds content to the end without overwriting."
+    },
+    {
+      "question": "How do you check if a file exists?",
+      "options": [
+        "exists('file')",
+        "os.exists()",
+        "os.path.exists()",
+        "file.exists()"
+      ],
+      "answer": "os.path.exists()",
+      "hint": "It's part of the os.path module."
+    },
+    {
+      "question": "Which module provides file path checking functions?",
+      "options": [
+        "os",
+        "sys",
+        "file",
+        "pathlib"
+      ],
+      "answer": "os",
+      "hint": "This module handles operating system tasks."
+    },
+    {
+      "question": "How do you write to a file in Python?",
+      "options": [
+        "file.read('text')",
+        "file.write('text')",
+        "write(file, 'text')",
+        "file.add('text')"
+      ],
+      "answer": "file.write('text')",
+      "hint": "This function writes strings to a file."
+    },
+    {
+      "question": "Which method reads one line at a time from a file?",
+      "options": [
+        "read()",
+        "readline()",
+        "readlines()",
+        "get()"
+      ],
+      "answer": "readline()",
+      "hint": "It reads the file line-by-line."
+    },
+    {
+      "question": "What is the advantage of using 'with open(...)'?",
+      "options": [
+        "Faster reading",
+        "Auto-close files",
+        "Better memory",
+        "Opens large files only"
+      ],
+      "answer": "Auto-close files",
+      "hint": "It ensures proper resource handling."
+    },
+    {
+      "question": "What happens if you open a file in 'x' mode and it already exists?",
+      "options": [
+        "Opens normally",
+        "Overwrites file",
+        "Appends file",
+        "Raises an error"
+      ],
+      "answer": "Raises an error",
+      "hint": "This mode is for exclusive creation only."
+    }
+  ],
+  "for_while_loops": [
+    {
+      "question": "What loop is best for iterating a known range of numbers?",
+      "options": [
+        "for",
+        "while",
+        "loop",
+        "range"
+      ],
+      "answer": "for"
+    },
+    {
+      "question": "Which keyword breaks out of a loop?",
+      "options": [
+        "exit",
+        "break",
+        "stop",
+        "continue"
+      ],
+      "answer": "break"
+    },
+    {
+      "question": "What loop continues as long as a condition is True?",
+      "options": [
+        "for",
+        "while",
+        "repeat",
+        "do"
+      ],
+      "answer": "while"
+    },
+    {
+      "question": "What is printed?\nfor i in range(3): print(i)",
+      "options": [
+        "1 2 3",
+        "0 1 2",
+        "0 1 2 3",
+        "1 2"
+      ],
+      "answer": "0 1 2"
+    },
+    {
+      "question": "What will end a while loop immediately?",
+      "options": [
+        "break",
+        "continue",
+        "skip",
+        "exit"
+      ],
+      "answer": "break"
+    },
+    {
+      "question": "What happens if the condition in a while loop is never False?",
+      "options": [
+        "It skips the loop",
+        "It runs once",
+        "It crashes",
+        "It runs forever"
+      ],
+      "answer": "It runs forever"
+    },
+    {
+      "question": "Which of these is NOT a valid loop in Python?",
+      "options": [
+        "for",
+        "while",
+        "loop",
+        "None"
+      ],
+      "answer": "loop"
+    },
+    {
+      "question": "What does range(1, 5) generate?",
+      "options": [
+        "1 to 4",
+        "1 to 5",
+        "0 to 5",
+        "2 to 5"
+      ],
+      "answer": "1 to 4"
+    },
+    {
+      "question": "What does 'continue' do inside a loop?",
+      "options": [
+        "Stops the loop",
+        "Skips to next iteration",
+        "Exits Python",
+        "Repeats last line"
+      ],
+      "answer": "Skips to next iteration"
+    },
+    {
+      "question": "What loop should you use when you don\u2019t know how many times it\u2019ll run?",
+      "options": [
+        "for",
+        "while",
+        "repeat",
+        "loop"
+      ],
+      "answer": "while"
+    }
+  ],
+  "functions": [
+    {
+      "question": "Which keyword is used to define a function in Python?",
+      "options": [
+        "function",
+        "def",
+        "define",
+        "func"
+      ],
+      "answer": "def"
+    },
+    {
+      "question": "What does return do in a function?",
+      "options": [
+        "Prints value",
+        "Exits loop",
+        "Saves a variable",
+        "Sends result back"
+      ],
+      "answer": "Sends result back"
+    },
+    {
+      "question": "What will greet('Sumon') return?",
+      "options": [
+        "Hi Sumon",
+        "Hello, Sumon!",
+        "Goodbye",
+        "None"
+      ],
+      "answer": "Hello, Sumon!"
+    },
+    {
+      "question": "What is the output of is_even(4)?",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "Error"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "How do you access a function's return value?",
+      "options": [
+        "print it",
+        "use = sign",
+        "call it",
+        "all of these"
+      ],
+      "answer": "all of these"
+    },
+    {
+      "question": "Which function returns area of circle?",
+      "options": [
+        "area_circle()",
+        "area()",
+        "circle()",
+        "None"
+      ],
+      "answer": "area_circle()"
+    },
+    {
+      "question": "What does reverse_string('abc') return?",
+      "options": [
+        "cba",
+        "abc",
+        "bac",
+        "None"
+      ],
+      "answer": "cba"
+    },
+    {
+      "question": "What does title_case('hello world') return?",
+      "options": [
+        "Hello World",
+        "hello world",
+        "HELLO WORLD",
+        "None"
+      ],
+      "answer": "Hello World"
+    },
+    {
+      "question": "What does max_in_list([4,9,1]) return?",
+      "options": [
+        "9",
+        "1",
+        "4",
+        "Error"
+      ],
+      "answer": "9"
+    },
+    {
+      "question": "is_prime(11) returns?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True"
+    }
+  ],
+  "guessing_game": [
+    {
+      "question": "What kind of loop is used in the guessing game?",
+      "options": [
+        "for",
+        "while",
+        "do-while",
+        "loop"
+      ],
+      "answer": "while"
+    },
+    {
+      "question": "What type of variable tracks how many attempts were made?",
+      "options": [
+        "Boolean",
+        "String",
+        "Counter (int)",
+        "List"
+      ],
+      "answer": "Counter (int)"
+    },
+    {
+      "question": "Which statement checks if guess is too low?",
+      "options": [
+        "if guess < secret_number",
+        "if guess > secret_number",
+        "if guess == secret_number",
+        "if guess <= 0"
+      ],
+      "answer": "if guess < secret_number"
+    },
+    {
+      "question": "When does the while loop stop?",
+      "options": [
+        "When guess is less than 100",
+        "When user quits",
+        "When guess == secret_number",
+        "After 3 tries"
+      ],
+      "answer": "When guess == secret_number"
+    },
+    {
+      "question": "What will happen if guess > secret_number?",
+      "options": [
+        "Too high!",
+        "Too low!",
+        "Correct",
+        "Nothing"
+      ],
+      "answer": "Too high!"
+    },
+    {
+      "question": "How is input from Player 2 collected?",
+      "options": [
+        "print()",
+        "int()",
+        "input()",
+        "len()"
+      ],
+      "answer": "input()"
+    },
+    {
+      "question": "How do we convert input to number?",
+      "options": [
+        "str()",
+        "list()",
+        "int()",
+        "input()"
+      ],
+      "answer": "int()"
+    },
+    {
+      "question": "What happens when guess == secret_number?",
+      "options": [
+        "Print win message",
+        "Start over",
+        "Break loop",
+        "Both A and C"
+      ],
+      "answer": "Both A and C"
+    },
+    {
+      "question": "How to increase attempt count each time?",
+      "options": [
+        "attempts += 1",
+        "attempts =+ 1",
+        "attempts ++",
+        "attempts = attempts"
+      ],
+      "answer": "attempts += 1"
+    },
+    {
+      "question": "Which line ends the loop?",
+      "options": [
+        "guess = secret_number",
+        "guess != secret_number",
+        "while guess != secret_number",
+        "for guess in secret"
+      ],
+      "answer": "while guess != secret_number"
+    }
+  ],
+  "if_elif_else": [
+    {
+      "question": "What keyword is used for the first condition in a conditional block?",
+      "options": [
+        "if",
+        "else",
+        "elif",
+        "then"
+      ],
+      "answer": "if",
+      "hint": "It's the main entry point for condition checks."
+    },
+    {
+      "question": "Which keyword is used for multiple conditions after the initial one?",
+      "options": [
+        "if",
+        "else",
+        "elif",
+        "case"
+      ],
+      "answer": "elif",
+      "hint": "It's short for 'else if'."
+    },
+    {
+      "question": "What does the 'else' clause do?",
+      "options": [
+        "It runs if all 'if' and 'elif' fail.",
+        "It always runs.",
+        "It checks the first condition.",
+        "It defines a loop."
+      ],
+      "answer": "It runs if all 'if' and 'elif' fail.",
+      "hint": "It's the fallback case."
+    },
+    {
+      "question": "if 5 > 3: print('Yes') \u2014 will it print?",
+      "options": [
+        "Yes",
+        "No",
+        "Error",
+        "None"
+      ],
+      "answer": "Yes",
+      "hint": "5 is indeed greater than 3."
+    },
+    {
+      "question": "What is printed: x=10; if x==10: print('Match') else: print('No')",
+      "options": [
+        "Match",
+        "No",
+        "Error",
+        "Nothing"
+      ],
+      "answer": "Match",
+      "hint": "x equals 10, so the first block runs."
+    },
+    {
+      "question": "Which keyword is **not** part of conditional branching?",
+      "options": [
+        "if",
+        "elif",
+        "for",
+        "else"
+      ],
+      "answer": "for",
+      "hint": "One is for loops, not conditions."
+    },
+    {
+      "question": "True or False: 'elif' can be used alone without 'if'.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False",
+      "hint": "'elif' depends on an 'if' before it."
+    },
+    {
+      "question": "x = 20; if x < 10: ... elif x < 30: print('Ok') \u2014 will it print?",
+      "options": [
+        "Ok",
+        "Nothing",
+        "Error",
+        "20"
+      ],
+      "answer": "Ok",
+      "hint": "20 is less than 30."
+    },
+    {
+      "question": "What is the result of this block?\n\nx=5\nif x==10:\n  print('Ten')\nelse:\n  print('Not Ten')",
+      "options": [
+        "Ten",
+        "Not Ten",
+        "Error",
+        "None"
+      ],
+      "answer": "Not Ten",
+      "hint": "x is not 10."
+    },
+    {
+      "question": "Which condition will trigger in: x=10; if x < 5:... elif x==10:... else:...",
+      "options": [
+        "First",
+        "Second",
+        "Third",
+        "None"
+      ],
+      "answer": "Second",
+      "hint": "x equals 10, so the elif block runs."
+    }
+  ],
+  "lambda": [
+    {
+      "question": "What is a lambda function?",
+      "options": [
+        "A named function",
+        "An anonymous function",
+        "A loop",
+        "A module"
+      ],
+      "answer": "An anonymous function",
+      "explanation": {
+        "function_used": "lambda",
+        "learned": "lambda defines a function without a name.",
+        "reusability": "Used in short operations with map(), filter(), etc.",
+        "comments": "Lambda functions are quick and don't require formal naming."
+      }
+    },
+    {
+      "question": "lambda x: x + 2 — what will it return for x = 3?",
+      "options": [
+        "5",
+        "3",
+        "2",
+        "Error"
+      ],
+      "answer": "5",
+      "explanation": {
+        "function_used": "lambda",
+        "learned": "How to define and use a lambda to perform addition.",
+        "reusability": "Common in arithmetic tasks within map/filter.",
+        "comments": "Returns 3 + 2 = 5."
+      }
+    },
+    {
+      "question": "What does map() do?",
+      "options": [
+        "Modifies list",
+        "Applies function to each item",
+        "Filters items",
+        "Deletes items"
+      ],
+      "answer": "Applies function to each item",
+      "explanation": {
+        "function_used": "map()",
+        "learned": "Used to apply a function to each element in a list.",
+        "reusability": "Ideal for transforming datasets.",
+        "comments": "Returns a new list with the function applied to each item."
+      }
+    },
+    {
+      "question": "Which returns True for even numbers only?",
+      "options": [
+        "lambda x: x % 2 == 0",
+        "lambda x: x % 2",
+        "lambda x: x * 2",
+        "lambda x: x == 1"
+      ],
+      "answer": "lambda x: x % 2 == 0",
+      "explanation": {
+        "function_used": "lambda + modulo",
+        "learned": "Filter logic using lambda.",
+        "reusability": "Helps isolate even values in datasets.",
+        "comments": "x % 2 == 0 returns True for even numbers."
+      }
+    },
+    {
+      "question": "filter() returns:",
+      "options": [
+        "None",
+        "New list with matching items",
+        "All items",
+        "Sorted list"
+      ],
+      "answer": "New list with matching items",
+      "explanation": {
+        "function_used": "filter()",
+        "learned": "Returns values for which the condition is True.",
+        "reusability": "Powerful for data filtering operations.",
+        "comments": "Returns only items that pass the lambda test."
+      }
+    },
+    {
+      "question": "Which expression makes 'sumon' => 'SUMON'?",
+      "options": [
+        "lambda x: x.title()",
+        "lambda x: x.upper()",
+        "lambda x: x.lower()",
+        "lambda x: x.capitalize()"
+      ],
+      "answer": "lambda x: x.upper()",
+      "explanation": {
+        "function_used": "lambda + upper()",
+        "learned": "How to capitalize all letters in a string.",
+        "reusability": "Used in formatting names and strings.",
+        "comments": "'sumon'.upper() becomes 'SUMON'."
+      }
+    },
+    {
+      "question": "Which is correct for map()?",
+      "options": [
+        "map(list, lambda x: x)",
+        "map(lambda x: x*2, [1, 2])",
+        "map(x: x*2)",
+        "map([])"
+      ],
+      "answer": "map(lambda x: x*2, [1, 2])",
+      "explanation": {
+        "function_used": "map() + lambda",
+        "learned": "Syntax of using map with a lambda function.",
+        "reusability": "Applies transformations in one line.",
+        "comments": "Doubles all items in the list."
+      }
+    },
+    {
+      "question": "What will filter(lambda x: x > 5, [3, 6, 9]) return?",
+      "options": [
+        "[3,6,9]",
+        "[6,9]",
+        "[5,6]",
+        "[9]"
+      ],
+      "answer": "[6,9]",
+      "explanation": {
+        "function_used": "filter() + lambda",
+        "learned": "Filtering values greater than a threshold.",
+        "reusability": "Used for validation or cleaning data.",
+        "comments": "Only 6 and 9 are greater than 5."
+      }
+    },
+    {
+      "question": "Lambda is often used with:",
+      "options": [
+        "loops",
+        "recursion",
+        "map/filter",
+        "class"
+      ],
+      "answer": "map/filter",
+      "explanation": {
+        "function_used": "lambda + map/filter",
+        "learned": "Common pairing for concise operations.",
+        "reusability": "Frequent in functional programming.",
+        "comments": "Simplifies processing iterable data."
+      }
+    },
+    {
+      "question": "Which is valid syntax?",
+      "options": [
+        "lambda x x+1",
+        "lambda x: x+1",
+        "function(x) = x+1",
+        "def x(): x+1"
+      ],
+      "answer": "lambda x: x+1",
+      "explanation": {
+        "function_used": "lambda",
+        "learned": "Correct way to declare a lambda function.",
+        "reusability": "Inline functions used without naming.",
+        "comments": "Only correct syntax with colon and expression."
+      }
+    }
+  ],
+  "lists": [
+    {
+      "question": "Which method adds an item to the end of a list?",
+      "options": [
+        "add()",
+        "insert()",
+        "append()",
+        "push()"
+      ],
+      "answer": "append()"
+    },
+    {
+      "question": "What does the `remove()` method do in a list?",
+      "options": [
+        "Deletes item at a given index",
+        "Clears the list",
+        "Deletes the first matching value",
+        "Removes the last item"
+      ],
+      "answer": "Deletes the first matching value"
+    },
+    {
+      "question": "How do you reverse a list in-place?",
+      "options": [
+        "reverse()",
+        "reversed()",
+        "sort()",
+        "flip()"
+      ],
+      "answer": "reverse()"
+    },
+    {
+      "question": "What will `mylist[1:3]` return?",
+      "options": [
+        "Elements at index 1 and 3",
+        "Elements from index 1 to 2",
+        "First 3 elements",
+        "Last 2 elements"
+      ],
+      "answer": "Elements from index 1 to 2"
+    },
+    {
+      "question": "Which method would you use to sort a list?",
+      "options": [
+        "order()",
+        "arrange()",
+        "sort()",
+        "rank()"
+      ],
+      "answer": "sort()"
+    },
+    {
+      "question": "What does `list.pop()` do?",
+      "options": [
+        "Adds a value to the list",
+        "Removes and returns the last item",
+        "Duplicates list items",
+        "Reverses the list"
+      ],
+      "answer": "Removes and returns the last item"
+    },
+    {
+      "question": "How do you count occurrences of a value in a list?",
+      "options": [
+        "list.count()",
+        "list.total()",
+        "list.freq()",
+        "list.find()"
+      ],
+      "answer": "list.count()"
+    },
+    {
+      "question": "What is the result of `len([1,2,3])`?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "None"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "Which operator is used to concatenate two lists?",
+      "options": [
+        "*",
+        "&",
+        "+",
+        "%"
+      ],
+      "answer": "+"
+    },
+    {
+      "question": "What will `mylist.clear()` do?",
+      "options": [
+        "Delete one item",
+        "Clear the console",
+        "Remove all items",
+        "Sort the list"
+      ],
+      "answer": "Remove all items"
+    }
+  ],
+  "nested_scope": [
+    {
+      "question": "Which letter in LEGB refers to inside a function?",
+      "options": [
+        "L",
+        "G",
+        "B",
+        "E"
+      ],
+      "answer": "L"
+    },
+    {
+      "question": "What is the purpose of the global keyword?",
+      "options": [
+        "Declare global variable",
+        "Delete a variable",
+        "Loop variable",
+        "None"
+      ],
+      "answer": "Declare global variable"
+    },
+    {
+      "question": "What does outer() call when it includes an inner() function?",
+      "options": [
+        "Just outer",
+        "Just inner",
+        "outer and inner",
+        "None"
+      ],
+      "answer": "outer and inner"
+    },
+    {
+      "question": "What is the result of using a local variable with the same name as a global?",
+      "options": [
+        "Overrides global",
+        "Deletes global",
+        "No conflict",
+        "Throws error"
+      ],
+      "answer": "Overrides global"
+    },
+    {
+      "question": "What does inner() access from outer()?",
+      "options": [
+        "Global variables only",
+        "Enclosed variables",
+        "Only local",
+        "Nothing"
+      ],
+      "answer": "Enclosed variables"
+    },
+    {
+      "question": "Built-in scope includes:",
+      "options": [
+        "print()",
+        "def",
+        "input()",
+        "All above"
+      ],
+      "answer": "All above"
+    },
+    {
+      "question": "What happens if you override 'str'?",
+      "options": [
+        "print() fails",
+        "int() fails",
+        "str() fails",
+        "no effect"
+      ],
+      "answer": "str() fails"
+    },
+    {
+      "question": "Is 'return inner' allowed?",
+      "options": [
+        "Yes",
+        "No",
+        "Only in global",
+        "Only with decorator"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "question": "What will print in this example?\n\ndef outer():\n x = 'A'\n def inner():\n  print(x)\n inner()",
+      "options": [
+        "A",
+        "None",
+        "Error",
+        "x"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "How do you access global 'x' inside a function?",
+      "options": [
+        "use global x",
+        "use return x",
+        "use x = global",
+        "cannot access"
+      ],
+      "answer": "use global x"
+    }
+  ],
+  "numbers": [
+    {
+      "question": "What will be the result of 7 + 3?",
+      "options": [
+        "10",
+        "73",
+        "7.3",
+        "None"
+      ],
+      "answer": "10",
+      "hint": "It's a simple addition."
+    },
+    {
+      "question": "Which function gives absolute value?",
+      "options": [
+        "abs()",
+        "round()",
+        "int()",
+        "float()"
+      ],
+      "answer": "abs()",
+      "hint": "It's used to remove negatives."
+    },
+    {
+      "question": "What is the output of round(4.6)?",
+      "options": [
+        "4",
+        "5",
+        "4.6",
+        "Error"
+      ],
+      "answer": "5",
+      "hint": "Rounding rounds to the nearest whole number."
+    },
+    {
+      "question": "What type is returned by 10 / 2 in Python 3?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "answer": "float",
+      "hint": "Division returns float in Python 3."
+    },
+    {
+      "question": "What does 2 ** 3 evaluate to?",
+      "options": [
+        "6",
+        "8",
+        "9",
+        "5"
+      ],
+      "answer": "8",
+      "hint": "This is exponentiation (power)."
+    },
+    {
+      "question": "What will be the value of 15 % 4?",
+      "options": [
+        "3",
+        "4",
+        "1",
+        "0"
+      ],
+      "answer": "3",
+      "hint": "It's the remainder of 15 divided by 4."
+    },
+    {
+      "question": "Which of these is an integer in Python?",
+      "options": [
+        "3.14",
+        "'10'",
+        "10",
+        "True"
+      ],
+      "answer": "10",
+      "hint": "It's a whole number without quotes or decimal."
+    },
+    {
+      "question": "What does int('7') return?",
+      "options": [
+        "'7'",
+        "7",
+        "Error",
+        "None"
+      ],
+      "answer": "7",
+      "hint": "Converts a string number to an integer."
+    },
+    {
+      "question": "What is the result of abs(-12)?",
+      "options": [
+        "12",
+        "-12",
+        "0",
+        "Error"
+      ],
+      "answer": "12",
+      "hint": "Absolute value removes the sign."
+    },
+    {
+      "question": "Which function converts a float to an integer?",
+      "options": [
+        "str()",
+        "int()",
+        "float()",
+        "bool()"
+      ],
+      "answer": "int()",
+      "hint": "It truncates decimals."
+    }
+  ],
+  "play_game": [
+    {
+      "question": "What function is used to clear the output in the terminal display of the board?",
+      "options": [
+        "print()",
+        "clear_output()",
+        "flush()",
+        "reset_output()"
+      ],
+      "answer": "clear_output",
+      "hint": "It's imported from IPython.display."
+    },
+    {
+      "question": "Which function determines which player goes first?",
+      "options": [
+        "choose_player()",
+        "decide_turn()",
+        "choose_first()",
+        "random_turn()"
+      ],
+      "answer": "choose_first",
+      "hint": "It uses the random module."
+    },
+    {
+      "question": "How does the game check if a board position is available?",
+      "options": [
+        "position_free()",
+        "check_empty()",
+        "space_check()",
+        "is_open()"
+      ],
+      "answer": "space_check",
+      "hint": "Returns True if board[position] is a space."
+    },
+    {
+      "question": "What input does player_choice() expect from the user?",
+      "options": [
+        "X or O",
+        "Yes or No",
+        "1 to 9",
+        "0 to 8"
+      ],
+      "answer": "1 to 9",
+      "hint": "It's a number between 1 and 9."
+    },
+    {
+      "question": "What does full_board_check() return if the board is full?",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "0"
+      ],
+      "answer": "True",
+      "hint": "It uses not any() logic."
+    },
+    {
+      "question": "Which function is used to put a marker on the board?",
+      "options": [
+        "mark_position()",
+        "insert_marker()",
+        "place_marker()",
+        "put_marker()"
+      ],
+      "answer": "place_marker",
+      "hint": "It assigns a value to board[position]."
+    },
+    {
+      "question": "Which value is assigned to an empty board at the start?",
+      "options": [
+        "''",
+        "None",
+        "' '",
+        "0"
+      ],
+      "answer": "' '",
+      "hint": "It's a space character."
+    },
+    {
+      "question": "How many win conditions are there in the win_check() function?",
+      "options": [
+        "4",
+        "6",
+        "8",
+        "10"
+      ],
+      "answer": "8",
+      "hint": "Includes rows, columns, and diagonals."
+    },
+    {
+      "question": "What triggers the end of the main game loop?",
+      "options": [
+        "'exit' input",
+        "board full",
+        "a win or draw",
+        "three rounds"
+      ],
+      "answer": "a win or draw",
+      "hint": "Checks are made after each move."
+    },
+    {
+      "question": "How does the game decide whether to start a new round?",
+      "options": [
+        "ask_restart()",
+        "check_status()",
+        "new_game()",
+        "replay()"
+      ],
+      "answer": "replay",
+      "hint": "It checks user input starting with 'y'."
+    }
+  ],
+  "python_dictionaries": [
+    {
+      "question": "What data type is used to store key-value pairs?",
+      "options": [
+        "List",
+        "Tuple",
+        "Dictionary",
+        "Set"
+      ],
+      "answer": "Dictionary",
+      "hint": "Dictionaries store keys and values."
+    },
+    {
+      "question": "How do you access a value by key in a dictionary?",
+      "options": [
+        "dict.value(key)",
+        "dict[key]",
+        "dict.getValue(key)",
+        "dict->key"
+      ],
+      "answer": "dict[key]",
+      "hint": "Standard syntax for key access."
+    },
+    {
+      "question": "What does .get('key') do if the key doesn't exist?",
+      "options": [
+        "Throws error",
+        "Returns 0",
+        "Returns None",
+        "Adds the key"
+      ],
+      "answer": "Returns None",
+      "hint": "Safer than using bracket syntax."
+    },
+    {
+      "question": "Which method returns all keys in a dictionary?",
+      "options": [
+        "keys()",
+        "get_keys()",
+        "dict_keys()",
+        "items()"
+      ],
+      "answer": "keys()",
+      "hint": "It’s literally named after keys."
+    },
+    {
+      "question": "What will len({'a':1, 'b':2}) return?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "answer": "2",
+      "hint": "It counts the key-value pairs."
+    },
+    {
+      "question": "How do you remove a key from a dictionary?",
+      "options": [
+        "pop()",
+        "del",
+        "remove()",
+        "Both A and B"
+      ],
+      "answer": "Both A and B",
+      "hint": "Two options are valid in Python."
+    },
+    {
+      "question": "Which returns all key-value pairs?",
+      "options": [
+        "keys()",
+        "values()",
+        "items()",
+        "entries()"
+      ],
+      "answer": "items()",
+      "hint": "It’s used when looping over key-value pairs."
+    },
+    {
+      "question": "What is the output of {'a':1}['a']?",
+      "options": [
+        "1",
+        "'a'",
+        "Error",
+        "None"
+      ],
+      "answer": "1",
+      "hint": "Basic dictionary value access."
+    },
+    {
+      "question": "Which is true about dictionary keys?",
+      "options": [
+        "Must be unique",
+        "Can be mutable",
+        "Can be duplicated",
+        "All of the above"
+      ],
+      "answer": "Must be unique",
+      "hint": "Python doesn't allow duplicate keys."
+    },
+    {
+      "question": "What type is returned by dict.keys()?",
+      "options": [
+        "list",
+        "dict_keys",
+        "set",
+        "array"
+      ],
+      "answer": "dict_keys",
+      "hint": "A special view object in Python."
+    }
+  ],
+  "python_statements": [
+    {
+      "question": "Which keyword starts a conditional block in Python?",
+      "options": [
+        "while",
+        "for",
+        "if",
+        "loop"
+      ],
+      "answer": "if",
+      "hint": "It's used to make decisions."
+    },
+    {
+      "question": "What is the result of this condition: if 5 > 2?",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "Error"
+      ],
+      "answer": "True",
+      "hint": "Compare 5 and 2."
+    },
+    {
+      "question": "Which loop checks its condition before running the block?",
+      "options": [
+        "while",
+        "for",
+        "foreach",
+        "loop"
+      ],
+      "answer": "while",
+      "hint": "It keeps running while a condition is true."
+    },
+    {
+      "question": "What does the 'break' keyword do in a loop?",
+      "options": [
+        "Repeats",
+        "Skips",
+        "Ends",
+        "Starts"
+      ],
+      "answer": "Ends",
+      "hint": "It stops the loop."
+    },
+    {
+      "question": "Which keyword skips to the next iteration in a loop?",
+      "options": [
+        "end",
+        "next",
+        "continue",
+        "break"
+      ],
+      "answer": "continue",
+      "hint": "It skips just one turn."
+    },
+    {
+      "question": "What does range(3) return?",
+      "options": [
+        "0 1 2",
+        "1 2 3",
+        "0 1 2 3",
+        "1 2"
+      ],
+      "answer": "0 1 2",
+      "hint": "Python starts counting from 0."
+    },
+    {
+      "question": "Which is a valid loop variable name?",
+      "options": [
+        "1loop",
+        "my-var",
+        "_i",
+        "var$"
+      ],
+      "answer": "_i",
+      "hint": "Must start with letter or underscore."
+    },
+    {
+      "question": "How many times does this run? for i in range(2):",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": "2",
+      "hint": "Starts at 0, stops before 2."
+    },
+    {
+      "question": "What does 'elif' stand for in Python?",
+      "options": [
+        "else if",
+        "end if",
+        "evaluate if",
+        "error if"
+      ],
+      "answer": "else if",
+      "hint": "It's used after an 'if' condition."
+    },
+    {
+      "question": "How do you exit a while loop in Python?",
+      "options": [
+        "stop()",
+        "exit()",
+        "break",
+        "done"
+      ],
+      "answer": "break",
+      "hint": "Same keyword used to exit both for and while loops."
+    }
+  ],
+  "sets_booleans": [
+    {
+      "question": "What is the primary feature of a Python set?",
+      "options": [
+        "Ordered elements",
+        "Duplicate elements",
+        "Unique elements",
+        "Sorted elements"
+      ],
+      "answer": "Unique elements"
+    },
+    {
+      "question": "Which syntax creates an empty set in Python?",
+      "options": [
+        "{}",
+        "[]",
+        "()",
+        "set()"
+      ],
+      "answer": "set()"
+    },
+    {
+      "question": "What does the '&' operator do with sets?",
+      "options": [
+        "Union",
+        "Intersection",
+        "Difference",
+        "Symmetric difference"
+      ],
+      "answer": "Intersection"
+    },
+    {
+      "question": "Which method checks membership in a set?",
+      "options": [
+        "exists()",
+        "has()",
+        "in",
+        "check()"
+      ],
+      "answer": "in"
+    },
+    {
+      "question": "What will `len({1, 2, 2, 3})` return?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "Error"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What are the only two Boolean values in Python?",
+      "options": [
+        "True and False",
+        "Yes and No",
+        "1 and 0",
+        "On and Off"
+      ],
+      "answer": "True and False"
+    },
+    {
+      "question": "What is the output of `bool([])`?",
+      "options": [
+        "True",
+        "False",
+        "[]",
+        "Error"
+      ],
+      "answer": "False"
+    },
+    {
+      "question": "Which statement evaluates to True?",
+      "options": [
+        "5 < 3",
+        "5 == 5",
+        "False and True",
+        "not True"
+      ],
+      "answer": "5 == 5"
+    },
+    {
+      "question": "Which of the following performs union of sets?",
+      "options": [
+        "+",
+        "&",
+        "|",
+        "-"
+      ],
+      "answer": "|"
+    },
+    {
+      "question": "Which expression returns the opposite of True?",
+      "options": [
+        "not True",
+        "True == False",
+        "False != True",
+        "True and False"
+      ],
+      "answer": "not True"
+    }
+  ],
+  "string_list_methods": [
+    {
+      "question": "What does 'hello'.upper() return?",
+      "options": [
+        "hello",
+        "HELLO",
+        "Hello",
+        "error"
+      ],
+      "answer": "HELLO"
+    },
+    {
+      "question": "What does 'PYTHON'.lower() return?",
+      "options": [
+        "python",
+        "PYTHON",
+        "Python",
+        "None"
+      ],
+      "answer": "python"
+    },
+    {
+      "question": "'I love Python'.split() returns?",
+      "options": [
+        "['I', 'love', 'Python']",
+        "I love Python",
+        "['I love Python']",
+        "None"
+      ],
+      "answer": "['I', 'love', 'Python']"
+    },
+    {
+      "question": "'Hello World'.replace('World', 'Sumon') returns?",
+      "options": [
+        "Hello",
+        "Hello Sumon",
+        "World Sumon",
+        "Sumon Hello"
+      ],
+      "answer": "Hello Sumon"
+    },
+    {
+      "question": "Which method adds an item to the end of a list?",
+      "options": [
+        "insert()",
+        "add()",
+        "append()",
+        "push()"
+      ],
+      "answer": "append()"
+    },
+    {
+      "question": "What does [1, 2, 3].pop() return?",
+      "options": [
+        "1",
+        "3",
+        "2",
+        "None"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "What does [3, 1, 2].sort() do?",
+      "options": [
+        "Sort ascending",
+        "Sort descending",
+        "Return reversed",
+        "Throws error"
+      ],
+      "answer": "Sort ascending"
+    },
+    {
+      "question": "[1,2,3].reverse() returns?",
+      "options": [
+        "[1,2,3]",
+        "[3,2,1]",
+        "[2,3,1]",
+        "None"
+      ],
+      "answer": "[3,2,1]"
+    },
+    {
+      "question": "'apple'.replace('a','o') returns?",
+      "options": [
+        "opple",
+        "applo",
+        "oaple",
+        "None"
+      ],
+      "answer": "opple"
+    },
+    {
+      "question": "What is the output of: 'code'.upper().lower()?",
+      "options": [
+        "CODE",
+        "code",
+        "CoDe",
+        "Error"
+      ],
+      "answer": "code"
+    }
+  ],
+  "strings": [
+    {
+      "question": "Which method converts a string to all uppercase?",
+      "options": [
+        "upper()",
+        "UPPERCASE()",
+        "toUpperCase()",
+        "capitalize()"
+      ],
+      "answer": "upper()"
+    },
+    {
+      "question": "How do you concatenate 'Hello' and 'World' in Python?",
+      "options": [
+        "Hello + World",
+        "'Hello' + 'World'",
+        "'Hello'.concat('World')",
+        "'Hello' . 'World'"
+      ],
+      "answer": "'Hello' + 'World'"
+    },
+    {
+      "question": "What does 'hello'.capitalize() return?",
+      "options": [
+        "Hello",
+        "HELLO",
+        "hello",
+        "HellO"
+      ],
+      "answer": "Hello"
+    },
+    {
+      "question": "Which method splits a string into a list?",
+      "options": [
+        "split()",
+        "break()",
+        "cut()",
+        "slice()"
+      ],
+      "answer": "split()"
+    },
+    {
+      "question": "What does 'abc'[1] return?",
+      "options": [
+        "a",
+        "b",
+        "c",
+        "Error"
+      ],
+      "answer": "b"
+    },
+    {
+      "question": "Are strings mutable in Python?",
+      "options": [
+        "Yes",
+        "Only sometimes",
+        "No",
+        "Depends on version"
+      ],
+      "answer": "No"
+    },
+    {
+      "question": "Which method replaces a substring in a string?",
+      "options": [
+        "replace()",
+        "swap()",
+        "sub()",
+        "change()"
+      ],
+      "answer": "replace()"
+    },
+    {
+      "question": "How do you check if a string starts with a specific word?",
+      "options": [
+        "startswith()",
+        "startsWith()",
+        "begin()",
+        "isstart()"
+      ],
+      "answer": "startswith()"
+    },
+    {
+      "question": "What is the result of len('Python')?",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "Error"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What does '  test  '.strip() return?",
+      "options": [
+        "test",
+        "  test  ",
+        "test  ",
+        "  test"
+      ],
+      "answer": "test"
+    }
+  ],
+  "test": [
+    {
+      "question": "What is the result of: True and False?",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "Error"
+      ],
+      "answer": "False"
+    },
+    {
+      "question": "Which loop checks the condition before executing?",
+      "options": [
+        "for",
+        "while",
+        "do-while",
+        "None"
+      ],
+      "answer": "while"
+    },
+    {
+      "question": "What does 'in' do in Python?",
+      "options": [
+        "Assignment",
+        "Loop",
+        "Checks membership",
+        "Comparison"
+      ],
+      "answer": "Checks membership"
+    },
+    {
+      "question": "range(2, 10, 2) will return?",
+      "options": [
+        "2 to 10",
+        "2, 4, 6, 8",
+        "2, 3, ..., 10",
+        "Even numbers to 12"
+      ],
+      "answer": "2, 4, 6, 8"
+    },
+    {
+      "question": "Which code prints each letter of 'Sumon'?",
+      "options": [
+        "print(Sumon)",
+        "for x in Sumon: print(x)",
+        "for x in 'Sumon': print(x)",
+        "print(x for x in 'Sumon')"
+      ],
+      "answer": "for x in 'Sumon': print(x)"
+    },
+    {
+      "question": "What is the result of: [x for x in range(5) if x % 2 == 0]?",
+      "options": [
+        "[1, 3]",
+        "[0, 2, 4]",
+        "[2, 4]",
+        "[0, 1, 2, 3, 4]"
+      ],
+      "answer": "[0, 2, 4]"
+    },
+    {
+      "question": "What's the output of: 4 in [1,2,3,4]?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "What does the continue statement do?",
+      "options": [
+        "Stops loop",
+        "Skips current iteration",
+        "Ends program",
+        "Pauses loop"
+      ],
+      "answer": "Skips current iteration"
+    },
+    {
+      "question": "Which is correct to count from 3 to 1?",
+      "options": [
+        "while x > 0: print(x); x -= 1",
+        "for x in 3 to 1",
+        "print(x) if x > 0",
+        "range(3, 1)"
+      ],
+      "answer": "while x > 0: print(x); x -= 1"
+    },
+    {
+      "question": "How to check if a number is even?",
+      "options": [
+        "x / 2 == 0",
+        "x % 2 == 0",
+        "x == even",
+        "x // 2"
+      ],
+      "answer": "x % 2 == 0"
+    }
+  ],
+  "tic_tac_toe": [
+    {
+      "question": "What does the renderBoard() function do?",
+      "options": [
+        "It checks for a winner",
+        "It resets the game",
+        "It updates the HTML layout of the game board",
+        "It switches players"
+      ],
+      "answer": "It updates the HTML layout of the game board"
+    },
+    {
+      "question": "Which symbol starts the game by default?",
+      "options": [
+        "X",
+        "O",
+        "None",
+        "Both"
+      ],
+      "answer": "X"
+    },
+    {
+      "question": "What triggers handleCellClick(idx)?",
+      "options": [
+        "Page load",
+        "Game reset",
+        "Clicking a cell button",
+        "Changing currentPlayer"
+      ],
+      "answer": "Clicking a cell button"
+    },
+    {
+      "question": "What array holds winning combinations?",
+      "options": [
+        "board",
+        "players",
+        "winConditions",
+        "winLines"
+      ],
+      "answer": "winConditions"
+    },
+    {
+      "question": "What happens when all cells are filled without a winner?",
+      "options": [
+        "Game resets",
+        "Player X wins",
+        "Player O wins",
+        "It's a draw"
+      ],
+      "answer": "It's a draw"
+    },
+    {
+      "question": "Which method is used to check if all cells are filled?",
+      "options": [
+        "map()",
+        "forEach()",
+        "every()",
+        "filter()"
+      ],
+      "answer": "every()"
+    },
+    {
+      "question": "What does resetGame() NOT do?",
+      "options": [
+        "Reset the board array",
+        "Reset currentPlayer to X",
+        "Restart the browser",
+        "Update the game status"
+      ],
+      "answer": "Restart the browser"
+    },
+    {
+      "question": "Where is the game result message shown?",
+      "options": [
+        "Console log",
+        "HTML title tag",
+        "Element with id 'status'",
+        "Button text"
+      ],
+      "answer": "Element with id 'status'"
+    },
+    {
+      "question": "When does a player win?",
+      "options": [
+        "Three same marks align in a winCondition",
+        "Two Xs are clicked",
+        "All buttons are pressed",
+        "Player clicks restart"
+      ],
+      "answer": "Three same marks align in a winCondition"
+    },
+    {
+      "question": "Which function disables already clicked cells?",
+      "options": [
+        "checkWin()",
+        "renderBoard()",
+        "handleCellClick()",
+        "resetGame()"
+      ],
+      "answer": "renderBoard()"
+    }
+  ],
+  "tuples": [
+    {
+      "question": "What is a key feature of a tuple?",
+      "options": [
+        "Mutable",
+        "Unordered",
+        "Immutable",
+        "Expandable"
+      ],
+      "answer": "Immutable"
+    },
+    {
+      "question": "Which of the following is a valid tuple?",
+      "options": [
+        "(1,)",
+        "(1)",
+        "[1,2]",
+        "{1,2}"
+      ],
+      "answer": "(1,)"
+    },
+    {
+      "question": "How do you access the first item in a tuple t?",
+      "options": [
+        "t.first()",
+        "t[0]",
+        "t.get(1)",
+        "first(t)"
+      ],
+      "answer": "t[0]"
+    },
+    {
+      "question": "What is the result of len((1, 2, 3))?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "Error"
+      ],
+      "answer": "3"
+    },
+    {
+      "question": "Which function can convert a list into a tuple?",
+      "options": [
+        "tuple()",
+        "list()",
+        "set()",
+        "dict()"
+      ],
+      "answer": "tuple()"
+    },
+    {
+      "question": "What happens when you try to modify a tuple?",
+      "options": [
+        "Changes value",
+        "Adds new item",
+        "Deletes last item",
+        "TypeError"
+      ],
+      "answer": "TypeError"
+    },
+    {
+      "question": "Which operator joins two tuples?",
+      "options": [
+        "+",
+        "*",
+        "&",
+        "append()"
+      ],
+      "answer": "+"
+    },
+    {
+      "question": "Which method returns the number of occurrences of a value?",
+      "options": [
+        "count()",
+        "index()",
+        "find()",
+        "match()"
+      ],
+      "answer": "count()"
+    },
+    {
+      "question": "Which method gives the first index of a value?",
+      "options": [
+        "index()",
+        "find()",
+        "locate()",
+        "search()"
+      ],
+      "answer": "index()"
+    },
+    {
+      "question": "Tuples use which brackets?",
+      "options": [
+        "{}",
+        "[]",
+        "()",
+        "<>"
+      ],
+      "answer": "()"
+    }
+  ],
+  "useful_list_comprehension": [
+    {
+      "question": "What does enumerate() return?",
+      "options": [
+        "Index only",
+        "Value only",
+        "Index and value tuple",
+        "None"
+      ],
+      "answer": "Index and value tuple"
+    },
+    {
+      "question": "What is the result of: [x**2 for x in range(3)]?",
+      "options": [
+        "[1, 2, 3]",
+        "[0, 1, 4]",
+        "[1, 4, 9]",
+        "[0, 1, 2]"
+      ],
+      "answer": "[0, 1, 4]"
+    },
+    {
+      "question": "What does zip() do?",
+      "options": [
+        "Joins strings",
+        "Combines lists element-wise",
+        "Sorts a list",
+        "None"
+      ],
+      "answer": "Combines lists element-wise"
+    },
+    {
+      "question": "'apple' in ['apple', 'banana'] returns?",
+      "options": [
+        "True",
+        "False",
+        "Error",
+        "None"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Which line gets even numbers using list comprehension?",
+      "options": [
+        "[x for x in nums if x % 2 == 0]",
+        "[x for x in nums if x % 2]",
+        "[x for nums in x]",
+        "[x % 2 == 0 for x in nums]"
+      ],
+      "answer": "[x for x in nums if x % 2 == 0]"
+    },
+    {
+      "question": "What does random.shuffle() do?",
+      "options": [
+        "Deletes list",
+        "Sorts list",
+        "Shuffles list in-place",
+        "Copies list"
+      ],
+      "answer": "Shuffles list in-place"
+    },
+    {
+      "question": "Flatten [[1,2],[3,4]] using list comprehension?",
+      "options": [
+        "[num for num in matrix]",
+        "[num for row in matrix for num in row]",
+        "[matrix for row in num]",
+        "[for num in row for matrix]"
+      ],
+      "answer": "[num for row in matrix for num in row]"
+    },
+    {
+      "question": "Use random.choice(['a','b','c']) returns?",
+      "options": [
+        "Always 'a'",
+        "A random item",
+        "Index only",
+        "None"
+      ],
+      "answer": "A random item"
+    },
+    {
+      "question": "min([4, 1, 7]) gives?",
+      "options": [
+        "1",
+        "4",
+        "7",
+        "None"
+      ],
+      "answer": "1"
+    },
+    {
+      "question": "What's printed: [x.upper() for x in ['hi','bye']]?",
+      "options": [
+        "['hi', 'bye']",
+        "['HI', 'BYE']",
+        "['hi'.upper(), 'bye'.upper()]",
+        "Error"
+      ],
+      "answer": "['HI', 'BYE']"
+    }
+  ],
+  "variable_assignment": [
+    {
+      "question": "Which operator is used to assign a value to a variable?",
+      "options": [
+        "=",
+        "==",
+        ":=",
+        "->"
+      ],
+      "answer": "=",
+      "hint": "Used to assign values"
+    },
+    {
+      "question": "What data type is stored in x = \"Hello\"?",
+      "options": [
+        "String",
+        "Integer",
+        "Boolean",
+        "Float"
+      ],
+      "answer": "String",
+      "hint": "Enclosed in quotes"
+    },
+    {
+      "question": "Which is a valid variable name in Python?",
+      "options": [
+        "2value",
+        "_value",
+        "value$",
+        "for"
+      ],
+      "answer": "_value",
+      "hint": "Can start with underscore"
+    },
+    {
+      "question": "Result of x = 5; x + 3 is?",
+      "options": [
+        "8",
+        "53",
+        "Error",
+        "None"
+      ],
+      "answer": "8",
+      "hint": "5 + 3"
+    },
+    {
+      "question": "Which causes an error?",
+      "options": [
+        "x = \"5\"",
+        "y = 2.5",
+        "z = int(\"abc\")",
+        "w = True"
+      ],
+      "answer": "z = int(\"abc\")",
+      "hint": "\"abc\" is not a number"
+    },
+    {
+      "question": "Type of x after x = 3.0?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "answer": "float",
+      "hint": "Contains a decimal"
+    },
+    {
+      "question": "How to assign multiple variables at once?",
+      "options": [
+        "x, y = 1, 2",
+        "x = y = 1",
+        "Both above",
+        "None"
+      ],
+      "answer": "Both above",
+      "hint": "Both syntax work"
+    },
+    {
+      "question": "What’s the result of name.upper() if name = \"Sumon\"?",
+      "options": [
+        "sumon",
+        "SUMON",
+        "Sumon",
+        "Error"
+      ],
+      "answer": "SUMON",
+      "hint": "upper() means capital letters"
+    },
+    {
+      "question": "What value is stored by x = True?",
+      "options": [
+        "String",
+        "Boolean",
+        "Integer",
+        "Float"
+      ],
+      "answer": "Boolean",
+      "hint": "True or False"
+    },
+    {
+      "question": "What will print(type(5)) return?",
+      "options": [
+        "<class \"str\">",
+        "<class \"float\">",
+        "<class \"bool\">",
+        "<class \"int\">"
+      ],
+      "answer": "<class \"int\">",
+      "hint": "5 is an integer"
+    }
+  ],
+  "warm_project": [
+    {
+      "question": "Which function removes surrounding whitespace and capitalizes the first letter?",
+      "options": [
+        "lower()",
+        "strip()",
+        "clean_name()",
+        "title()"
+      ],
+      "answer": "clean_name()"
+    },
+    {
+      "question": "What does average([10, 20, 30]) return?",
+      "options": ["60", "20", "10", "None"],
+    "answer": "20"
+  },
+  {
+    "question": "Which method splits a sentence into words?",
+    "options": ["split()", "strip()", "title()", "format()"],
+    "answer": "split()"
+  },
+  {
+    "question": "What does map() function do?",
+    "options": ["Iterates manually", "Applies a function to each item", "Sorts a list", "None"],
+    "answer": "Applies a function to each item"
+  },
+  {
+    "question": "Which is used for filtering even numbers?",
+    "options": ["map()", "filter()", "lambda x: x**2", "sum()"],
+    "answer": "filter()"
+  },
+  {
+    "question": "What does *args allow?",
+    "options": ["Named arguments", "Flexible number of positional arguments", "Loops", "List unpacking"],
+    "answer": "Flexible number of positional arguments"
+  },
+  {
+    "question": "What is LEGB in Python?",
+    "options": ["Function types", "Scope resolution order", "Error system", "Loop structure"],
+    "answer": "Scope resolution order"
+  },
+  {
+    "question": "How do you access enclosing variables in nested functions?",
+    "options": ["use global", "use inner()", "refer to variable directly", "use nonlocal"],
+    "answer": "refer to variable directly"
+  },
+  {
+    "question": "Which built-in method gives the index of an item in list?",
+    "options": ["position()", "index()", "find()", "get()"],
+    "answer": "index()"
+  },
+  {
+    "question": "What keyword starts a lambda expression?",
+    "options": ["lambda", "def", "function", "map"],
+    "answer": "lambda"
+  }
+  ],
+
+  "ready_play": [
+    {
+      "question": "What is the default mode when the Tic Tac Toe game loads?",
+      "options": ["ai", "2p", "human", "bot"],
+      "answer": "ai",
+      "hint": "Check the value of the 'mode' variable at the top."
+    },
+    {
+      "question": "Which symbol does the AI play as in the game?",
+      "options": ["X", "O", "Z", "Random"],
+      "answer": "O",
+      "hint": "Player X always starts first. AI comes after."
+    },
+    {
+      "question": "What happens when a winning combination is detected?",
+      "options": [
+        "Game continues",
+        "Page reloads",
+        "Winning cells are highlighted and status message shows winner",
+        "An alert pops up"
+      ],
+      "answer": "Winning cells are highlighted and status message shows winner",
+      "hint": "Look into the checkWin() function."
+    },
+    {
+      "question": "What does the `resetGame()` function do?",
+      "options": [
+        "Restarts the page",
+        "Reloads browser",
+        "Clears the board and resets variables",
+        "Switches mode to 2p"
+      ],
+      "answer": "Clears the board and resets variables",
+      "hint": "Observe how it resets board state and UI."
+    },
+    {
+      "question": "What algorithm is used by the AI to choose its move?",
+      "options": ["Minimax", "Greedy", "Random", "Alpha-Beta"],
+      "answer": "Minimax",
+      "hint": "Check the function name getBestMove()."
+    },
+    {
+      "question": "Which player always starts the game?",
+      "options": ["O", "Random", "X", "User selects"],
+      "answer": "X",
+      "hint": "Look at the initial value of `currentPlayer`."
+    },
+    {
+      "question": "What triggers the AI move?",
+      "options": [
+        "Clicking a cell",
+        "Clicking the AI button",
+        "When it's O's turn in AI mode",
+        "Every 2 seconds"
+      ],
+      "answer": "When it's O's turn in AI mode",
+      "hint": "Follow the logic in `makeMove()`."
+    },
+    {
+      "question": "How is the winning combination visually indicated?",
+      "options": [
+        "Bold underline",
+        "Win text in cells",
+        "Background color and text color changes",
+        "Flashing animation"
+      ],
+      "answer": "Background color and text color changes",
+      "hint": "Check `.cell.win` CSS styling."
+    },
+    {
+      "question": "Which function updates the board after each move?",
+      "options": ["makeMove", "checkWin", "updateBoard", "getBestMove"],
+      "answer": "updateBoard",
+      "hint": "This handles the DOM cell updates."
+    },
+    {
+      "question": "What happens if all cells are filled and no player wins?",
+      "options": [
+        "AI makes another move",
+        "It's a draw!",
+        "Game resets",
+        "No action"
+      ],
+      "answer": "It's a draw!",
+      "hint": "Look at the logic after move validation."
+    }
+  ],
+
+  "oriented": [
+  {
+    "question": "Which keyword defines a class in Python?",
+    "options": ["object", "define", "class", "create"],
+    "answer": "class",
+    "hint": "It is a reserved keyword used to define classes."
+  },
+  {
+    "question": "What does the __init__ method do?",
+    "options": ["Closes the app", "Initializes an object", "Saves logs", "None"],
+    "answer": "Initializes an object",
+    "hint": "This method is called automatically when an object is created."
+  },
+  {
+    "question": "Encapsulation helps in:",
+    "options": ["Improving speed", "Hiding data", "Memory allocation", "Dynamic imports"],
+    "answer": "Hiding data",
+    "hint": "It keeps internal object details hidden from the outside."
+  },
+  {
+    "question": "What is returned by __str__?",
+    "options": ["List", "Integer", "Custom readable string", "Float"],
+    "answer": "Custom readable string",
+    "hint": "It's used to print human-readable descriptions of objects."
+  },
+  {
+    "question": "Which is an example of inheritance?",
+    "options": ["Class A(B):", "if else", "def sum():", "lambda x: x"],
+    "answer": "Class A(B):",
+    "hint": "This syntax means Class A inherits from B."
+  },
+  {
+    "question": "Polymorphism allows:",
+    "options": ["Same method, different behavior", "Multiple files", "Memory saving", "Static binding"],
+    "answer": "Same method, different behavior",
+    "hint": "One interface, many forms."
+  },
+  {
+    "question": "What is abstraction in OOP?",
+    "options": ["Importing files", "Hiding implementation", "Optimizing speed", "Removing methods"],
+    "answer": "Hiding implementation",
+    "hint": "Only show essential features and hide the background details."
+  },
+  {
+    "question": "Which method is used to represent an object for logging?",
+    "options": ["__str__", "__repr__", "__log__", "__init__"],
+    "answer": "__repr__",
+    "hint": "Used mostly for developers, gives detailed string output."
+  },
+  {
+    "question": "Which is used to define abstract classes?",
+    "options": ["math", "os", "abc", "numpy"],
+    "answer": "abc",
+    "hint": "The module `abc` stands for Abstract Base Classes."
+  },
+  {
+    "question": "Which design pattern does 'has-a' relationship define?",
+    "options": ["Polymorphism", "Abstraction", "Composition", "Inheritance"],
+    "answer": "Composition",
+    "hint": "It means one class contains another as an attribute."
+  }
+],
+
+  "obj_homework": [
+  {
+    "question": "What is the purpose of the __init__ method in a Python class?",
+    "options": [
+      "To destroy an object",
+      "To print values",
+      "To initialize an object’s attributes",
+      "To return a string"
+    ],
+    "answer": "To initialize an object’s attributes",
+    "hint": "It's a constructor."
+  },
+  {
+    "question": "Where is a class attribute defined in Python?",
+    "options": [
+      "Inside __init__",
+      "Inside any method",
+      "Outside all methods, at the class level",
+      "Inside main"
+    ],
+    "answer": "Outside all methods, at the class level",
+    "hint": "It's shared among all instances."
+  },
+  {
+    "question": "What does self refer to inside a method?",
+    "options": [
+      "The class name",
+      "A global variable",
+      "The current instance of the class",
+      "The method itself"
+    ],
+    "answer": "The current instance of the class",
+    "hint": "It refers to the object that calls the method."
+  },
+  {
+    "question": "Which of the following is a class attribute in the Circle example?",
+    "options": [
+      "radius",
+      "pi",
+      "get_circumference",
+      "self"
+    ],
+    "answer": "pi",
+    "hint": "It is shared by all instances of the class."
+  },
+  {
+    "question": "What does the bark method demonstrate?",
+    "options": [
+      "Class attribute usage",
+      "Inheritance",
+      "Encapsulation",
+      "Instance method calling an instance variable"
+    ],
+    "answer": "Instance method calling an instance variable",
+    "hint": "It prints a message using self.name."
+  },
+  {
+    "question": "What keyword is used to define a class in Python?",
+    "options": [
+      "class",
+      "def",
+      "object",
+      "self"
+    ],
+    "answer": "class",
+    "hint": "It's used at the very beginning of class definitions."
+  },
+  {
+    "question": "What happens if you forget to use self in a method definition?",
+    "options": [
+      "Nothing changes",
+      "It results in a syntax error",
+      "You can't access instance variables",
+      "The method won't be recognized"
+    ],
+    "answer": "You can't access instance variables",
+    "hint": "self links method to object properties."
+  },
+  {
+    "question": "How can you access a class attribute?",
+    "options": [
+      "Using the class name or self",
+      "Only using self",
+      "Only using class name",
+      "You can't access it"
+    ],
+    "answer": "Using the class name or self",
+    "hint": "Both Dog.species and self.species are valid."
+  },
+  {
+    "question": "What is the result of calling get_circumference() on a Circle with radius 2?",
+    "options": [
+      "6.28",
+      "12.56",
+      "3.14",
+      "4"
+    ],
+    "answer": "12.56",
+    "hint": "Use formula 2 * pi * radius with pi = 3.14"
+  },
+  {
+    "question": "Which principle is shown when you use a method like bark() inside a class?",
+    "options": [
+      "Polymorphism",
+      "Inheritance",
+      "Encapsulation",
+      "Abstraction"
+    ],
+    "answer": "Encapsulation",
+    "hint": "Behavior is bundled with data inside the object."
+  }
+],
+
+  "oop_che_sol": [
+    {
+      "question": "What does the constructor in the Customer class validate?",
+      "options": ["Name length", "Password strength", "Email format", "Phone number"],
+      "answer": "Email format",
+      "hint": "It checks if '@' is present."
+    },
+    {
+      "question": "Which feature is used in Product class to hide stock data?",
+      "options": ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"],
+      "answer": "Encapsulation",
+      "hint": "It uses private variables like __stock."
+    },
+    {
+      "question": "What pattern does the Logger class implement?",
+      "options": ["Factory", "Adapter", "Singleton", "Builder"],
+      "answer": "Singleton",
+      "hint": "Only one instance is allowed."
+    },
+    {
+      "question": "What is the role of abstract base classes like PaymentGateway?",
+      "options": ["To store payment logs", "To define shared variables", "To enforce method implementation", "To process payments directly"],
+      "answer": "To enforce method implementation",
+      "hint": "Abstract classes force subclasses to implement methods."
+    },
+    {
+      "question": "In the Vehicle example, what is speed_up designed to do?",
+      "options": ["Print speed", "Accelerate differently per vehicle", "Stop vehicles", "Display mileage"],
+      "answer": "Accelerate differently per vehicle",
+      "hint": "It is overridden in Car and Bike."
+    },
+    {
+      "question": "What concept is demonstrated by method override in Car and Bike?",
+      "options": ["Encapsulation", "Polymorphism", "Abstraction", "Static method"],
+      "answer": "Polymorphism",
+      "hint": "Same method name, different behavior."
+    },
+    {
+      "question": "What does the FileManager class use to ensure cleanup?",
+      "options": ["Loop", "Context manager", "Static method", "Try-except"],
+      "answer": "Context manager",
+      "hint": "It implements __enter__ and __exit__."
+    },
+    {
+      "question": "Why does Event use a class variable 'count'?",
+      "options": ["To count attendees", "To set a price", "To log events", "To keep a global counter"],
+      "answer": "To keep a global counter",
+      "hint": "Shared across all instances."
+    },
+    {
+      "question": "How does the EmailValidator validate format?",
+      "options": ["__call__ method", "property decorator", "regular expressions", "staticmethod"],
+      "answer": "__call__ method",
+      "hint": "Used to validate when instance is called like a function."
+    },
+    {
+      "question": "What is unique about the Config singleton?",
+      "options": ["It supports multiple configs", "It logs automatically", "It returns same instance on every creation", "It encrypts settings"],
+      "answer": "It returns same instance on every creation",
+      "hint": "A core idea of Singleton pattern."
+    }
+],
+
+  "mod_pack": [
+    {
+      "question": "Which file is executed when a Python package is imported?",
+      "options": [
+        "__main__.py",
+        "__init__.py",
+        "__start__.py",
+        "__package__.py"
+      ],
+      "answer": "__init__.py"
+    },
+    {
+      "question": "How do you import a specific function from a module?",
+      "options": [
+        "include function from module",
+        "from module import function",
+        "using module.function",
+        "require function from module"
+      ],
+      "answer": "from module import function"
+    },
+    {
+      "question": "What does 'import mymodule' do?",
+      "options": [
+        "Executes mymodule",
+        "Copies all functions",
+        "Links functions to scope",
+        "Loads module for use"
+      ],
+      "answer": "Loads module for use"
+    },
+    {
+      "question": "Where are reusable functions typically written?",
+      "options": [
+        "In main script",
+        "In a package",
+        "In a module file",
+        "In the interpreter"
+      ],
+      "answer": "In a module file"
+    },
+    {
+      "question": "Which syntax is used for aliasing a module?",
+      "options": [
+        "import math = m",
+        "use math as m",
+        "import math as m",
+        "alias math to m"
+      ],
+      "answer": "import math as m"
+    },
+    {
+      "question": "What is the purpose of a Python package?",
+      "options": [
+        "To speed up execution",
+        "To reuse modules",
+        "To define data types",
+        "To debug scripts"
+      ],
+      "answer": "To reuse modules"
+    },
+    {
+      "question": "What file is required in a folder to treat it as a package?",
+      "options": [
+        "__init__.py",
+        "main.py",
+        "package.py",
+        "index.py"
+      ],
+      "answer": "__init__.py"
+    },
+    {
+      "question": "Which statement imports a module from a subpackage?",
+      "options": [
+        "import subpackage.module",
+        "from subpackage import module",
+        "import package.subpackage.module",
+        "from package.subpackage import module"
+      ],
+      "answer": "from package.subpackage import module"
+    },
+    {
+      "question": "What is a common use of modules in large projects?",
+      "options": [
+        "To increase memory usage",
+        "To split code into manageable parts",
+        "To hide code from users",
+        "To define UI layout"
+      ],
+      "answer": "To split code into manageable parts"
+    },
+    {
+      "question": "What does `__name__ == '__main__'` ensure?",
+      "options": [
+        "Code runs only if imported",
+        "Code runs only in a browser",
+        "Code runs only when the script is executed directly",
+        "Code is ignored during import"
+      ],
+      "answer": "Code runs only when the script is executed directly"
+    }
+  ],
+
+  "all_in_one_all": [
+    {
+      "question": "What does the function `myfunc()` in one.py typically do in modular scripts?",
+      "options": [
+        "Executes mathematical operations",
+        "Prints a greeting or specific message",
+        "Saves data to a file",
+        "Runs a loop infinitely"
+      ],
+      "answer": "Prints a greeting or specific message"
+    },
+    {
+      "question": "Which statement correctly imports a function from a different module in Python?",
+      "options": [
+        "use module.function()",
+        "from module import function",
+        "require function from module",
+        "include function from module"
+      ],
+      "answer": "from module import function"
+    },
+    {
+      "question": "What is the purpose of using multiple files like one.py and two.py?",
+      "options": [
+        "To run scripts faster",
+        "To keep code organized and reusable",
+        "To compile the code automatically",
+        "To create backup copies"
+      ],
+      "answer": "To keep code organized and reusable"
+    },
+    {
+      "question": "If you define a variable in one.py, how can you access it from two.py?",
+      "options": [
+        "Copy and paste it manually",
+        "Use global keyword",
+        "Import one.py and access variable",
+        "Use os.system() to load"
+      ],
+      "answer": "Import one.py and access variable"
+    },
+    {
+      "question": "What is the role of the Explanation.txt file in this project?",
+      "options": [
+        "Stores configuration settings",
+        "Documents code behavior and logic",
+        "Contains the main application logic",
+        "Lists external libraries used"
+      ],
+      "answer": "Documents code behavior and logic"
+    },
+    {
+      "question": "Which keyword is used to reuse functions from another file?",
+      "options": [
+        "export",
+        "require",
+        "include",
+        "import"
+      ],
+      "answer": "import"
+    },
+    {
+      "question": "Which of the following is TRUE about modular programming?",
+      "options": [
+        "It increases code duplication",
+        "It reduces code reusability",
+        "It helps manage large projects",
+        "It prevents code reuse"
+      ],
+      "answer": "It helps manage large projects"
+    },
+    {
+      "question": "How do you ensure two.py can access a function from one.py in the same directory?",
+      "options": [
+        "from one import function",
+        "use one::function",
+        "import one.function",
+        "access function directly"
+      ],
+      "answer": "from one import function"
+    },
+    {
+      "question": "What happens when you execute two.py that imports a function from one.py?",
+      "options": [
+        "It throws a syntax error",
+        "It executes both the imported and main script",
+        "It ignores the imported file",
+        "It halts unless __init__ is used"
+      ],
+      "answer": "It executes both the imported and main script"
+    },
+    {
+      "question": "Why might a developer use `if __name__ == '__main__'` in one.py?",
+      "options": [
+        "To define package metadata",
+        "To prevent auto-execution when imported",
+        "To comment the main function",
+        "To mark as a submodule"
+      ],
+      "answer": "To prevent auto-execution when imported"
+    }
+  ],
+
+
+  "error_hand_unit": [
+    {
+      "question": "What error occurs when dividing by zero?",
+      "options": ["ZeroDivisionError", "ValueError", "ArithmeticError", "SyntaxError"],
+      "answer": "ZeroDivisionError"
+    },
+    {
+      "question": "What does ValueError indicate?",
+      "options": ["Invalid value type", "Syntax issue", "Missing variable", "Permission denied"],
+      "answer": "Invalid value type"
+    },
+    {
+      "question": "Which error happens when accessing a missing dictionary key?",
+      "options": ["KeyError", "AttributeError", "IndexError", "NoneError"],
+      "answer": "KeyError"
+    },
+    {
+      "question": "How to catch a missing file?",
+      "options": ["FileNotFoundError", "OpenError", "ReadError", "None"],
+      "answer": "FileNotFoundError"
+    },
+    {
+      "question": "What error is raised for missing module imports?",
+      "options": ["ImportError", "ModuleError", "NameError", "SyntaxError"],
+      "answer": "ImportError"
+    },
+    {
+      "question": "Which error is triggered when index is out of range?",
+      "options": ["IndexError", "OverflowError", "KeyError", "LookupError"],
+      "answer": "IndexError"
+    },
+    {
+      "question": "What is the output of assert 2+2==5?",
+      "options": ["AssertionError", "TypeError", "RuntimeError", "None"],
+      "answer": "AssertionError"
+    },
+    {
+      "question": "Which error occurs on invalid string to int conversion?",
+      "options": ["ValueError", "TypeError", "ConversionError", "FloatError"],
+      "answer": "ValueError"
+    },
+    {
+      "question": "What happens when calling a method on None?",
+      "options": ["AttributeError", "NoneTypeError", "MethodError", "CallError"],
+      "answer": "AttributeError"
+    },
+    {
+      "question": "How do you raise a custom error?",
+      "options": ["raise Exception()", "throw()", "Error()", "assert False"],
+      "answer": "raise Exception()"
+    }
+  ],
+
+
+    "simple_py": [
+        {
+            "question": "What does the function cap_text() return when passed 'hello world'?",
+            "options": [
+                "Hello world",
+                "Hello World",
+                "HELLO WORLD",
+                "hello world"
+            ],
+            "answer": "Hello World"
+        },
+        {
+            "question": "In the first script, what are the values of 'first' and 'second' printed?",
+            "options": [
+                "2 and 1",
+                "1 and 2",
+                "0 and 1",
+                "None"
+            ],
+            "answer": "1 and 2"
+        },
+        {
+            "question": "What is the purpose of the unittest module?",
+            "options": [
+                "Create GUIs",
+                "Automate testing",
+                "Handle exceptions",
+                "Generate PDFs"
+            ],
+            "answer": "Automate testing"
+        },
+        {
+            "question": "What error does the second version of myfunc fix?",
+            "options": [
+                "SyntaxError",
+                "TypeError",
+                "String vs variable error",
+                "NameError"
+            ],
+            "answer": "String vs variable error"
+        },
+        {
+            "question": "Which function helps convert the first letter of each word to uppercase?",
+            "options": [
+                "capitalize()",
+                "upper()",
+                "title()",
+                "lower()"
+            ],
+            "answer": "title()"
+        }
+    ],
+
+  "warmup_intro_project": [
+  {
+    "question": "What does the Card class represent?",
+    "options": ["Deck of cards", "Single playing card", "Card suit", "Card value dictionary"],
+    "answer": "Single playing card"
+  },
+  {
+    "question": "Which method shuffles the deck in-place?",
+    "options": ["deal_one", "append", "shuffle", "randomize"],
+    "answer": "shuffle"
+  },
+  {
+    "question": "What does the Player class method remove_one() do?",
+    "options": ["Adds card", "Deals card", "Removes card from top", "Shuffles hand"],
+    "answer": "Removes card from top"
+  },
+  {
+    "question": "Which built-in Python method is used to combine two lists?",
+    "options": ["append", "merge", "extend", "add"],
+    "answer": "extend"
+  },
+  {
+    "question": "How many cards does each player start with?",
+    "options": ["13", "26", "52", "10"],
+    "answer": "26"
+  },
+  {
+    "question": "What happens if both players draw cards of equal value?",
+    "options": ["Game ends", "Start over", "WAR declared", "Shuffle deck"],
+    "answer": "WAR declared"
+  },
+  {
+    "question": "What does pop(0) mean in remove_one()?",
+    "options": ["Remove from bottom", "Add to top", "Remove from top", "Random card"],
+    "answer": "Remove from top"
+  },
+  {
+    "question": "What is the win condition in the war game?",
+    "options": ["Out of suits", "All cards collected", "Only jokers remain", "Tie after 10 rounds"],
+    "answer": "All cards collected"
+  },
+  {
+    "question": "Which data structure holds the deck?",
+    "options": ["Set", "Tuple", "List", "Dictionary"],
+    "answer": "List"
+  },
+  {
+    "question": "What triggers the 'WAR!' message?",
+    "options": ["Card value match", "Suit match", "Deck empty", "Value too low"],
+    "answer": "Card value match"
+  }
+],
+
+  "walkthrough_steps": [
+  {
+    "question": "What is the purpose of the Card class?",
+    "options": ["Track chips", "Deal cards", "Represent a single playing card", "Shuffle the deck"],
+    "answer": "Represent a single playing card"
+  },
+  {
+    "question": "Which class holds all 52 cards?",
+    "options": ["Chips", "Hand", "Deck", "Card"],
+    "answer": "Deck"
+  },
+  {
+    "question": "What method is used to randomize the deck?",
+    "options": ["sort()", "mix()", "shuffle()", "randomize()"],
+    "answer": "shuffle()"
+  },
+  {
+    "question": "What does the 'aces' attribute in Hand class track?",
+    "options": ["Total cards", "Face cards", "Ace cards", "Jokers"],
+    "answer": "Ace cards"
+  },
+  {
+    "question": "Which function updates the player’s balance after a win?",
+    "options": ["deal()", "win_bet()", "show_all()", "add_card()"],
+    "answer": "win_bet()"
+  }
+],
+
+  "blackjack_solution": [
+  {
+    "question": "What does the Card class represent?",
+    "options": ["A player", "Deck of cards", "Single playing card", "Betting system"],
+    "answer": "Single playing card"
+  },
+  {
+    "question": "What happens when you call adjust_for_ace()?",
+    "options": ["Add new cards", "Deal extra card", "Convert Ace from 11 to 1 if needed", "Reset hand"],
+    "answer": "Convert Ace from 11 to 1 if needed"
+  },
+  {
+    "question": "Which method removes and returns the top card?",
+    "options": ["deal_one()", "append()", "add_card()", "hit()"],
+    "answer": "deal_one()"
+  },
+  {
+    "question": "What happens when the player busts?",
+    "options": ["Player wins", "Chips double", "Game ends", "Dealer loses"],
+    "answer": "Game ends"
+  },
+  {
+    "question": "What does the Deck class use to create cards?",
+    "options": ["A for loop", "A dictionary", "List comprehension", "append only"],
+    "answer": "List comprehension"
+  }
+],
+
+  "advanced_solution": [
+  {
+    "question": "Which data structures are tested in Advanced Objects?",
+    "options": ["Only strings", "Only numbers", "Strings, lists, sets, dicts", "Only lists"],
+    "answer": "Strings, lists, sets, dicts"
+  },
+  {
+    "question": "What does a context manager ensure?",
+    "options": ["Random file closing", "Manual cleanup", "Automatic cleanup", "Multiple file copies"],
+    "answer": "Automatic cleanup"
+  },
+  {
+    "question": "Which method allows combining two lists?",
+    "options": ["map", "filter", "zip", "join"],
+    "answer": "zip"
+  },
+  {
+    "question": "What's the benefit of using get() in a dictionary?",
+    "options": ["Error-free access", "Speed boost", "Saves RAM", "Removes duplicates"],
+    "answer": "Error-free access"
+  },
+  {
+    "question": "What module is commonly used with contextlib?",
+    "options": ["math", "collections", "random", "contextlib"],
+    "answer": "contextlib"
+  }
+],
+
+  "all_empty_all": [
+  {
+    "question": "Which method adds an item to a list?",
+    "options": ["add()", "insert()", "append()", "push()"],
+    "answer": "append()",
+    "hint": "Commonly used to grow the list at the end"
+  },
+  {
+    "question": "What does list indexing start at in Python?",
+    "options": ["1", "0", "-1", "Depends"],
+    "answer": "0",
+    "hint": "It’s a zero-based index language"
+  },
+  {
+    "question": "Which method removes the last item?",
+    "options": ["remove()", "pop()", "del", "discard()"],
+    "answer": "pop()",
+    "hint": "Removes from the end"
+  },
+  {
+    "question": "How do you combine two lists?",
+    "options": ["list1 + list2", "list1.append(list2)", "list1.merge(list2)", "combine(list1, list2)"],
+    "answer": "list1 + list2",
+    "hint": "Think + operator"
+  },
+  {
+    "question": "Which method removes a specific item?",
+    "options": ["pop()", "del()", "remove()", "drop()"],
+    "answer": "remove()",
+    "hint": "Used for specific values"
+  },
+  {
+    "question": "What does len([1,2,3]) return?",
+    "options": ["2", "3", "4", "Error"],
+    "answer": "3",
+    "hint": "Counts all items"
+  },
+  {
+    "question": "What is the output of [1,2]*2?",
+    "options": ["[2,4]", "[1,2,1,2]", "[1,2,2,4]", "Error"],
+    "answer": "[1,2,1,2]",
+    "hint": "Repeats the list"
+  },
+  {
+    "question": "Which of these checks if 3 is in the list [1, 2, 3]?",
+    "options": ["3 in [1, 2, 3]", "[1,2,3].has(3)", "contains([1,2,3], 3)", "find(3) in list"],
+    "answer": "3 in [1, 2, 3]",
+    "hint": "Use `in` keyword"
+  },
+  {
+    "question": "How to sort a list?",
+    "options": ["list.sort()", "sort(list)", "sorted(list)", "Both A and C"],
+    "answer": "Both A and C",
+    "hint": "Both sort in-place and return-based are valid"
+  },
+  {
+    "question": "What does list.reverse() do?",
+    "options": ["Sorts descending", "Returns reversed", "Reverses in place", "Deletes reverse"],
+    "answer": "Reverses in place",
+    "hint": "It mutates the original list"
+  }
+],
+
+  "build_in_solution": [
+  {
+    "question": "What does the `map()` function do in Python?",
+    "options": [
+      "Maps one dictionary to another",
+      "Applies a function to each item in an iterable",
+      "Creates a new key-value pair",
+      "Filters items in a list"
+    ],
+    "answer": "Applies a function to each item in an iterable",
+    "hint": "Think of applying transformations across data"
+  },
+  {
+    "question": "Which function returns the length of an object?",
+    "options": ["size()", "count()", "len()", "length()"],
+    "answer": "len()",
+    "hint": "It's a 3-letter built-in function"
+  },
+  {
+    "question": "What is the result of `sum([1, 2, 3])`?",
+    "options": ["6", "123", "5", "Error"],
+    "answer": "6",
+    "hint": "Adds all elements"
+  },
+  {
+    "question": "Which built-in function can sort an iterable?",
+    "options": ["order()", "sorted()", "arrange()", "sequence()"],
+    "answer": "sorted()",
+    "hint": "Alphabetically and numerically sorts"
+  },
+  {
+    "question": "What does the `filter()` function return?",
+    "options": [
+      "List of items that meet a condition",
+      "All true values in a list",
+      "Modified list",
+      "Sum of all values"
+    ],
+    "answer": "List of items that meet a condition",
+    "hint": "Used to select matching values"
+  },
+  {
+    "question": "Which function is used to get the ASCII value of a character?",
+    "options": ["ascii()", "ord()", "char()", "chr()"],
+    "answer": "ord()",
+    "hint": "Opposite of chr()"
+  },
+  {
+    "question": "What is the output of `max([4, 7, 2])`?",
+    "options": ["4", "7", "2", "13"],
+    "answer": "7",
+    "hint": "Find the highest number"
+  },
+  {
+    "question": "Which function returns the absolute value of a number?",
+    "options": ["abs()", "absolute()", "fabs()", "mod()"],
+    "answer": "abs()",
+    "hint": "Returns positive version of a number"
+  },
+  {
+    "question": "How to convert a string to an integer?",
+    "options": ["int('5')", "str(5)", "float('5')", "char('5')"],
+    "answer": "int('5')",
+    "hint": "Wrap with int()"
+  },
+  {
+    "question": "Which function returns the smallest item in an iterable?",
+    "options": ["min()", "least()", "smallest()", "lower()"],
+    "answer": "min()",
+    "hint": "The opposite of max()"
+  }
+],
+
+  "home_decorator": [
+    {
+      "question": "What is a decorator in Python?",
+      "options": [
+        "A special kind of loop",
+        "A function that returns another function",
+        "A class method",
+        "A built-in data type"
+      ],
+      "answer": "A function that returns another function"
+    },
+    {
+      "question": "What does the *args and **kwargs allow you to do in a decorator?",
+      "options": [
+        "Store values",
+        "Print arguments",
+        "Handle any number of positional and keyword arguments",
+        "None of the above"
+      ],
+      "answer": "Handle any number of positional and keyword arguments"
+    },
+    {
+      "question": "Which built-in Python module helps preserve function metadata when using decorators?",
+      "options": ["functools", "os", "sys", "math"],
+      "answer": "functools"
+    },
+    {
+      "question": "Where do you place the decorator syntax in Python?",
+      "options": [
+        "After the function body",
+        "Inside the function",
+        "Above the function definition",
+        "Below the function call"
+      ],
+      "answer": "Above the function definition"
+    },
+    {
+      "question": "What is the purpose of functools.wraps()?",
+      "options": [
+        "To execute a function",
+        "To preserve metadata of original function",
+        "To wrap multiple functions",
+        "To debug code"
+      ],
+      "answer": "To preserve metadata of original function"
+    },
+    {
+      "question": "What does the wrapper function typically do in a decorator?",
+      "options": [
+        "Calls another decorator",
+        "Returns a class",
+        "Extends or modifies behavior of a function",
+        "Deletes the original function"
+      ],
+      "answer": "Extends or modifies behavior of a function"
+    },
+    {
+      "question": "Which symbol is used to apply a decorator?",
+      "options": ["@", "#", "&", "$"],
+      "answer": "@"
+    },
+    {
+      "question": "Can a decorator return something other than a function?",
+      "options": [
+        "Yes, any object",
+        "No, only a function",
+        "Only integers",
+        "Only strings"
+      ],
+      "answer": "Yes, any object"
+    },
+    {
+      "question": "What will be the output of a decorated function if the wrapper doesn’t return anything?",
+      "options": [
+        "The original function output",
+        "None",
+        "An error",
+        "A warning"
+      ],
+      "answer": "None"
+    },
+    {
+      "question": "How do you apply multiple decorators to one function?",
+      "options": [
+        "Stack them with multiple @ symbols",
+        "Separate them by commas",
+        "Use semicolons",
+        "It’s not allowed"
+      ],
+      "answer": "Stack them with multiple @ symbols"
+    }
+  ],
+
+  "math_datetime_open_collect": [
+    {
+      "question": "What does the `Counter()` function from `collections` module do?",
+      "options": [
+        "Sorts elements",
+        "Counts the frequency of elements",
+        "Removes duplicates",
+        "Converts list to string"
+      ],
+      "answer": "Counts the frequency of elements",
+      "hint": "It tracks how many times each item appears."
+    },
+    {
+      "question": "What does `defaultdict(int)` prevent?",
+      "options": [
+        "Duplicate keys",
+        "Syntax errors",
+        "KeyErrors for missing keys",
+        "TypeErrors in dictionaries"
+      ],
+      "answer": "KeyErrors for missing keys",
+      "hint": "It provides a default value when key is missing."
+    },
+    {
+      "question": "How does `namedtuple()` enhance a tuple?",
+      "options": [
+        "Makes it mutable",
+        "Adds index access",
+        "Adds named fields",
+        "Makes it hashable"
+      ],
+      "answer": "Adds named fields",
+      "hint": "It allows access to elements like attributes."
+    },
+    {
+      "question": "Which data structure allows quick append and pop from both ends?",
+      "options": [
+        "list",
+        "set",
+        "deque",
+        "tuple"
+      ],
+      "answer": "deque",
+      "hint": "It's a double-ended queue."
+    },
+    {
+      "question": "Which function is best for writing to a file?",
+      "options": [
+        "print()",
+        "write()",
+        "open() with mode 'w'",
+        "append()"
+      ],
+      "answer": "open() with mode 'w'",
+      "hint": "It allows writing and auto-closing with 'with' statement."
+    },
+    {
+      "question": "What does `datetime.now()` return?",
+      "options": [
+        "Current time in UTC",
+        "Today's date only",
+        "A static timestamp",
+        "Current date and time"
+      ],
+      "answer": "Current date and time",
+      "hint": "It includes both date and time."
+    },
+    {
+      "question": "What does `math.sqrt(25)` return?",
+      "options": [
+        "5.0",
+        "25",
+        "125",
+        "Error"
+      ],
+      "answer": "5.0",
+      "hint": "It gives the square root."
+    },
+    {
+      "question": "Which module is used for random choices?",
+      "options": [
+        "math",
+        "random",
+        "statistics",
+        "collections"
+      ],
+      "answer": "random",
+      "hint": "It's a built-in module for randomness."
+    },
+    {
+      "question": "What does `random.choice(['a','b','c'])` do?",
+      "options": [
+        "Shuffles the list",
+        "Returns a random element",
+        "Sorts the list",
+        "Removes duplicates"
+      ],
+      "answer": "Returns a random element",
+      "hint": "It selects one item at random."
+    },
+    {
+      "question": "Which of the following modules helps with date and time?",
+      "options": [
+        "math",
+        "datetime",
+        "os",
+        "string"
+      ],
+      "answer": "datetime",
+      "hint": "It handles both dates and times."
+    }
+  ],
+
+  "deb_regular_timing_code": [
+    {
+      "question": "What function allows you to set breakpoints for debugging in Python?",
+      "options": [
+        "breakpoint()",
+        "trace()",
+        "pdb.set_trace()",
+        "debugger()"
+      ],
+      "answer": "pdb.set_trace()"
+    },
+    {
+      "question": "Which module is used for regular expressions in Python?",
+      "options": [
+        "regex",
+        "re",
+        "pattern",
+        "match"
+      ],
+      "answer": "re"
+    },
+    {
+      "question": "Which function is best for checking code execution time?",
+      "options": [
+        "time()",
+        "clock()",
+        "sleep()",
+        "timeit"
+      ],
+      "answer": "timeit"
+    },
+    {
+      "question": "Which Python function writes content into a file?",
+      "options": [
+        "open()",
+        "write()",
+        "read()",
+        "zip()"
+      ],
+      "answer": "write()"
+    },
+    {
+      "question": "Which method lets you create a compressed ZIP archive?",
+      "options": [
+        "shutil.archive()",
+        "zipfile.ZipFile()",
+        "gzip.compress()",
+        "os.zip()"
+      ],
+      "answer": "zipfile.ZipFile()"
+    },
+    {
+      "question": "What does re.search() return if the pattern is not found?",
+      "options": [
+        "False",
+        "None",
+        "0",
+        "Error"
+      ],
+      "answer": "None"
+    },
+    {
+      "question": "Which is a faster method for converting numbers to strings in large loops?",
+      "options": [
+        "for loop",
+        "map()",
+        "append()",
+        "filter()"
+      ],
+      "answer": "map()"
+    },
+    {
+      "question": "Which file mode is used to read and write a file simultaneously?",
+      "options": [
+        "'r'",
+        "'w'",
+        "'r+'",
+        "'a'"
+      ],
+      "answer": "'r+'"
+    },
+    {
+      "question": "Which function opens a file for both reading and writing?",
+      "options": [
+        "open('file.txt', 'rw')",
+        "open('file.txt', 'r+')",
+        "file.open('r+')",
+        "openfile('rw')"
+      ],
+      "answer": "open('file.txt', 'r+')"
+    },
+    {
+      "question": "What keyword is used to match a pattern at the beginning of a string?",
+      "options": [
+        "re.search()",
+        "re.match()",
+        "re.findall()",
+        "re.compile()"
+      ],
+      "answer": "re.match()"
+    }
+  ],
+
+
+  "scraping": [
+    {
+      "question": "Which Python library is commonly used for web scraping?",
+      "options": ["NumPy", "pandas", "BeautifulSoup", "matplotlib"],
+      "answer": "BeautifulSoup"
+    },
+    {
+      "question": "Which method retrieves all matching tags in BeautifulSoup?",
+      "options": ["find()", "select()", "get()", "find_all()"],
+      "answer": "find_all()"
+    },
+    {
+      "question": "What HTTP library is typically used with BeautifulSoup?",
+      "options": ["socket", "urllib", "http", "requests"],
+      "answer": "requests"
+    },
+    {
+      "question": "What does the .text attribute of a soup object return?",
+      "options": ["Tag attributes", "Raw HTML", "Text content", "Scripts"],
+      "answer": "Text content"
+    },
+    {
+      "question": "Which tag is used to extract hyperlinks?",
+      "options": ["<link>", "<href>", "<url>", "<a>"],
+      "answer": "<a>"
+    },
+    {
+      "question": "Which BeautifulSoup parser is most commonly used?",
+      "options": ["html", "xml", "lxml", "json"],
+      "answer": "lxml"
+    },
+    {
+      "question": "Which method extracts attributes from HTML tags?",
+      "options": ["attrs", "get_attr", "property", "text"],
+      "answer": "attrs"
+    },
+    {
+      "question": "How can you simulate a browser visit in Python?",
+      "options": ["urllib", "scrapy", "headers in requests", "open()"],
+      "answer": "headers in requests"
+    },
+    {
+      "question": "Which exception should be handled when requests fail?",
+      "options": ["SyntaxError", "NameError", "requests.exceptions.RequestException", "KeyError"],
+      "answer": "requests.exceptions.RequestException"
+    },
+    {
+      "question": "What is the role of user-agent in scraping?",
+      "options": ["URL resolver", "Security header", "Identify client", "Cache manager"],
+      "answer": "Identify client"
+    }
+  ],
+
+
+  "image_working": [
+    {
+      "question": "Which Python library is commonly used for image processing?",
+      "options": [
+        "NumPy",
+        "pandas",
+        "PIL",
+        "matplotlib"
+      ],
+      "answer": "PIL",
+      "hint": "It stands for Python Imaging Library"
+    },
+    {
+      "question": "What function displays an image using PIL?",
+      "options": [
+        "image.display()",
+        "image.show()",
+        "image.view()",
+        "image.render()"
+      ],
+      "answer": "image.show()",
+      "hint": "It's a method of the Image object"
+    },
+    {
+      "question": "What method splits an image into RGB channels?",
+      "options": [
+        "separate()",
+        "split()",
+        "extract()",
+        "divide()"
+      ],
+      "answer": "split()",
+      "hint": "It's a method of the Image object"
+    },
+    {
+      "question": "Which method is used to merge color channels in PIL?",
+      "options": [
+        "combine()",
+        "fuse()",
+        "merge()",
+        "blend()"
+      ],
+      "answer": "merge()",
+      "hint": "Think of putting RGB channels together"
+    },
+    {
+      "question": "What image format supports alpha transparency?",
+      "options": [
+        "JPEG",
+        "GIF",
+        "PNG",
+        "BMP"
+      ],
+      "answer": "PNG",
+      "hint": "It's widely used for transparent images"
+    },
+    {
+      "question": "Which PIL module allows drawing shapes and text?",
+      "options": [
+        "ImageDraw",
+        "ImageEdit",
+        "DrawTool",
+        "PILCanvas"
+      ],
+      "answer": "ImageDraw",
+      "hint": "You import it from PIL"
+    },
+    {
+      "question": "What function adds text to an image?",
+      "options": [
+        "draw.text()",
+        "image.putText()",
+        "write_text()",
+        "img.annotate()"
+      ],
+      "answer": "draw.text()",
+      "hint": "It\u2019s a method of the ImageDraw object"
+    },
+    {
+      "question": "How do you paste an image using a mask?",
+      "options": [
+        "paste(mask)",
+        "add(mask)",
+        "paste(image, mask)",
+        "image.paste()"
+      ],
+      "answer": "image.paste()",
+      "hint": "Check the example with the 'mask.png'"
+    },
+    {
+      "question": "What image file is used for annotations in the example?",
+      "options": [
+        "mask.png",
+        "example.jpg",
+        "pencils.jpg",
+        "word_matrix.png"
+      ],
+      "answer": "pencils.jpg",
+      "hint": "It\u2019s where 'Hello!' is drawn"
+    },
+    {
+      "question": "Which PIL method is used to load an image file?",
+      "options": [
+        "Image.open()",
+        "Image.read()",
+        "Image.load()",
+        "cv2.imread()"
+      ],
+      "answer": "Image.open()",
+      "hint": "It\u2019s similar to opening a file in Python"
+    }
+  ],
+
+  "some_practice": [
+  {
+    "question": "Q1: Which module is used to read CSV files in Python?",
+    "options": ["os", "json", "csv", "xml"],
+    "answer": 2,
+    "hint": "It's a built-in module specifically for CSVs"
+  },
+  {
+    "question": "Q2: What does csv.DictReader return?",
+    "options": ["List", "String", "Dictionary", "Iterator of dictionaries"],
+    "answer": 3,
+    "hint": "Used for accessing columns by name"
+  },
+  {
+    "question": "Q3: Why use newline='' when writing CSVs?",
+    "options": ["To enable encryption", "To prevent extra lines", "To allow tabular input", "To split by words"],
+    "answer": 1,
+    "hint": "Avoid double spacing"
+  },
+  {
+    "question": "Q4: What method is used to write rows in a CSV?",
+    "options": ["write()", "writer.write()", "writer.writerow()", "file.write_csv()"],
+    "answer": 2,
+    "hint": "writer + function name"
+  },
+  {
+    "question": "Q5: Which library helps extract text from PDFs?",
+    "options": ["requests", "PyPDF2", "matplotlib", "csv"],
+    "answer": 1,
+    "hint": "Python PDF module"
+  },
+  {
+    "question": "Q6: How do you get the first page of a PDF using PyPDF2?",
+    "options": ["reader.page[0]", "reader.get(0)", "reader.pages[0]", "reader[0]"],
+    "answer": 2,
+    "hint": "It's a list of pages"
+  },
+  {
+    "question": "Q7: Which file mode is used to write a new CSV file?",
+    "options": ["'r'", "'w'", "'a'", "'x'"],
+    "answer": 1,
+    "hint": "Think overwrite"
+  },
+  {
+    "question": "Q8: What does page.extract_text() return?",
+    "options": ["HTML", "Images", "Text", "Tables"],
+    "answer": 2,
+    "hint": "The visible content"
+  },
+  {
+    "question": "Q9: What file format does PdfReader work with?",
+    "options": [".docx", ".pdf", ".txt", ".csv"],
+    "answer": 1,
+    "hint": "PDF-specific"
+  },
+  {
+    "question": "Q10: What happens if you don’t use newline='' in csv.writer?",
+    "options": ["It fails", "Extra new lines appear", "Deletes content", "Skips rows"],
+    "answer": 1,
+    "hint": "Formatting issue"
+  }
+],
+
+
+  "csv_with": [
+    {
+      "question": "What does the command `!pwd` return in a Jupyter notebook?",
+      "options": ["Prints the present working directory", "Prints working document", "Opens a file", "Prints Python version"],
+      "answer": "Prints the present working directory",
+      "hint": "Think about checking your current location in the file system."
+    },
+    {
+      "question": "Which module must be imported to work with CSV files in Python?",
+      "options": ["os", "json", "csv", "pandas"],
+      "answer": "csv",
+      "hint": "It's a built-in module specifically for comma-separated values."
+    },
+    {
+      "question": "Why is `encoding='utf-8'` used when opening a file?",
+      "options": ["To make it faster", "To write binary data", "To support special characters", "To lock the file"],
+      "answer": "To support special characters",
+      "hint": "Useful when dealing with symbols or non-English text."
+    },
+    {
+      "question": "What does `csv.reader()` do?",
+      "options": ["Writes CSV data", "Reads CSV file line-by-line", "Converts file to JSON", "Creates directories"],
+      "answer": "Reads CSV file line-by-line",
+      "hint": "Used for parsing text files in CSV format."
+    },
+    {
+      "question": "Why is `list(csv_reader)` used?",
+      "options": ["To write to CSV", "To convert to JSON", "To view all rows as a list", "To skip headers"],
+      "answer": "To view all rows as a list",
+      "hint": "This changes an iterator to something you can slice or preview."
+    },
+    {
+      "question": "What does `next(csv_reader)` do?",
+      "options": ["Repeats the last row", "Skips the header row", "Saves a row", "Quits the loop"],
+      "answer": "Skips the header row",
+      "hint": "Moves the reader one step forward, usually to skip the first row."
+    },
+    {
+      "question": "Which loop structure is used to iterate CSV rows?",
+      "options": ["while row in csv_reader", "for row in csv_reader", "if row in csv_reader", "with row in csv_reader"],
+      "answer": "for row in csv_reader",
+      "hint": "The most common way to loop over iterable objects in Python."
+    },
+    {
+      "question": "Why use `newline=''` when opening a file for writing CSVs?",
+      "options": ["To add extra lines", "To escape newlines", "To prevent blank lines", "To speed up writing"],
+      "answer": "To prevent blank lines",
+      "hint": "Prevents each row from being separated by a blank line."
+    },
+    {
+      "question": "What is the purpose of `csv.writer()`?",
+      "options": ["Read CSV", "Convert CSV to list", "Write rows to CSV", "Open folders"],
+      "answer": "Write rows to CSV",
+      "hint": "Use this before using writerow or writerows."
+    },
+    {
+      "question": "Which method writes a single row to a CSV file?",
+      "options": ["write.csv()", "writerow()", "write_row()", "csv.write()"],
+      "answer": "writerow()",
+      "hint": "This function writes one row at a time."
+    }
+  ],
+
+
+  "emailing_python": [
+    {
+      "question": "Which library is used to send emails in Python?",
+      "options": [
+        "imaplib",
+        "smtplib",
+        "requests",
+        "email"
+      ],
+      "answer": "smtplib",
+      "hint": "Think of SMTP"
+    },
+    {
+      "question": "Which method logs into Gmail via IMAP?",
+      "options": [
+        "imaplib.login()",
+        "imaplib.connect()",
+        "IMAP4_SSL.login()",
+        "IMAP.open()"
+      ],
+      "answer": "IMAP4_SSL.login()",
+      "hint": "Look at the secure class"
+    },
+    {
+      "question": "What is the port for TLS with Gmail SMTP?",
+      "options": [
+        "465",
+        "25",
+        "110",
+        "587"
+      ],
+      "answer": "587",
+      "hint": "TLS usually uses this port"
+    },
+    {
+      "question": "What does `email.message_from_bytes()` do?",
+      "options": [
+        "Create raw email",
+        "Convert byte to message",
+        "Send message",
+        "Decode subject"
+      ],
+      "answer": "Convert byte to message",
+      "hint": "Parsing incoming email"
+    },
+    {
+      "question": "What does 'mail.select(\"inbox\")' do?",
+      "options": [
+        "Logs in",
+        "Fetches unread",
+        "Selects mailbox",
+        "Deletes mail"
+      ],
+      "answer": "Selects mailbox",
+      "hint": "Mailbox access"
+    }
+  ],
+
+
+  "pods_advanced_all_in_one": [
+    {
+      "question": "What does a list comprehension do?",
+      "options": ["Sorts lists", "Creates lists using loops", "Joins two lists", "Deletes elements"],
+      "answer": 1,
+      "hint": "It's a concise way to build lists"
+    },
+    {
+      "question": "Which function helps transform items in a list?",
+      "options": ["filter()", "lambda", "map()", "zip()"],
+      "answer": 2,
+      "hint": "It 'maps' one list to another"
+    },
+    {
+      "question": "Which function is best for filtering a list?",
+      "options": ["map()", "filter()", "reduce()", "join()"],
+      "answer": 1,
+      "hint": "It filters based on a condition"
+    },
+    {
+      "question": "How do you reverse a list in Python?",
+      "options": ["list[::-1]", "list.reverse()", "Both", "None"],
+      "answer": 2,
+      "hint": "Both slicing and method work"
+    },
+    {
+      "question": "What does enumerate() return?",
+      "options": ["Only values", "Only indices", "Tuples of index and value", "Sorted list"],
+      "answer": 2,
+      "hint": "Used when you want index and item"
+    },
+    {
+      "question": "Which module provides square root and pi?",
+      "options": ["random", "decimal", "math", "re"],
+      "answer": 2,
+      "hint": "It includes trigonometric and logarithmic functions"
+    },
+    {
+      "question": "How do you create a dictionary from a list of keys with default value 0?",
+      "options": ["dict.fromkeys(keys, 0)", "defaultdict(0)", "dict(keys)", "{k:0 for k in keys}"],
+      "answer": 0,
+      "hint": "Use this built-in dict method"
+    },
+    {
+      "question": "Which data structure ignores duplicates?",
+      "options": ["List", "Tuple", "Set", "Dictionary"],
+      "answer": 2,
+      "hint": "It’s unordered and stores only unique values"
+    },
+    {
+      "question": "What does this return: Fraction(1, 2) + Fraction(1, 4)?",
+      "options": ["0.75", "3/4", "0.5", "1"],
+      "answer": 1,
+      "hint": "The answer remains in fraction form"
+    },
+    {
+      "question": "What is the purpose of defaultdict in Python?",
+      "options": ["To count values", "To avoid key errors", "To sort data", "To convert to list"],
+      "answer": 1,
+      "hint": "It supplies default values for missing keys"
+    }
+  ],
+
+
+  "python_context_managers": [
+  {
+    "question": "What is the purpose of a context manager in Python?",
+    "options": ["To manage global variables", "To handle errors", "To properly manage resources", "To improve performance"],
+    "answer": 2,
+    "hint": "Think about file closing, database disconnecting, etc."
+  },
+  {
+    "question": "Which keyword is used with context managers?",
+    "options": ["try", "with", "use", "for"],
+    "answer": 1,
+    "hint": "It's commonly used with file operations"
+  },
+  {
+    "question": "What does the `__enter__` method do in a context manager class?",
+    "options": ["Handles errors", "Closes files", "Initializes and returns the resource", "Deletes variables"],
+    "answer": 2,
+    "hint": "It prepares and returns the resource"
+  },
+  {
+    "question": "What is the role of `__exit__` in a context manager?",
+    "options": ["Saves files", "Performs cleanup", "Raises exceptions", "Opens new resources"],
+    "answer": 1,
+    "hint": "Think cleanup or closing"
+  },
+  {
+    "question": "What is the output of: `with open('file.txt') as f:`?",
+    "options": ["f is closed automatically after use", "f stays open", "f becomes None", "It causes an error"],
+    "answer": 0,
+    "hint": "This is the benefit of using context managers"
+  },
+  {
+    "question": "Which built-in module simplifies context manager creation?",
+    "options": ["functools", "itertools", "contextlib", "os"],
+    "answer": 2,
+    "hint": "`contextlib` has a decorator for it"
+  },
+  {
+    "question": "What does `@contextmanager` from `contextlib` allow you to do?",
+    "options": ["Create GUI apps", "Manage resources using generator syntax", "Handle multiple threads", "Write faster loops"],
+    "answer": 1,
+    "hint": "It uses `yield`"
+  },
+  {
+    "question": "Can you nest `with` statements?",
+    "options": ["No", "Only for files", "Yes, using a single line or multiple lines", "Yes, but only with `try`"],
+    "answer": 2,
+    "hint": "Both single-line and multi-line nesting is allowed"
+  },
+  {
+    "question": "Which of the following best demonstrates a context manager's use?",
+    "options": ["with socket.connect():", "with my_list.append():", "with open('data.txt') as f:", "with for loop:"],
+    "answer": 2,
+    "hint": "It's the most common usage example"
+  },
+  {
+    "question": "Why should context managers be used?",
+    "options": ["They are required by Python", "They are faster", "They ensure proper resource cleanup", "They improve syntax"],
+    "answer": 2,
+    "hint": "Prevents memory leaks or open files"
+  }
+],
+
+  "project_three": [
+  {
+    "question": "Which Python module is best for reading CSV files?",
+    "options": ["json", "csv", "pickle", "os"],
+    "answer": 1,
+    "hint": "It's a built-in module designed for comma-separated data."
+  },
+  {
+    "question": "What does `sum(asset['quantity'] * asset['price'] for asset in portfolio)` do?",
+    "options": ["Calculates total shares", "Sorts assets", "Calculates total portfolio value", "None"],
+    "answer": 2,
+    "hint": "Think financial value."
+  },
+  {
+    "question": "Which function finds the highest-priced asset?",
+    "options": ["min()", "sum()", "sorted()", "max()"],
+    "answer": 3,
+    "hint": "Opposite of minimum."
+  },
+  {
+    "question": "What happens if a CSV row has invalid data?",
+    "options": ["It crashes", "It skips with an error message", "It continues but corrupts data", "It retries"],
+    "answer": 1,
+    "hint": "Look at the try/except block."
+  },
+  {
+    "question": "Which structure is used to group assets by sector?",
+    "options": ["List", "Set", "Dictionary", "Tuple"],
+    "answer": 2,
+    "hint": "Think key-value structure."
+  }
+],
+
+  "widget_bonus": [
+  {
+    "question": "Which library is used for interactive widgets in Jupyter?",
+    "options": ["matplotlib", "ipywidgets", "seaborn", "tkinter"],
+    "answer": 1,
+    "hint": "It starts with 'ipy...'"
+  },
+  {
+    "question": "Which widget layout stacks items vertically?",
+    "options": ["HBox", "VBox", "StackBox", "FlexBox"],
+    "answer": 1,
+    "hint": "Think of 'Vertical Box'"
+  },
+  {
+    "question": "What method is used to attach a function to a button click?",
+    "options": ["on_action()", "on_press()", "on_click()", "add_event()"],
+    "answer": 2,
+    "hint": "It starts with 'on_' and ends with 'click'"
+  },
+  {
+    "question": "What is the use of 'interactive()' in ipywidgets?",
+    "options": ["Create animations", "Create dropdowns", "Dynamically update output", "Log console output"],
+    "answer": 2,
+    "hint": "It links UI changes to function output"
+  },
+  {
+    "question": "Which widget is suitable for user input of text?",
+    "options": ["Text()", "Label()", "Button()", "Slider()"],
+    "answer": 0,
+    "hint": "It shares its name with the data type"
+  }
+]
+
+
+
+
+}

@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">📂 Python Utility Modules</h1>
+    <p class="fs-5 text-muted"><strong>Explore powerful built-in modules: collections, datetime, math, random, and open() for file handling</strong></p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples">Examples <span class="badge bg-secondary ms-1" id="exampleCount"></span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz">Quiz <span class="badge bg-info ms-1" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples">
+      <div class="row" id="exampleCards">
+
+        <div class="tab-pane fade show active" id="examples">
+      <div class="row" id="exampleCards">
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ collections.Counter()</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code>from collections import Counter
+
+my_list = ['a', 'b', 'a', 'c', 'b', 'a']
+print(Counter(my_list))</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> Counter()</li>
+                <li><strong>📘 What I Learn:</strong> Count occurrences in a list</li>
+                <li><strong>♻️ Reusability Insight:</strong> Frequency analysis, polls, logs</li>
+                <li><strong>💬 Comments:</strong> Count how often each element appears in a list.</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ collections.defaultdict()</div>
+            <div class="card-body">
+              <pre><code>from collections import defaultdict
+
+counts = defaultdict(int)
+counts['apple'] += 1
+print(counts)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> defaultdict()</li>
+                <li><strong>📘 What I Learn:</strong> Prevent KeyErrors with default values</li>
+                <li><strong>♻️ Reusability Insight:</strong> Grouping, dictionary building</li>
+                <li><strong>💬 Comments:</strong> Automatically initializes missing keys.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-warning text-white fw-bold">3️⃣ collections.namedtuple()</div>
+            <div class="card-body">
+              <pre><code>from collections import namedtuple
+
+Point = namedtuple('Point', 'x y')
+p1 = Point(10, 20)
+print(p1.x, p1.y)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> namedtuple()</li>
+                <li><strong>📘 What I Learn:</strong> Struct-like tuples with named fields</li>
+                <li><strong>♻️ Reusability Insight:</strong> Clean representations of objects</li>
+                <li><strong>💬 Comments:</strong> Provides field access to tuple elements by name.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-danger text-white fw-bold">4️⃣ collections.deque()</div>
+            <div class="card-body">
+              <pre><code>from collections import deque
+
+d = deque()
+d.append('first')
+d.appendleft('zero')
+print(d)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> deque()</li>
+                <li><strong>📘 What I Learn:</strong> Fast appends/pops from both ends</li>
+                <li><strong>♻️ Reusability Insight:</strong> Task queues, undo systems</li>
+                <li><strong>💬 Comments:</strong> Allows quick append/appendleft operations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional examples will be continued next -->
+
+      </div>
+    </div>
+
+        <!-- 5️⃣ open() file handling -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white fw-bold">5️⃣ open() file handling</div>
+            <div class="card-body">
+              <pre><code>with open('example.txt', 'w') as f:
+    f.write("Hello, world!")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> open()</li>
+                <li><strong>📘 What I Learn:</strong> Write text to a file safely</li>
+                <li><strong>♻️ Reusability Insight:</strong> Logging, data export, configs</li>
+                <li><strong>💬 Comments:</strong> Use 'with' to automatically close files.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6️⃣ datetime.now() -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white fw-bold">6️⃣ datetime.now()</div>
+            <div class="card-body">
+              <pre><code>from datetime import datetime
+print(datetime.now())</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> datetime.now()</li>
+                <li><strong>📘 What I Learn:</strong> Get current date and time</li>
+                <li><strong>♻️ Reusability Insight:</strong> Logging, timestamps, records</li>
+                <li><strong>💬 Comments:</strong> Retrieves real-time timestamp.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7️⃣ math.sqrt() -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-info text-white fw-bold">7️⃣ math.sqrt()</div>
+            <div class="card-body">
+              <pre><code>import math
+print(math.sqrt(25))</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> math.sqrt()</li>
+                <li><strong>📘 What I Learn:</strong> Compute square roots</li>
+                <li><strong>♻️ Reusability Insight:</strong> Statistics, geometry, finance</li>
+                <li><strong>💬 Comments:</strong> Use math functions to handle numeric tasks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8️⃣ random.choice() -->
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white fw-bold">8️⃣ random.choice()</div>
+            <div class="card-body">
+              <pre><code>import random
+print(random.choice(['apple', 'banana', 'cherry']))</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> random.choice()</li>
+                <li><strong>📘 What I Learn:</strong> Select a random element from list</li>
+                <li><strong>♻️ Reusability Insight:</strong> Games, simulations, randomness</li>
+                <li><strong>💬 Comments:</strong> Great for drawing samples randomly.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox"></div>
+      <div id="quizSummary"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<!-- Sound Effects -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById("exampleCount").textContent = count;
+    loadQuizData("math_datetime_open_collect");
+  });
+</script>
+{% endblock %}

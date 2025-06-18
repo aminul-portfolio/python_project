@@ -1,0 +1,117 @@
+<!-- modules_packages.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="mb-4">📦 Python Modules & Packages</h2>
+  <p>This section introduces Python modules and packages, essential tools for organizing code and reusing functionality across projects.</p>
+
+  <!-- Example 1 -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">🔹 Example 1: Importing a Standard Module</h5>
+      <pre><code class="python">import math
+
+result = math.sqrt(16)
+print("Square root:", result)</code></pre>
+      <p><strong>📘 What you learn:</strong> How to import and use built-in Python modules.</p>
+      <p><strong>♻️ Reusability:</strong> Use built-in modules like <code>math</code>, <code>random</code>, <code>datetime</code> to simplify calculations and operations.</p>
+      <p><strong>💬 Comments:</strong> <code>math.sqrt()</code> is a function from the <code>math</code> module for square root calculation.</p>
+    </div>
+  </div>
+
+  <!-- Example 2 -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">🔹 Example 2: Creating and Importing a Custom Module</h5>
+      <pre><code class="python"># File: my_utils.py
+def greet(name):
+    return f"Hello, {name}!"
+
+# In your main script
+import my_utils
+print(my_utils.greet("Sumon"))</code></pre>
+      <p><strong>📘 What you learn:</strong> How to create a custom module and use it in other scripts.</p>
+      <p><strong>♻️ Reusability:</strong> Write reusable utility functions in separate files.</p>
+      <p><strong>💬 Comments:</strong> Use the same folder or PYTHONPATH to locate modules correctly.</p>
+    </div>
+  </div>
+
+  <!-- Example 3 -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">🔹 Example 3: Using from-import syntax</h5>
+      <pre><code class="python">from math import pi, ceil
+print("Pi:", pi)
+print("Ceil of 4.2:", ceil(4.2))</code></pre>
+      <p><strong>📘 What you learn:</strong> How to import specific functions or constants.</p>
+      <p><strong>♻️ Reusability:</strong> Keeps namespace clean and improves readability.</p>
+      <p><strong>💬 Comments:</strong> Only imports what's needed from the module.</p>
+    </div>
+  </div>
+
+  <!-- Quiz Section -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">🎯 Quiz: Test Your Knowledge</h5>
+      <div id="quiz-container"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const questions = [
+  { q: "Which keyword is used to include a Python module?", a: "import" },
+  { q: "Which file makes a folder a Python package?", a: "__init__.py" },
+  { q: "What function do you use to get square root from math module?", a: "sqrt" },
+  { q: "What does 'from module import function' do?", a: "Imports a specific function" },
+  { q: "Can custom modules be reused in other files?", a: "Yes" },
+  { q: "Which module provides constants like pi and e?", a: "math" },
+  { q: "Which import method keeps the namespace clean?", a: "from-import" },
+  { q: "What's a benefit of using packages?", a: "Organized code" },
+  { q: "What does PYTHONPATH affect?", a: "Module search path" },
+  { q: "How do you import all from a module?", a: "from module import *" }
+];
+
+function startQuiz(containerId, questions) {
+  const container = document.getElementById(containerId);
+  let index = 0;
+  let score = 0;
+  container.innerHTML = '';
+
+  function showQuestion() {
+    const q = questions[index];
+    container.innerHTML = `
+      <div class="mb-3"><strong>Q${index + 1}:</strong> ${q.q}</div>
+      <input type="text" class="form-control mb-2" id="answer">
+      <button class="btn btn-primary" id="submit">Submit</button>
+      <div class="mt-2" id="feedback"></div>
+    `;
+
+    document.getElementById("submit").onclick = function () {
+      const ans = document.getElementById("answer").value.trim().toLowerCase();
+      const correct = q.a.toLowerCase();
+      const feedback = document.getElementById("feedback");
+      if (ans === correct) {
+        feedback.innerHTML = `<span class='text-success'>✅ Correct!</span>`;
+        score++;
+      } else {
+        feedback.innerHTML = `<span class='text-danger'>❌ Incorrect. Hint: ${correct}</span>`;
+      }
+      index++;
+      setTimeout(() => index < questions.length ? showQuestion() : showScore(), 1500);
+    };
+  }
+
+  function showScore() {
+    container.innerHTML = `
+      <h5>Your Score: ${score}/${questions.length}</h5>
+      <button class="btn btn-info" onclick="startQuiz('${containerId}', questions)">🔄 Retry Quiz</button>
+    `;
+  }
+
+  showQuestion();
+}
+
+startQuiz("quiz-container", questions);
+</script>
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4 py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">📘 Advanced Python Objects – All in One</h1>
+    <p class="fs-5 text-muted"><strong>This page combines real-world examples of advanced Python numbers, strings, sets, dicts, and lists with an interactive quiz.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="tabs">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#examples">Examples <span class="badge bg-secondary" id="exampleCount">5</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#quiz">Quiz <span class="badge bg-secondary" id="quizCountText">5</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+        <div class="card mb-4">
+          <div class="card-header bg-info text-white fw-bold">1️⃣ Advanced Numbers</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code>nums = [-2, -5, 0, 4, 9]
+positive_nums = [abs(num) for num in nums]
+print(positive_nums)
+
+import math, random
+print(math.sqrt(16))
+print(random.randint(1, 100))
+
+for i in range(5):
+    print("Even" if i % 2 == 0 else "Odd")
+
+from decimal import Decimal
+from fractions import Fraction
+print(Decimal('0.1') + Decimal('0.2'))
+print(Fraction(1, 3) + Fraction(2, 3))</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: abs(), math, random, Decimal, Fraction</li>
+              <li>📘 Learned: Numeric precision, absolute values, random numbers, modular arithmetic</li>
+              <li>♻️ Reusability: Useful in data cleansing, simulations, and financial calculations</li>
+              <li>💬 Comments: Shows built-in functions and libraries for robust numeric work</li>
+            </ul></div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ Advanced Strings</div>
+          <div class="card-body">
+            <pre><code>word = "Python"
+print(word[::-1])
+
+msg = "Data Science is awesome"
+print(msg.replace("awesome", "fun"))
+
+name = "Sumon"
+age = 30
+print(f"{name} is {age} years old")
+
+path = r"C:\new_folder\test"
+print(path)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: slicing, replace(), f-strings, raw strings</li>
+              <li>📘 Learned: Text manipulation and formatting</li>
+              <li>♻️ Reusability: String processing and file paths</li>
+              <li>💬 Comments: Clear techniques for cleaner and more efficient string handling</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ Advanced Sets</div>
+          <div class="card-body">
+            <pre><code>a = {1, 2, 3}
+b = {2, 3, 4}
+print(a & b)
+
+squared = {x*x for x in range(5)}
+print(squared)
+
+s = set()
+s.add(10)
+s.discard(5)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: set(), intersection, comprehension</li>
+              <li>📘 Learned: Set theory basics, deduplication, math ops</li>
+              <li>♻️ Reusability: Data filtering, comparison, membership testing</li>
+              <li>💬 Comments: Practical for data validation and grouping tasks</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ Advanced Dictionaries</div>
+          <div class="card-body">
+            <pre><code>square_dict = {x: x**2 for x in range(5)}
+print(square_dict)
+
+nested = {'person': {'name': 'Aminul', 'age': 32}}
+
+for k, v in square_dict.items():
+    print(k, v)
+
+from collections import defaultdict
+dd = defaultdict(int)
+dd['missing'] += 1</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: dict comprehension, defaultdict, .items()</li>
+              <li>📘 Learned: Advanced mapping and nested structures</li>
+              <li>♻️ Reusability: Configs, dynamic key-value stores, JSON-like data</li>
+              <li>💬 Comments: Shows flexibility and default-safe key usage</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white fw-bold">5️⃣ Advanced Lists</div>
+          <div class="card-body">
+            <pre><code>squares = [x**2 for x in range(10) if x % 2 == 0]
+print(squares)
+
+nums = [1, 2, 3, 4, 5]
+evens = list(filter(lambda x: x % 2 == 0, nums))
+print(evens)
+
+students = [('Tom', 85), ('Jane', 92), ('Dan', 78)]
+students_sorted = sorted(students, key=lambda x: x[1], reverse=True)
+
+for idx, val in enumerate(['a', 'b', 'c']):
+    print(f"{idx}: {val}")</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: list comp, filter(), lambda, sorted(), enumerate()</li>
+              <li>📘 Learned: Functional and expressive list ops</li>
+              <li>♻️ Reusability: Rankings, filters, transformations</li>
+              <li>💬 Comments: Lists power almost all Python data logic</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const exampleCount = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById("exampleCount").innerText = exampleCount;
+    loadQuizData("pods_advanced_all_in_one");
+  });
+</script>
+{% endblock %}

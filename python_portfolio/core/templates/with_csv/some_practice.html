@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">📂 CSV & PDF File Practice</h1>
+    <p class="fs-5 text-muted"><strong>Learn to read/write CSV files and extract PDF content using Python.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">Examples <span class="badge bg-secondary" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">Quiz <span class="badge bg-secondary" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div id="exampleCards">
+
+        <!-- Example Cards -->
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ open('example.csv')</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">with open('example.csv', mode='r') as file:
+    content = file.read()
+    print(content)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> open('example.csv')</li>
+              <li>📘 <strong>Learned:</strong> Reading a local CSV file directly into memory.</li>
+              <li>♻️ <strong>Reusability:</strong> Use this to read standard CSV data files from the filesystem.</li>
+              <li>💬 <strong>Comments:</strong> Basic file reading for .csv content.</li>
+            </ul></div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ csv.DictReader()</div>
+          <div class="card-body">
+            <pre><code class="language-python">import csv
+with open('makeup_new.csv', mode='r') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        print(row['Brand'], row['Product'])</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> csv.DictReader()</li>
+              <li>📘 <strong>Learned:</strong> Reading CSV files into dictionaries for field-wise access.</li>
+              <li>♻️ <strong>Reusability:</strong> Use this when you need to access values by column headers.</li>
+              <li>💬 <strong>Comments:</strong> Best for structured CSV parsing.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ csv.writer()</div>
+          <div class="card-body">
+            <pre><code class="language-python">with open('to_save_file.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Name', 'Email'])
+    writer.writerow(['Alice', 'alice@example.com'])</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> csv.writer()</li>
+              <li>📘 <strong>Learned:</strong> Writing new data rows into a CSV file.</li>
+              <li>♻️ <strong>Reusability:</strong> Use to export processed data or logs to CSV format.</li>
+              <li>💬 <strong>Comments:</strong> Essential for file output generation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ PyPDF2.PdfReader</div>
+          <div class="card-body">
+            <pre><code class="language-python">from PyPDF2 import PdfReader
+reader = PdfReader("Some_BrandNew_Doc.pdf")
+page = reader.pages[0]
+print(page.extract_text())</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> PyPDF2.PdfReader</li>
+              <li>📘 <strong>Learned:</strong> Reading text from a PDF file using PyPDF2.</li>
+              <li>♻️ <strong>Reusability:</strong> Useful for extracting content from contracts, forms, or scanned documents.</li>
+              <li>💬 <strong>Comments:</strong> Use for basic PDF data scraping.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-info text-white fw-bold">5️⃣ PdfReader().pages</div>
+          <div class="card-body">
+            <pre><code class="language-python">reader = PdfReader("Working_Business_Proposal.pdf")
+for page in reader.pages:
+    print(page.extract_text())</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> PdfReader().pages</li>
+              <li>📘 <strong>Learned:</strong> Looping through multiple pages of a PDF file.</li>
+              <li>♻️ <strong>Reusability:</strong> Use this to process multipage reports or scanned booklets.</li>
+              <li>💬 <strong>Comments:</strong> Use for multi-page extraction workflows.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div class="card mt-4">
+        <div class="card-header bg-secondary text-white fw-bold">🧠 Quiz Time</div>
+        <div class="card-body" id="quizBox"></div>
+        <div id="quizSummary" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'audio/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'audio/wrong.mp3' %}" preload="auto"></audio>
+
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  function countExampleCards() {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').innerText = count;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    countExampleCards();
+    loadQuizData("some_practice");
+  });
+</script>
+{% endblock %}

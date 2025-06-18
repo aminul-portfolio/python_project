@@ -1,0 +1,214 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">📝 Statements Assessment Test + Solutions</h1>
+  <p class="lead">This section helps you review your Python statement knowledge through questions and detailed solutions.</p>
+
+  <!-- Nav Tabs -->
+  <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="examples-tab" data-bs-toggle="tab" href="#examples" role="tab">Examples</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="quiz-tab" data-bs-toggle="tab" href="#quiz" role="tab">Quiz</a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-3">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row" id="exampleCards">
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">1️⃣ Compare two numbers</h5>
+              <pre><code class="language-python">x = 10
+y = 20
+print(x < y)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> &lt;</li>
+                <li>📘 <strong>Learned:</strong> Comparing values using less-than.</li>
+                <li>♻️ <strong>Reusability:</strong> Useful in conditions and filters.</li>
+                <li>💬 <strong>Comments:</strong> Returns True since 10 is less than 20.</li>
+              </ul></div>
+          
+
+  <div class="mt-5"></div></div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">2️⃣ Check for equality</h5>
+              <pre><code class="language-python">a = 5
+b = 5
+print(a == b)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> ==</li>
+                <li>📘 <strong>Learned:</strong> Checking if two values are equal.</li>
+                <li>♻️ <strong>Reusability:</strong> Fundamental for if-statements and comparisons.</li>
+                <li>💬 <strong>Comments:</strong> Returns True since both values are equal.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">3️⃣ Not equal condition</h5>
+              <pre><code class="language-python">x = 7
+y = 3
+print(x != y)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> !=</li>
+                <li>📘 <strong>Learned:</strong> Checking if two values are not equal.</li>
+                <li>♻️ <strong>Reusability:</strong> Commonly used in loops and validation.</li>
+                <li>💬 <strong>Comments:</strong> Returns True since values differ.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">4️⃣ Greater than or equal to</h5>
+              <pre><code class="language-python">score = 85
+print(score >= 50)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> >=</li>
+                <li>📘 <strong>Learned:</strong> Checks if a value meets or exceeds a threshold.</li>
+                <li>♻️ <strong>Reusability:</strong> Used in grading systems or minimum criteria checks.</li>
+                <li>💬 <strong>Comments:</strong> Returns True since 85 is greater than 50.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">5️⃣ Compare strings</h5>
+              <pre><code class="language-python">print("apple" < "banana")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> &lt;</li>
+                <li>📘 <strong>Learned:</strong> Strings can be compared lexicographically.</li>
+                <li>♻️ <strong>Reusability:</strong> Helpful in sorting and filtering text.</li>
+                <li>💬 <strong>Comments:</strong> Returns True since 'a' comes before 'b'.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">6️⃣ Identity check with is</h5>
+              <pre><code class="language-python">a = [1, 2]
+b = a
+print(a is b)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> is</li>
+                <li>📘 <strong>Learned:</strong> Checks if two variables refer to the same object.</li>
+                <li>♻️ <strong>Reusability:</strong> Useful for checking reference equality.</li>
+                <li>💬 <strong>Comments:</strong> Returns True since both point to the same list.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">7️⃣ Membership check with in</h5>
+              <pre><code class="language-python">print(3 in [1, 2, 3, 4])</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> in</li>
+                <li>📘 <strong>Learned:</strong> Checks if an item exists in a sequence.</li>
+                <li>♻️ <strong>Reusability:</strong> Common for validation and filtering.</li>
+                <li>💬 <strong>Comments:</strong> Returns True because 3 is in the list.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">8️⃣ Chain comparison</h5>
+              <pre><code class="language-python">x = 5
+print(1 < x < 10)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> chaining operators</li>
+                <li>📘 <strong>Learned:</strong> Python supports chain comparison.</li>
+                <li>♻️ <strong>Reusability:</strong> Concise way to check a range.</li>
+                <li>💬 <strong>Comments:</strong> Returns True if all comparisons are True.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">9️⃣ Less than or equal to</h5>
+              <pre><code class="language-python">age = 18
+print(age <= 18)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> &lt;=</li>
+                <li>📘 <strong>Learned:</strong> Compares if value is less than or equal to another.</li>
+                <li>♻️ <strong>Reusability:</strong> Ideal for age or limit checks.</li>
+                <li>💬 <strong>Comments:</strong> Returns True because 18 is equal to 18.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🔟 Identity check with is not</h5>
+              <pre><code class="language-python">a = [1, 2]
+b = [1, 2]
+print(a is not b)</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> is not</li>
+                <li>📘 <strong>Learned:</strong> Checks if two variables do not refer to the same object.</li>
+                <li>♻️ <strong>Reusability:</strong> Use to ensure objects are separate.</li>
+                <li>💬 <strong>Comments:</strong> Returns True because a and b are different objects.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+{% endblock %}
+
+{% block extra_js %}
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  loadQuizData("test");
+  document.addEventListener("DOMContentLoaded", () => {
+    const exampleCards = document.querySelectorAll("#exampleCards .col-md-6").length;
+    const exampleCountEl = document.getElementById("exampleCount");
+    if (exampleCountEl) exampleCountEl.textContent = exampleCards;
+  });
+</script>
+{% endblock %}

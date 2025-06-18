@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4 py-5">
+
+  <!-- Header -->
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">📚 Python Dictionaries</h1>
+    <p class="fs-5 text-muted">Dictionaries store <strong>key-value pairs</strong>—perfect for structured data like user profiles, product info, and configurations.</p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="dictTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success">10</span>
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content" id="dictTabContent">
+
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row gy-4" id="exampleCards">
+
+        <!-- Example 1 -->
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ User Profile</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre class="mb-3" style="white-space: pre-wrap;"><code class="language-python">user = {
+    "name": "Sumon",
+    "email": "sumon@example.com",
+    "age": 30
+}
+print(user["email"])  # Output: sumon@example.com</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> Dictionary access by key</li>
+                <li>📘 <strong>Learned:</strong> Retrieve specific value</li>
+                <li>♻️ <strong>Reusability:</strong> User systems</li>
+                <li>💬 <strong>Comments:</strong> Simple lookup pattern</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Product Catalog</div>
+            <div class="card-body">
+              <pre class="mb-3" style="white-space: pre-wrap;"><code class="language-python">product = {
+    "id": 1001,
+    "name": "Laptop",
+    "price": 899.99
+}
+print(product["name"])  # Output: Laptop</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> Dictionary definition</li>
+                <li>📘 <strong>Learned:</strong> Key-value data modeling</li>
+                <li>♻️ <strong>Reusability:</strong> Product listings</li>
+                <li>💬 <strong>Comments:</strong> Great for APIs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-warning text-dark fw-bold">3️⃣ Inventory Management</div>
+            <div class="card-body">
+              <pre class="mb-3" style="white-space: pre-wrap;"><code class="language-python">inventory = {"apple": 10, "banana": 5}
+inventory["banana"] += 2
+print(inventory)  # Output: {'apple': 10, 'banana': 7}</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> Update values</li>
+                <li>📘 <strong>Learned:</strong> Modify existing key</li>
+                <li>♻️ <strong>Reusability:</strong> Stock tracking</li>
+                <li>💬 <strong>Comments:</strong> Real-world inventory logic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-danger text-white fw-bold">4️⃣ Safe Access with get()</div>
+            <div class="card-body">
+              <pre class="mb-3" style="white-space: pre-wrap;"><code class="language-python">data = {"key1": "value1"}
+print(data.get("key2", "Not Found"))  # Output: Not Found</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> get()</li>
+                <li>📘 <strong>Learned:</strong> Prevent key errors</li>
+                <li>♻️ <strong>Reusability:</strong> Defensive coding</li>
+                <li>💬 <strong>Comments:</strong> Avoids crashes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<!-- Quiz Engine + Sound Effects -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const count = document.querySelectorAll("#exampleCards .card").length;
+  document.getElementById("exampleCount").textContent = count;
+  loadQuizData("dictionaries");
+});
+</script>
+{% endblock %}
+{% endblock %}

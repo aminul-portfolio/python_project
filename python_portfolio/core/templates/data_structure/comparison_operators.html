@@ -1,0 +1,119 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">Python Comparison Operators</h1>
+  <p class="lead">Comparison operators allow us to compare values and return Boolean results. These are essential in decision-making logic and conditions.</p>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mt-4" id="stringsTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span></button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content mt-3" id="stringsTabContent">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">1️⃣ Age Check</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">age = 18
+print(age >= 18)  # Output: True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> >=</li>
+                <li>📘 <strong>Learned:</strong> Check if someone is eligible by age</li>
+                <li>♻️ <strong>Reusability:</strong> Age-based validation</li>
+                <li>💬 <strong>Comments:</strong> Used in registration checks</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Password Match</div>
+            <div class="card-body">
+              <pre><code class="language-python">stored = "sumon123"
+input_password = "Sumon123"
+print(stored == input_password)  # Output: False (case-sensitive)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> ==</li>
+                <li>📘 <strong>Learned:</strong> Compare two strings</li>
+                <li>♻️ <strong>Reusability:</strong> Login validation</li>
+                <li>💬 <strong>Comments:</strong> Case-sensitive check</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">3️⃣ Salary Range (Chained Comparison)</div>
+            <div class="card-body">
+              <pre><code class="language-python">salary = 3500
+print(3000 <= salary <= 5000)  # Output: True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> <= (chained)</li>
+                <li>📘 <strong>Learned:</strong> Range validation</li>
+                <li>♻️ <strong>Reusability:</strong> Salary grading</li>
+                <li>💬 <strong>Comments:</strong> Clean syntax for range checks</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">4️⃣ Item Price Comparison</div>
+            <div class="card-body">
+              <pre><code class="language-python">item1 = 120
+item2 = 150
+print(item1 < item2)  # Output: True</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> <</li>
+                <li>📘 <strong>Learned:</strong> Price comparison</li>
+                <li>♻️ <strong>Reusability:</strong> E-commerce, pricing logic</li>
+                <li>💬 <strong>Comments:</strong> Useful for sorting or filtering</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div class="mt-4" id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<!-- Quiz Engine + Count Script -->
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+{% block extra_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const exampleCards = document.querySelectorAll("#exampleCards .card").length;
+    document.getElementById("exampleCount").textContent = exampleCards;
+    loadQuizData("comparison_operators");  // ✅ Correct quiz ID
+  });
+</script>
+
+{% endblock %}
+{% endblock %}

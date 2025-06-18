@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">⚖️ Python Comparison Operators</h1>
+    <p class="fs-5 text-muted">Comparison operators are used to compare two values and return <strong>True</strong> or <strong>False</strong>.</p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="statementTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content" id="comparisonTabContent">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row gy-4" id="exampleCards">
+
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ Equal vs Not Equal</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">a = 5
+b = 10
+print(a == b)  # False
+print(a != b)  # True</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> ==, !=</li>
+                <li>📘 <strong>Learned:</strong> Equality and inequality comparison</li>
+                <li>♻️ <strong>Reusability:</strong> Used in conditional checks</li>
+                <li>💬 <strong>Comments:</strong> Essential in decision making</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Greater Than / Less Than</div>
+            <div class="card-body">
+              <pre><code class="language-python">age = 18
+if age >= 18:
+    print("You can vote.")
+else:
+    print("Too young to vote.")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> &gt;=, &lt;=</li>
+                <li>📘 <strong>Learned:</strong> Age validation logic</li>
+                <li>♻️ <strong>Reusability:</strong> Threshold-based conditions</li>
+                <li>💬 <strong>Comments:</strong> Common in form validations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-warning text-dark fw-bold">3️⃣ Sorting with Comparisons</div>
+            <div class="card-body">
+              <pre><code class="language-python">numbers = [3, 7, 2, 5]
+if numbers[0] &lt; numbers[-1]:
+    print("First is smaller than last")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> &lt;</li>
+                <li>📘 <strong>Learned:</strong> Comparing list elements</li>
+                <li>♻️ <strong>Reusability:</strong> Helpful in sorting logic</li>
+                <li>💬 <strong>Comments:</strong> Works on any comparable values</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4">Loading quiz...</div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<!-- Sounds + Quiz Loader -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+  loadQuizData("comparison_operators");
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const examples = document.querySelectorAll('#exampleCards .col-12').length;
+    const exampleCountEl = document.getElementById('exampleCount');
+    if (exampleCountEl) {
+      exampleCountEl.textContent = examples;
+    }
+  });
+</script>
+{% endblock %}

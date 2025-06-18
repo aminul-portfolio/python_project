@@ -1,0 +1,1572 @@
+base:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Highlight.js CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f1f4f8;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 260px;
+      background: linear-gradient(180deg, #6c63ff, #7f87ff);
+      color: white;
+      overflow-y: auto;
+      transition: transform 0.3s ease;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+    .sidebar.collapsed {
+      transform: translateX(-100%);
+    }
+    .sidebar h4 {
+      text-align: center;
+      padding: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .sidebar h5 {
+      font-size: 15px;
+      padding: 12px 20px;
+      margin-bottom: 0;
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.1);
+      transition: background 0.3s ease;
+    }
+    .sidebar h5:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .sidebar .nav-link {
+      padding-left: 30px;
+      font-size: 14px;
+      color: #fff;
+      display: block;
+      padding: 7px 30px;
+      transition: background 0.3s ease, padding-left 0.3s ease;
+    }
+    .sidebar .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding-left: 35px;
+    }
+    .sidebar .nav-link.active {
+      background-color: rgba(255, 255, 255, 0.3);
+      font-weight: bold;
+    }
+    .content {
+      margin-left: 260px;
+      padding: 30px;
+      transition: margin-left 0.3s ease;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1100;
+      background-color: #6c63ff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      font-size: 18px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+      .sidebar.show {
+        transform: translateX(0);
+      }
+      .content {
+        margin-left: 0;
+        padding-top: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Highlight.js JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+<!-- Mobile Toggle Button -->
+<button class="toggle-btn d-lg-none" onclick="toggleSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar d-lg-block" id="sidebar">
+  <h4>📘 Python Portfolio</h4>
+
+  <h5 data-toggle="collapse" data-target="#collapse0">📂 00 - Python Object and Data Structure Basics</h5>
+  <div id="collapse0" class="collapse {% if request.path == '/numbers/' or request.path == '/variable-assignment/' or request.path == '/strings/' or request.path == '/lists/' or request.path == '/tuples/' or request.path == '/dictionaries/' or request.path == '/sets-booleans/' or request.path == '/files/' %}show{% endif %}">
+    <a class="nav-link {% if request.path == '/numbers/' %}active{% endif %}" href="/numbers/">🔢 Numbers</a>
+    <a class="nav-link {% if request.path == '/variable-assignment/' %}active{% endif %}" href="/variable-assignment/">✍️ Variables</a>
+    <a class="nav-link {% if request.path == '/strings/' %}active{% endif %}" href="/strings/">🧵 Strings</a>
+    <a class="nav-link {% if request.path == '/lists/' %}active{% endif %}" href="/lists/">📋 Lists</a>
+    <a class="nav-link {% if request.path == '/tuples/' %}active{% endif %}" href="/tuples/">📐 Tuples</a>
+    <a class="nav-link {% if request.path == '/dictionaries/' %}active{% endif %}" href="/dictionaries/">📚 Dictionaries</a>
+    <a class="nav-link {% if request.path == '/sets-booleans/' %}active{% endif %}" href="/sets-booleans/">🔁 Sets & Booleans</a>
+    <a class="nav-link {% if request.path == '/files/' %}active{% endif %}" href="/files/"> Files</a>
+  </div>
+
+  <h5 data-toggle="collapse" data-target="#collapse1">📂 01 - Python Comparison Operators</h5>
+  <div id="collapse1" class="collapse {% if request.path == '/comparison-operators/' or request.path == '/chained-comparisons/' %}show{% endif %}">
+    <a class="nav-link {% if request.path == '/comparison-operators/' %}active{% endif %}" href="/comparison-operators/">⚖️ Comparisons</a>
+    <a class="nav-link {% if request.path == '/chained-comparisons/' %}active{% endif %}" href="/chained-comparisons/">⛓️ Chained Comparisons</a>
+  </div>
+
+<h5 data-toggle="collapse" data-target="#collapse2">📂 02 - Python Statements</h5>
+<div id="collapse2" class="collapse {% if request.path == '/python-statements/' or request.path == '/if-elif-else/' or request.path == '/for-while-loops/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/python-statements/' %}active{% endif %}" href="{% url 'python_statements' %}">📜 Overview</a>
+  <a class="nav-link {% if request.path == '/if-elif-else/' %}active{% endif %}" href="/if-elif-else/">🔀 If-Elif-Else</a>
+  <a class="nav-link {% if request.path == '/for-while-loops/' %}active{% endif %}" href="/for-while-loops/">🔄 For & While Loops</a>
+  <a class="nav-link {% if request.path == '/useful-operators/' %}active{% endif %}" href="/useful-operators/">🧰 Useful Operators</a>
+  <a class="nav-link {% if request.path == '/test-solutions/' %}active{% endif %}" href="/test-solutions/">📝 Test + Solutions</a>
+  <a class="nav-link {% if request.path == '/guess-challenge-solution/' %}active{% endif %}" href="/guess-challenge-solution/">🎯 Guess Game</a>
+
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse3">📂 03 - Methods & Functions</h5>
+<div id="collapse3" class="collapse {% if request.path == '/methods/' or request.path == '/functions-practice/' %}show{% endif %}">
+
+  <a class="nav-link {% if request.path == '/methods/' %}active{% endif %}" href="/methods/">🔧 Methods Overview</a>
+  <a class="nav-link {% if request.path == '/functions-practice/' %}active{% endif %}" href="/functions-practice/">📚 Function Practice</a>
+  <a class="nav-link {% if request.path == '/lambda/' %}active{% endif %}" href="/lambda/">⚡ Lambda & Map</a>
+  <a class="nav-link {% if request.path == '/nested-scope/' %}active{% endif %}" href="/nested-scope/">🌀 Nested Scope</a>
+  <a class="nav-link {% if request.path == '/args-kwargs/' %}active{% endif %}" href="/args-kwargs/">🔣 *args & **kwargs</a>
+  <a class="nav-link {% if request.path == '/fun-methods-homeworks/' %}active{% endif %}" href="/fun-methods-homeworks/">🧪 Fun Methods Homework</a>
+  <a class="nav-link font-weight-bold text-primary {% if request.path == '/all-in-one/' %}active{% endif %}" href="/all-in-one/">💼 All-in-One Project</a>
+</div>
+
+  <h5 data-toggle="collapse" data-target="#collapse_milestone">📂04 Milestone Projects</h5>
+<div id="collapse_milestone" class="collapse {% if request.path == '/warm-project/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/warm-project/' %}active{% endif %}" href="/warm-project/">🔥 Warm-Up Project</a>
+  <a class="nav-link {% if request.path == '/assignment-walkthrough-complete/' %}active{% endif %}" href="/assignment-walkthrough-complete/">📦 Project 1: Game + Solution</a>
+  <a class="nav-link {% if request.path == '/tic-tac-toe/' %}active{% endif %}" href="/tic-tac-toe/">🎲 Tic Tac Toe Game</a>
+<a class="nav-link {% if request.path == '/play-game/' %}active{% endif %}" href="/play-game/">🕹️ Play Game (Terminal Code)</a>
+<a class="nav-link {% if request.path == '/ready-play/' %}active{% endif %}" href="/ready-play/">🎮 Ready Play Game</a>
+
+</div>
+<h5 data-toggle="collapse" data-target="#collapse4">📂 05 - Object Oriented Programming</h5>
+<div id="collapse4" class="collapse {% if request.path == '/oop/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/oop/' %}active{% endif %}" href="/oop/">🧱 OOP Concepts</a>
+  <hr style="border-color: rgba(255,255,255,0.3);">
+<a class="nav-link text-info font-weight-bold {% if request.path == '/obj-homework/' %}active{% endif %}" href="/obj-homework/">🧪 OOP Homework + Quiz</a>
+<a class="nav-link {% if request.path == '/oop-che-sol/' %}active{% endif %}" href="/oop-che-sol/">🎓 OOP Challenge + Quiz</a>
+
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse_modules">📂 06 - Modules & Packages</h5>
+<div id="collapse_modules" class="collapse {% if request.path == '/modules-packages/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/modules-packages/' %}active{% endif %}" href="/modules-packages/">📦 Modules + Packages</a>
+  <a class="nav-link font-weight-bold text-primary {% if request.path == '/all-in-one/' %}active{% endif %}" href="/all-in-one/">💼 All-in-One Project</a>
+
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse_errors">📂 07 - Errors & Unit Testing</h5>
+<div id="collapse_errors" class="collapse {% if request.path == '/error_hand_unit/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/error_hand_unit/' %}active{% endif %}" href="/error_hand_unit/">⚠️ Error Handling</a>
+  <a class="nav-link {% if request.path == '/simple-python/' %}active{% endif %}" href="/simple-python/">📄 Simple Python</a>
+
+</div>
+<h5 data-toggle="collapse" data-target="#collapse_milestone_intro">📂 08 - Milestone Intro</h5>
+<div id="collapse_milestone_intro" class="collapse {% if request.path == '/warmup-intro/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/warmup-intro/' %}active{% endif %}" href="/warmup-intro/">📘 Warmup Intro</a>
+</div>
+<h5 data-toggle="collapse" data-target="#collapse_blackjack">📂 09 - Blackjack Game</h5>
+<div id="collapse_blackjack" class="collapse {% if request.path == '/blackjack-walkthrough/' or request.path == '/blackjack-solution/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/blackjack-walkthrough/' %}active{% endif %}" href="/blackjack-walkthrough/">📘 Walkthrough</a>
+  <a class="nav-link {% if request.path == '/blackjack-solution/' %}active{% endif %}" href="/blackjack-solution/">🧩 Solution</a>
+</div>
+<h5 data-toggle="collapse" data-target="#collapse_all_empty">📂 10 - Built-in Python Utilities</h5>
+<div id="collapse_all_empty" class="collapse {% if request.path == '/empty-section-all/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/empty-section-all/' %}active{% endif %}" href="/empty-section-all/">🧠 All Built-ins (map, reduce, filter, etc.)</a>
+  <a class="nav-link {% if request.path == '/build-in-solution/' %}active{% endif %}" href="/build-in-solution/">🧩 Built-ins Solution</a>
+</div>
+  <h5 data-toggle="collapse" data-target="#collapse_all_empty">📂11 Decorators Intro</h5>
+<div id="collapse_all_empty" class="collapse {% if request.path == '/empty-section-all/' %}show{% endif %}">
+ <a class="dropdown-item" href="{% url 'home_decorator' %}">🧠 Decorators Intro</a>
+
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse_all_empty">📂12 Iterators & Generators</h5>
+<div class="collapse" id="collapse_generators">
+  <a class="nav-link {% if request.path == '/generators-iterator/' %}active{% endif %}" href="{% url 'generators_iterator' %}">🔄 Iterators & Generators</a>
+</div>
+
+ <!-- Math, DateTime, Collections, Open Files Section -->
+  <!-- 10 - Built-ins -->
+  <h5 data-toggle="collapse" data-target="#collapse_utilities">📂 13 - Python Utility Modules</h5>
+  <div id="collapse_utilities" class="collapse {% if request.path == '/math-datetime-open-colect/' %}show{% endif %}">
+    <a class="nav-link {% if request.path == '/math-datetime-open-colect/' %}active{% endif %}" href="{% url 'math_datetime_open_colect' %}">🧮 Math, DateTime, Collections</a>
+    <a class="nav-link {% if request.path == '/deb-regular-timing-code/' %}active{% endif %}" href="{% url 'deb_regular_timing_code' %}">🛠️ Debug & Timing</a>
+  </div>
+
+<!-- Dropdown for Web Scraping -->
+<h5 data-toggle="collapse" data-target="#collapse_webscraping">📂 14 - Web Scraping</h5>
+<div id="collapse_webscraping" class="collapse {% if request.path == '/scraping-web/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/scraping-web/' %}active{% endif %}" href="{% url 'scraping_web' %}">🌐 Scraping Exercises</a>
+</div>
+<h5 data-toggle="collapse" data-target="#collapse_image">📂 15 - Working with Images</h5>
+<div id="collapse_image" class="collapse {% if request.path == '/image-working/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/image-working/' %}active{% endif %}" href="{% url 'image_working' %}">🖼️ Image Manipulation</a>
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse_csv">📂 17 - Working with CSV Files</h5>
+<div id="collapse_csv" class="collapse {% if request.path == '/csv_with/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/csv_with/' %}active{% endif %}" href="{% url 'csv_with' %}">📄 Read & Handle CSV Files</a>
+  <a class="nav-link {% if request.path == '/some_practice/' %}active{% endif %}" href="{% url 'some_practice' %}">📝 CSV & PDF Practice</a>
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse_emailing">📂 16 - Emailing with Python</h5>
+<div id="collapse_emailing" class="collapse {% if request.path == '/emailing_python/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/emailing_python/' %}active{% endif %}" href="{% url 'emailing_python' %}">📧 Email Automation</a>
+</div>
+<h5 data-toggle="collapse" data-target="#collapse_pods_advanced">📂 17 - Advanced Python Objects</h5>
+<div id="collapse_pods_advanced" class="collapse {% if request.path == '/pods-advanced/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/pods-advanced/' %}active{% endif %}" href="{% url 'pods_advanced_all_in_one' %}">🔍 Advanced PODs - All in One</a>
+  <a class="nav-link {% if request.path == '/advanced_solution/' %}active{% endif %}" href="{% url 'advanced_solution' %}">🧠 Solutions & Context</a>
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse_milestone">📂 18 - Milestone Projects</h5>
+<div id="collapse_milestone" class="collapse {% if request.path == '/milestone_project_three/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/milestone_project_three/' %}active{% endif %}" href="{% url 'project_three' %}">🏆 Final Capstone Project</a>
+</div>
+
+<h5 data-toggle="collapse" data-target="#collapse_milestone3">📂 Milestone Project 3</h5>
+<div id="collapse_milestone3" class="collapse {% if request.path == '/project-three/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/project-three/' %}active{% endif %}" href="{% url 'project_three' %}">📊 Capstone: Portfolio Analyzer</a>
+</div>
+<h5 data-toggle="collapse" data-target="#collapse_widget_bonus">📂 17 - Bonus Widgets</h5>
+<div id="collapse_widget_bonus" class="collapse {% if request.path == '/widget-bonus/' %}show{% endif %}">
+  <a class="nav-link {% if request.path == '/widget-bonus/' %}active{% endif %}" href="{% url 'widget_bonus' %}">🧩 Interactive Widget Bonus</a>
+</div>
+
+  <div id="collapse2" class="collapse"></div>
+
+  <hr style="border-color: rgba(255,255,255,0.3);">
+  <a class="nav-link text-warning font-weight-bold {% if request.path == '/assessment-test/' %}active{% endif %}" href="/assessment-test/">📝 Assessment</a>
+  <a class="nav-link text-success font-weight-bold {% if request.path == '/assessment-solution/' %}active{% endif %}" href="/assessment-solution/">✅ Solution</a>
+</div>
+
+<!-- Main Content -->
+<div class="content">
+  {% block content %}{% endblock %}
+</div>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('show');
+  }
+</script>
+</body>
+</html>
+
+
+
+
+import json
+import os
+from functools import reduce
+def home_view(request):
+    return render(request, 'home.html')
+
+# Dictionaries topic view
+def dictionaries_view(request):
+    context = {
+        'topic_title': 'Python Dictionaries',
+        'real_world_example': {
+            "name": "Sumon",
+            "email": "sumon@example.com",
+            "orders": [1001, 1002],
+            "total_spent": 249.99
+        },
+        'quiz': {
+            "question": "What method gets a list of all keys in a dictionary?",
+            "options": [".values()", ".items()", ".keys()", ".get()"],
+            "answer": ".keys()",
+            "hint": "Use this to loop over dictionary headings."
+        }
+    }
+    return render(request, 'data_structure/dictionaries.html', context)
+
+# Variable assignment topic view
+def variable_assignment_view(request):
+    return render(request, 'data_structure/variable_assignment.html')
+
+# Numbers topic with quiz
+def numbers_view(request):
+    quiz_data = [
+        {
+            "question": "What is 2 * (3 + 4)?",
+            "options": ["14", "10", "7", "6"],
+            "answer": "14"
+        },
+        {
+            "question": "Which function gives the absolute value?",
+            "options": ["abs()", "sum()", "int()", "round()"],
+            "answer": "abs()"
+        },
+        {
+            "question": "What is 10 % 3?",
+            "options": ["1", "2", "3", "0"],
+            "answer": "1"
+        },
+        {
+            "question": "What is the type of 10.0?",
+            "options": ["float", "int", "bool", "str"],
+            "answer": "float"
+        },
+        {
+            "question": "Which operator is used for exponentiation?",
+            "options": ["**", "^", "//", "exp()"],
+            "answer": "**"
+        },
+        {
+            "question": "What is 9 // 2?",
+            "options": ["4", "4.5", "5", "Error"],
+            "answer": "4"
+        },
+        {
+            "question": "How to convert a string '5' to int?",
+            "options": ["int('5')", "str(5)", "float(5)", "5.toInt()"],
+            "answer": "int('5')"
+        },
+        {
+            "question": "Which gives a float result?",
+            "options": ["10 / 3", "10 // 3", "10 % 3", "int(10 / 3)"],
+            "answer": "10 / 3"
+        },
+        {
+            "question": "round(7.6) returns?",
+            "options": ["8", "7", "7.6", "Error"],
+            "answer": "8"
+        },
+        {
+            "question": "abs(-4) returns?",
+            "options": ["4", "-4", "Error", "0"],
+            "answer": "4"
+        }
+    ]
+    return render(request, 'data_structure/numbers.html', {
+        'quiz_data': json.dumps(quiz_data)
+    })
+
+# Strings topic with quiz
+def strings_view(request):
+    quiz_data = [
+        {
+            "question": "Which method returns the number of characters in a string?",
+            "options": ["len()", "count()", "size()", "length()"],
+            "answer": "len()"
+        },
+        {
+            "question": "What does 'hello'.upper() return?",
+            "options": ["hello", "HELLO", "Hello", "error"],
+            "answer": "HELLO"
+        },
+        {
+            "question": "How do you combine two strings?",
+            "options": ["Using +", "Using *", "Using join()", "Both A and C"],
+            "answer": "Both A and C"
+        },
+        {
+            "question": "Which method splits a string into a list?",
+            "options": ["split()", "partition()", "explode()", "separate()"],
+            "answer": "split()"
+        },
+        {
+            "question": "'Sumon' in 'My name is Sumon' returns?",
+            "options": ["True", "False", "Error", "None"],
+            "answer": "True"
+        },
+        {
+            "question": "What does 'sumon'.capitalize() return?",
+            "options": ["SUMON", "Sumon", "sumon", "None"],
+            "answer": "Sumon"
+        },
+        {
+            "question": "What will '  hello  '.strip() return?",
+            "options": ["hello", "  hello", "hello  ", "None"],
+            "answer": "hello"
+        },
+        {
+            "question": "'Hello'.replace('l', 'x') returns?",
+            "options": ["Hexxo", "Helxo", "Hexxox", "Hexxo"],
+            "answer": "Hexxo"
+        },
+        {
+            "question": "'sumon'.find('o') returns?",
+            "options": ["4", "3", "2", "1"],
+            "answer": "3"
+        },
+        {
+            "question": "Which method checks if string ends with a certain suffix?",
+            "options": ["endswith()", "finish()", "checkend()", "suffix()"],
+            "answer": "endswith()"
+        }
+    ]
+    return render(request, 'data_structure/strings.html', {
+        'quiz_data': json.dumps(quiz_data)
+    })
+def lists_view(request):
+    quiz_data = [
+        {
+            "question": "Which method adds an item to a list?",
+            "options": ["add()", "insert()", "append()", "push()"],
+            "answer": "append()"
+        },
+        {
+            "question": "What does list indexing start at in Python?",
+            "options": ["1", "0", "-1", "Depends"],
+            "answer": "0"
+        },
+        {
+            "question": "Which method removes the last item?",
+            "options": ["remove()", "pop()", "del", "discard()"],
+            "answer": "pop()"
+        },
+        {
+            "question": "How do you combine two lists?",
+            "options": ["list1 + list2", "list1.append(list2)", "list1.merge(list2)", "combine(list1, list2)"],
+            "answer": "list1 + list2"
+        },
+        {
+            "question": "Which method removes a specific item?",
+            "options": ["pop()", "del()", "remove()", "drop()"],
+            "answer": "remove()"
+        },
+        {
+            "question": "What does len([1,2,3]) return?",
+            "options": ["2", "3", "4", "Error"],
+            "answer": "3"
+        },
+        {
+            "question": "What is the output of [1,2]*2?",
+            "options": ["[2,4]", "[1,2,1,2]", "[1,2,2,4]", "Error"],
+            "answer": "[1,2,1,2]"
+        },
+        {
+            "question": "Which of these checks if 3 is in the list [1, 2, 3]?",
+            "options": ["3 in [1, 2, 3]", "[1,2,3].has(3)", "contains([1,2,3], 3)", "find(3) in list"],
+            "answer": "3 in [1, 2, 3]"
+        },
+        {
+            "question": "How to sort a list?",
+            "options": ["list.sort()", "sort(list)", "sorted(list)", "Both A and C"],
+            "answer": "Both A and C"
+        },
+        {
+            "question": "What does list.reverse() do?",
+            "options": ["Sorts descending", "Returns reversed", "Reverses in place", "Deletes reverse"],
+            "answer": "Reverses in place"
+        }
+    ]
+    return render(request, 'data_structure/lists.html', {
+        'quiz_data': json.dumps(quiz_data)
+    })
+def tuples_view(request):
+    return render(request, 'data_structure/tuples.html')
+def sets_booleans_view(request):
+    return render(request, 'data_structure/sets_booleans.html')
+def files_view(request):
+    return render(request, 'data_structure/files.html')
+def assessment_test_view(request):
+    return render(request, 'data_structure/assessment_test.html')
+def assessment_solution_view(request):
+    return render(request, 'data_structure/assessment_solution.html')
+def comparison_operators_view(request):
+    return render(request, 'data_structure/comparison_operators.html')
+def chained_comparisons_view(request):
+    return render(request, 'data_structure/chained_comparisons.html')
+from django.shortcuts import render
+
+def python_statements_view(request):  # renamed to match urls.py
+    return render(request, 'python_statement/python_statements.html')
+
+def if_elif_else_view(request):
+    return render(request, 'python_statement/if_elif_else.html')
+def for_while_loops_view(request):
+    return render(request, 'python_statement/for_while_loops.html')
+def useful_list_view(request):
+    return render(request, 'python_statement/useful_list.html')
+def test_solutions_view(request):
+    return render(request, 'python_statement/test_solutions.html')
+def guess_challenge_solution_view(request):
+    return render(request, 'python_statement/guess_challenge_solution.html')
+def methods_view(request):
+    return render(request, 'methods_functions/methods.html')
+def fun_practice_solution_view(request):
+    return render(request, 'methods_functions/fun_practice_solution.html')
+
+def lambda_view(request):
+    return render(request, 'methods_functions/lambda.html')
+def nested_scope_view(request):
+    return render(request, 'methods_functions/nested_scope.html')
+def args_kwargs_view(request):
+    return render(request, 'methods_functions/args_kwargs.html')
+def fun_methods_homeworks_view(request):
+    return render(request, 'methods_functions/fun_methods_homeworks.html')
+def all_in_one_view(request):
+    return render(request, 'methods_functions/all_in_one.html')
+def warm_project_view(request):
+    return render(request, 'milestone_project/warm_project.html')
+def assignment_walkthrough_complete_view(request):
+    return render(request, 'milestone_project/assignment_walkthrough_complete.html')
+def tic_tac_toe_view(request):
+    return render(request, 'milestone_project/tic_tac_toe.html')
+from django.shortcuts import render
+
+# core/views.py
+from django.shortcuts import render
+
+from django.shortcuts import render
+
+def play_game_view(request):
+    steps = [
+        {
+            "title": "Step 1️⃣ display_board()",
+            "color": "primary",
+            "code": """from IPython.display import clear_output
+
+def display_board(board):
+    clear_output()
+    print('   |   |')
+    print(f' {board[7]} | {board[8]} | {board[9]}')
+    print('   |   |')
+    print('-----------')
+    print('   |   |')
+    print(f' {board[4]} | {board[5]} | {board[6]}')
+    print('   |   |')
+    print('-----------')
+    print('   |   |')
+    print(f' {board[1]} | {board[2]} | {board[3]}')
+    print('   |   |')"""
+        },
+        {
+            "title": "Step 2️⃣ player_input()",
+            "color": "success",
+            "code": """def player_input():
+    marker = ''
+    while marker not in ('X','O'):
+        marker = input('Player 1: X or O? ').upper()
+    return ('X','O') if marker=='X' else ('O','X')"""
+        },
+        {
+            "title": "Step 3️⃣ place_marker()",
+            "color": "info",
+            "code": "def place_marker(board, marker, position):\n    board[position] = marker"
+        },
+        {
+            "title": "Step 4️⃣ win_check()",
+            "color": "warning",
+            "code": """def win_check(board, mark):
+    return ((board[7]==mark and board[8]==mark and board[9]==mark) or
+            (board[4]==mark and board[5]==mark and board[6]==mark) or
+            (board[1]==mark and board[2]==mark and board[3]==mark) or
+            (board[7]==mark and board[4]==mark and board[1]==mark) or
+            (board[8]==mark and board[5]==mark and board[2]==mark) or
+            (board[9]==mark and board[6]==mark and board[3]==mark) or
+            (board[7]==mark and board[5]==mark and board[3]==mark) or
+            (board[9]==mark and board[5]==mark and board[1]==mark))"""
+        },
+        {
+            "title": "Step 5️⃣ choose_first()",
+            "color": "danger",
+            "code": """import random
+
+def choose_first():
+    return 'Player 1' if random.randint(0,1)==1 else 'Player 2'"""
+        },
+        {
+            "title": "Step 6️⃣ space_check()",
+            "color": "dark",
+            "code": "def space_check(board, position):\n    return board[position]==' '"
+        },
+        {
+            "title": "Step 7️⃣ full_board_check()",
+            "color": "secondary",
+            "code": "def full_board_check(board):\n    return not any(space_check(board, i) for i in range(1,10))"
+        },
+        {
+            "title": "Step 8️⃣ player_choice()",
+            "color": "primary",
+            "code": """def player_choice(board):
+    pos=0
+    while pos not in range(1,10) or not space_check(board,pos):
+        pos=int(input('Choose pos (1-9): '))
+    return pos"""
+        },
+        {
+            "title": "Step 9️⃣ replay()",
+            "color": "success",
+            "code": "def replay():\n    return input('Play again? Yes/No: ').lower().startswith('y')"
+        },
+        {
+            "title": "🔟 Main Game Loop",
+            "color": "info",
+            "code": """print('Welcome to Tic Tac Toe!')
+
+while True:
+    board=[' ']*10
+    p1,p2=player_input()
+    turn=choose_first()
+    print(f'{turn} goes first.')
+    game_on=input('Ready? Yes/No: ').lower().startswith('y')
+
+    while game_on:
+        if turn=='Player 1':
+            display_board(board)
+            pos=player_choice(board)
+            place_marker(board,p1,pos)
+            if win_check(board,p1):
+                display_board(board); print('P1 wins!'); break
+            if full_board_check(board):
+                display_board(board); print('Draw!'); break
+            turn='Player 2'
+        else:
+            display_board(board)
+            pos=player_choice(board)
+            place_marker(board,p2,pos)
+            if win_check(board,p2):
+                display_board(board); print('P2 wins!'); break
+            if full_board_check(board):
+                display_board(board); print('Draw!'); break
+            turn='Player 1'
+
+    if not replay(): break"""
+        }
+    ]
+    return render(request, 'milestone_project/play_game.html', {'steps': steps})
+
+
+def ready_play_view(request):
+    return render(request, 'milestone_project/ready_play.html')
+def ready_play_view(request):
+    grid = [[r * 9 + c for c in range(9)] for r in range(3)]
+    return render(request, 'milestone_project/ready_play.html', {'grid': grid})
+def object_view(request):
+    examples = [
+        {
+            'title': 'Creating a Simple Class',
+            'description': 'Define a class and create an object of it.',
+            'code': '''class Person:\n    pass\n\njohn = Person()\nprint(type(john))'''
+        },
+        {
+            'title': 'Using the __init__ Method',
+            'description': 'Initialize class with instance attributes.',
+            'code': '''class Dog:\n    def __init__(self, name):\n        self.name = name\n\nd = Dog("Buddy")\nprint(d.name)'''
+        },
+        {
+            'title': 'Class and Instance Attributes',
+            'description': 'Shared vs. unique attributes.',
+            'code': '''class Circle:\n    pi = 3.14\n    def __init__(self, radius):\n        self.radius = radius\nprint(Circle.pi)'''
+        },
+        {
+            'title': 'Methods in Class',
+            'description': 'Define behaviors with methods.',
+            'code': '''class Car:\n    def start(self):\n        print("Car started")\nc = Car()\nc.start()'''
+        },
+        {
+            'title': 'Inheritance',
+            'description': 'Child class inherits from parent.',
+            'code': '''class Animal:\n    def speak(self):\n        print("Animal sound")\n\nclass Cat(Animal):\n    pass\n\nc = Cat()\nc.speak()'''
+        },
+        {
+            'title': 'Overriding Methods',
+            'description': 'Child class overrides parent method.',
+            'code': '''class Animal:\n    def speak(self):\n        print("Animal sound")\n\nclass Dog(Animal):\n    def speak(self):\n        print("Bark")\nd = Dog()\nd.speak()'''
+        },
+        {
+            'title': 'Polymorphism',
+            'description': 'Same interface, different behavior.',
+            'code': '''class Bird:\n    def fly(self):\n        print("Flying")\nclass Plane:\n    def fly(self):\n        print("Jet flying")\nfor f in [Bird(), Plane()]:\n    f.fly()'''
+        },
+        {
+            'title': 'Encapsulation',
+            'description': 'Restrict access to methods/variables.',
+            'code': '''class Bank:\n    def __init__(self):\n        self.__balance = 1000\n    def get_balance(self):\n        return self.__balance\nb = Bank()\nprint(b.get_balance())'''
+        },
+        {
+            'title': 'Using __str__ Method',
+            'description': 'Readable string representation.',
+            'code': '''class Book:\n    def __init__(self, title):\n        self.title = title\n    def __str__(self):\n        return f"Book: {self.title}"\nprint(Book("Python"))'''
+        },
+        {
+            'title': 'Using __len__ Method',
+            'description': 'Custom behavior for len().',
+            'code': '''class Movie:\n    def __init__(self, title, duration):\n        self.title = title\n        self.duration = duration\n    def __len__(self):\n        return self.duration\nm = Movie("Oppenheimer", 180)\nprint(len(m))'''
+        }
+    ]
+
+    quiz = [
+        {"question": "What keyword is used to define a class?"},
+        {"question": "What does __init__ method do?"},
+        {"question": "What is the term for a class inheriting another class?"},
+        {"question": "What does encapsulation mean in OOP?"},
+        {"question": "Which special method returns a string representation of an object?"},
+        {"question": "How do you override a method in a child class?"},
+        {"question": "What is polymorphism in Python?"},
+        {"question": "What is the syntax to access a private variable in Python?"},
+        {"question": "Which method is called when len() is used?"},
+        {"question": "What is the output of str(Book('Test')) if __str__ is defined?"}
+    ]
+
+    quiz_answers = {
+        "q1": "class",
+        "q2": "constructor",
+        "q3": "inheritance",
+        "q4": "data hiding",
+        "q5": "__str__",
+        "q6": "redefine",
+        "q7": "same method different class",
+        "q8": "__varname",
+        "q9": "__len__",
+        "q10": "Book: Test"
+    }
+
+    return render(request, 'ob_ori_prog/object.html', {
+        "examples": examples,
+        "quiz": quiz,
+        "quiz_answers": quiz_answers
+    })
+def obj_homework_view(request):
+    exercises = [
+        {
+            "title": "Create a Dog class",
+            "description": "Include attributes like breed, name, and spots. All strings.",
+            "task": "class Dog:\n    def __init__(self, breed, name, spots):\n        pass",
+            "solution": "class Dog:\n    def __init__(self, breed, name, spots):\n        self.breed = breed\n        self.name = name\n        self.spots = spots"
+        },
+        {
+            "title": "Add species class attribute",
+            "description": "Set species = 'mammal' for all dogs.",
+            "task": "class Dog:\n    pass",
+            "solution": "class Dog:\n    species = 'mammal'\n    def __init__(self, name):\n        self.name = name"
+        },
+        # Add 8 more tasks/solutions similarly...
+    ]
+    return render(request, 'ob_ori_prog/obj_homework.html', {"exercises": exercises})
+def oop_che_sol_view(request):
+    examples = [
+        {
+            "title": "Account Class Basics",
+            "description": "Create a class with owner and balance attributes.",
+            "task": "class Account:\n    def __init__(self, owner, balance):\n        pass",
+            "solution": "class Account:\n    def __init__(self, owner, balance):\n        self.owner = owner\n        self.balance = balance"
+        },
+        {
+            "title": "Add Deposit Method",
+            "description": "Add a method to increase the account balance.",
+            "task": "def deposit(self, amount):\n    pass",
+            "solution": "def deposit(self, amount):\n    self.balance += amount"
+        },
+        # Add 8 more as needed...
+    ]
+    return render(request, 'ob_ori_prog/oop_che_sol.html', {'examples': examples})
+
+def mod_pack_view(request):
+    return render(request, 'modules_packages/mod_pack.html')
+
+
+def all_in_one_view(request):
+    base_path = os.path.join('core', 'modules_packages')
+
+    def read_file(filename):
+        path = os.path.join(base_path, filename)
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                return f.read()
+        except FileNotFoundError:
+            return f"⚠️ {filename} not found."
+
+    context = {
+        'one_code': read_file('one.py'),
+        'two_code': read_file('two.py'),
+        'explanation': read_file('Explanation.txt'),
+    }
+
+    return render(request, 'modules_packages/all_in_one.html', context)
+def error_solution_view(request):
+    context = {
+        'quiz_questions': quiz_questions,
+        'quiz_answers': quiz_answers,
+        'question_range': range(1, 11)  # 👈 this line added
+    }
+    return render(request, 'error_home_solution/error_hand_unit.html', context)
+
+from django.shortcuts import render
+
+from django.shortcuts import render
+
+def error_hand_unit_view(request):
+    quiz_data = [
+        {"question": "What keyword is used for the first condition in a conditional block?", "options": ["if", "else", "elif", "then"]},
+        {"question": "Which keyword handles exceptions in Python?", "options": ["catch", "handle", "except", "error"]},
+        {"question": "What error occurs when dividing by zero?", "options": ["TypeError", "ZeroDivisionError", "ValueError", "CalcError"]},
+        {"question": "Which block always executes?", "options": ["try", "finally", "except", "else"]},
+        {"question": "Which keyword raises an exception?", "options": ["throw", "raise", "assert", "error"]},
+        {"question": "Which error occurs when accessing out-of-range list index?", "options": ["IndexError", "KeyError", "TypeError", "ValueError"]},
+        {"question": "Which is the root of all exceptions in Python?", "options": ["Exception", "BaseException", "Error", "IOError"]},
+        {"question": "Which module prints the full traceback?", "options": ["logger", "traceback", "debug", "report"]},
+        {"question": "Which block runs only when no error occurs?", "options": ["finally", "else", "pass", "catch"]},
+        {"question": "How do you handle multiple exceptions in one block?", "options": ["except (A, B):", "except A or B:", "catch A, B:", "handle A & B:"]}
+    ]
+
+    quiz_answers = [
+        "if", "except", "ZeroDivisionError", "finally", "raise",
+        "IndexError", "BaseException", "traceback", "else", "except (A, B):"
+    ]
+
+    context = {
+        "quiz_data": quiz_data,
+        "quiz_answers": quiz_answers
+    }
+    return render(request, 'error_home_solution/error_hand_unit.html', context)
+def simple_python(request):
+    return render(request, 'error_home_solution/simple_py.html')
+from django.shortcuts import render
+
+def warmup_intro(request):
+    return render(request, 'milestone_intro/warmup_intro_project.html')
+
+def blackjack_walkthrough(request):
+    return render(request, 'milestone_blackjack/walkthrough_steps.html')
+def blackjack_solution(request):
+    return render(request, 'milestone_blackjack/blackjack_solution.html')
+from django.shortcuts import render
+
+from django.shortcuts import render
+
+from django.shortcuts import render
+from functools import reduce  # Required for reduce() examples
+
+def all_empty_all(request):
+    topics = [
+        {
+            'title': 'map()',
+            'function': 'map(function, iterable)',
+            'learn': 'Transform elements in a list using a function or lambda.',
+            'reuse': 'Helpful in temperature conversion, formatting data, etc.',
+            'examples': [
+                {'code': 'def fahrenheit(celsius):\n    return (9/5)*celsius + 32\n\ntemps = [0, 22.5, 40, 100]', 'comment': 'Define a function and list of temperatures'},
+                {'code': 'F_temps = map(fahrenheit, temps)\nlist(F_temps)', 'comment': 'Convert each Celsius value to Fahrenheit'},
+                {'code': 'list(map(lambda x: (9/5)*x + 32, temps))', 'comment': 'Lambda version of conversion'},
+                {'code': 'a = [1,2,3,4]\nb = [5,6,7,8]\nlist(map(lambda x,y: x+y, a, b))', 'comment': 'Element-wise sum of two lists'}
+            ]
+        },
+        {
+            'title': 'reduce()',
+            'function': 'reduce(function, iterable)',
+            'learn': 'Apply a rolling computation to sequential elements.',
+            'reuse': 'Use for summation, multiplication, finding max/min.',
+            'examples': [
+                {'code': 'from functools import reduce\nnums = [1, 2, 3, 4, 5]\ntotal = reduce(lambda x, y: x + y, nums)', 'comment': 'Sum all numbers: 15'},
+                {'code': 'nums = [1, 2, 3, 4]\nproduct = reduce(lambda x, y: x * y, nums)', 'comment': 'Multiply all numbers: 24'},
+                {'code': 'nums = [1, 5, 3, 9, 2]\nmax_val = reduce(lambda x, y: x if x > y else y, nums)', 'comment': 'Find the maximum value: 9'},
+                {'code': "words = ['Python', 'is', 'fun']\nsentence = reduce(lambda x, y: x + ' ' + y, words)", 'comment': 'Concatenate words into a sentence'}
+            ]
+        },
+        {
+            'title': 'filter()',
+            'function': 'filter(function, iterable)',
+            'learn': 'Filter elements that meet a condition.',
+            'reuse': 'Use to remove unwanted data like empty strings or negatives.',
+            'examples': [
+                {'code': 'nums = [1, 2, 3, 4, 5, 6]\nev = list(filter(lambda x: x % 2 == 0, nums))', 'comment': 'Filter even numbers'},
+                {'code': "names = ['Tom', 'Alice', 'Sam', 'Jonathan']\nlong_names = list(filter(lambda name: len(name) > 4, names))", 'comment': 'Names longer than 4 characters'},
+                {'code': 'texts = ["Hello", "", "World", "", "Python"]\nnon_empty = list(filter(lambda x: x != "", texts))', 'comment': 'Remove empty strings'},
+                {'code': 'values = [4, -3, 2, -1, 0, 7]\npositives = list(filter(lambda x: x >= 0, values))', 'comment': 'Filter out negative numbers'}
+            ]
+        },
+        {
+            'title': 'zip()',
+            'function': 'zip(iter1, iter2, ...)',
+            'learn': 'Combine elements from multiple iterables into tuples.',
+            'reuse': 'Use for merging lists, creating dictionaries, or parallel iteration.',
+            'examples': [
+                {'code': "names = ['Alice', 'Bob']\nages = [25, 30]\nlist(zip(names, ages))", 'comment': 'Zip two lists into pairs'},
+                {'code': "keys = ['id', 'name']\nvalues = [101, 'Alice']\ndict(zip(keys, values))", 'comment': 'Create dictionary from two lists'},
+                {'code': 'a = [1, 2, 3]\nb = [4, 5, 6]\n[x + y for x, y in zip(a, b)]', 'comment': 'Element-wise addition'},
+                {'code': "x = [10, 20, 30]\ny = ['a', 'b']\nlist(zip(x, y))", 'comment': 'Zip stops at shortest iterable'}
+            ]
+        },
+        {
+            'title': 'enumerate()',
+            'function': 'enumerate(iterable, start=0)',
+            'learn': 'Loop over items with an index counter.',
+            'reuse': 'Useful in loops where index tracking is needed.',
+            'examples': [
+                {'code': "fruits = ['apple', 'banana', 'cherry']\nfor i, f in enumerate(fruits): print(i, f)", 'comment': 'Print index and fruit'},
+                {'code': "for i, f in enumerate(fruits, start=1): print(i, f)", 'comment': 'Start indexing from 1'},
+                {'code': "[(i, f) for i, f in enumerate(fruits)]", 'comment': 'List of indexed tuples'},
+                {'code': "for i, f in enumerate(fruits):\n    if f == 'banana': print(f'Found at {i}')", 'comment': 'Find index of a specific item'}
+            ]
+        },
+        {
+            'title': 'all() and any()',
+            'function': 'all(iterable), any(iterable)',
+            'learn': 'Check if all or any conditions are True.',
+            'reuse': 'Useful in validation checks, data cleaning.',
+            'examples': [
+                {'code': 'conditions = [True, True, True]\nall(conditions)', 'comment': 'Returns True if all True'},
+                {'code': 'checks = [True, False, True]\nall(checks)', 'comment': 'Returns False because of one False'},
+                {'code': 'alerts = [False, False, True]\nany(alerts)', 'comment': 'Returns True because at least one True'},
+                {'code': 'scores = [80, 90, 75]\nall(score > 60 for score in scores)', 'comment': 'Check all scores > 60'}
+            ]
+        },
+        {
+            'title': 'Complex Numbers',
+            'function': 'complex(real, imag)',
+            'learn': 'Work with real + imaginary numbers.',
+            'reuse': 'Helpful in math, engineering, and simulations.',
+            'examples': [
+                {'code': 'z = complex(2, 3)\nprint(z)', 'comment': 'Creates 2 + 3j'},
+                {'code': 'z.real', 'comment': 'Returns real part: 2.0'},
+                {'code': 'z.imag', 'comment': 'Returns imaginary part: 3.0'},
+                {'code': 'abs(z)', 'comment': 'Magnitude of complex number: √(2² + 3²)'}
+            ]
+        }
+    ]
+
+    quiz_data = [
+        {'question': "What does the map() function do?", 'answer': "transforms iterable", 'hint': "Applies a function to all items"},
+        {'question': "Which function combines iterables element-wise?", 'answer': "zip", 'hint': "Pairs elements like a zipper"},
+        {'question': "What does all() return if one element is False?", 'answer': "false", 'hint': "All must be True"},
+        {'question': "What is the output of any([False, False, True])?", 'answer': "true", 'hint': "At least one True"},
+        {'question': "What function reduces a list to a single value?", 'answer': "reduce", 'hint': "Comes from functools"}
+    ]
+
+    return render(request, 'empty_section_all/all_empty_all.html', {
+        'topics': topics,
+        'quiz': quiz_data
+    })
+def build_in_solution_view(request):
+    return render(request, 'empty_section_all/build_in_solution.html')
+def home_decorator(request):
+    return render(request, 'decorator_home/home_decorator.html')
+def generators_iterator(request):
+    return render(request, 'iterators_generator/generators_iterator.html')
+def math_datetime_open_colect_view(request):
+    return render(request, 'colect_open_datetime_math/math_datetime_open_colect.html')
+def deb_regular_timing_code_view(request):
+    return render(request, 'colect_open_datetime_math/deb_regular_timing_code.html')
+def scraping_web_view(request):
+    return render(request, 'web_scraping/scraping_web.html')
+def image_working_view(request):
+    return render(request, 'working_image/image_working.html')
+def csv_with_view(request):
+    return render(request, 'with_csv/csv_with.html')
+def some_practice_view(request):
+    return render(request, 'with_csv/some_practice.html')
+def emailing_python_view(request):
+    return render(request, 'emailing/emailing_python.html')
+def advanced_solution(request):
+    return render(request, 'advanced_pods/advanced_solution.html')
+def pods_advanced_all_in_one(request):
+    return render(request, 'advanced_pods/pods_advanced_all_in_one.html')
+
+def project_three(request):
+    return render(request, 'milestone_project_three/project_three.html')
+def widget_bonus_view(request):
+    return render(request, 'bonus_widget/widget_bonus.html')
+
+
+
+
+core/urls.py:
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home_view, name='home'),
+
+    # Python Basics
+    path('numbers/', views.numbers_view, name='numbers'),
+    path('variable-assignment/', views.variable_assignment_view, name='variable_assignment'),
+    path('strings/', views.strings_view, name='strings'),
+    path('lists/', views.lists_view, name='lists'),
+    path('tuples/', views.tuples_view, name='tuples'),
+    path('sets-booleans/', views.sets_booleans_view, name='sets_booleans'),
+    path('files/', views.files_view, name='files'),
+    path('dictionaries/', views.dictionaries_view, name='dictionaries'),
+
+    # Assessments
+    path('assessment-test/', views.assessment_test_view, name='assessment_test'),
+    path('assessment-solution/', views.assessment_solution_view, name='assessment_solution'),
+
+    # Comparison Operators
+    path('comparison-operators/', views.comparison_operators_view, name='comparison_operators'),
+    path('chained-comparisons/', views.chained_comparisons_view, name='chained_comparisons'),
+
+    # Python Statements
+    path('python-statements/', views.python_statements_view, name='python_statements'),
+    path('if-elif-else/', views.if_elif_else_view, name='if_elif_else'),
+    path('for-while-loops/', views.for_while_loops_view, name='for_while_loops'),
+    path('useful-operators/', views.useful_list_view, name='useful_operators'),
+    path('test-solutions/', views.test_solutions_view, name='test_solutions'),
+    path('guess-challenge-solution/', views.guess_challenge_solution_view, name='guess_challenge_solution'),
+
+    # Methods and Functions
+    path('methods/', views.methods_view, name='methods'),
+    path('functions-practice/', views.fun_practice_solution_view, name='fun_practice_solution'),
+    path('lambda/', views.lambda_view, name='lambda'),
+    path('nested-scope/', views.nested_scope_view, name='nested_scope'),
+    path('args-kwargs/', views.args_kwargs_view, name='args_kwargs'),
+    path('fun-methods-homeworks/', views.fun_methods_homeworks_view, name='fun_methods_homeworks'),
+    path('all-in-one/', views.all_in_one_view, name='all_in_one'),
+
+    # Milestone Projects
+    path('warm-project/', views.warm_project_view, name='warm_project'),
+    path('assignment-walkthrough-complete/', views.assignment_walkthrough_complete_view, name='assignment_walkthrough_complete'),
+    path('blackjack-walkthrough/', views.blackjack_walkthrough, name='blackjack_walkthrough'),
+    path('blackjack-solution/', views.blackjack_solution, name='blackjack_solution'),
+    path('tic-tac-toe/', views.tic_tac_toe_view, name='tic_tac_toe'),
+
+    # Playable Games
+    path('play-game/', views.play_game_view, name='play_game'),
+    path('ready-play/', views.ready_play_view, name='ready_play'),
+
+    # OOP + Modules
+    path('object/', views.object_view, name='object'),  # 🔧 add this
+    path('obj-homework/', views.obj_homework_view, name='obj_homework'),
+    path('oop-che-sol/', views.oop_che_sol_view, name='oop_che_sol'),
+    path('modules-packages/', views.mod_pack_view, name='modules_packages'),
+
+    # Error Handling
+    path('error_hand_unit/', views.error_hand_unit_view, name='error_hand_unit'),
+
+    # Decorators & Generators
+    path('decorators/', views.home_decorator, name='home_decorator'),
+    path('generators-iterator/', views.generators_iterator, name='generators_iterator'),
+
+    # Utilities
+    path('math-datetime-open-colect/', views.math_datetime_open_colect_view, name='math_datetime_open_colect'),
+    path('deb-regular-timing-code/', views.deb_regular_timing_code_view, name='deb_regular_timing_code'),
+
+    # Web Scraping & Images
+    path('scraping-web/', views.scraping_web_view, name='scraping_web'),
+    path('image-working/', views.image_working_view, name='image_working'),
+
+    # Misc
+    path('empty-section-all/', views.all_empty_all, name='all_empty_all'),
+    path('build-in-solution/', views.build_in_solution_view, name='build_in_solution'),
+    path('simple-python/', views.simple_python, name='simple_python'),
+    path('warmup-intro/', views.warmup_intro, name='warmup_intro'),
+    path('csv_with/', views.csv_with_view, name='csv_with'),
+    path('some_practice/', views.some_practice_view, name='some_practice'),
+    path('emailing_python/', views.emailing_python_view, name='emailing_python'),
+    path('pods-advanced/', views.pods_advanced_all_in_one, name='pods_advanced_all_in_one'),
+    path('pods-advanced/', views.pods_advanced_all_in_one, name='pods_advanced_all_in_one'),
+
+    path('advanced_solution/', views.advanced_solution, name='advanced_solution'),
+    path('project-three/', views.project_three, name='project_three'),
+    path('widget-bonus/', views.widget_bonus_view, name='widget_bonus'),
+]
+
+
+project/urls.py
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('core.urls')),
+]
+
+
+home.html
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-success">Welcome to Python Portfolio</h1>
+  <p class="lead">Select a topic to explore:</p>
+  <ul>
+    <li><a href="{% url 'numbers' %}">Python Numbers</a></li>
+    <li><a href="{% url 'variable_assignment' %}">Variable Assignment</a></li>
+    <li><a href="{% url 'dictionaries' %}">Dictionaries</a></li>
+    <li><a href="{% url 'numbers' %}">numbers</a></li>
+    <li><a href="{% url 'variable_assignment' %}">variable_assignment</a></li>
+    <li><a href="{% url 'strings' %}">strings</a></li>
+    <li><a href="{% url 'lists' %}">lists</a></li>
+    <li><a href="{% url 'tuples' %}">tuples</a></li>
+     <li><a href="{% url 'sets_booleans' %}">sets_booleans</a></li>
+     <li><a href="{% url 'assessment_test' %}">assessment_test</a></li>
+     <li><a href="{% url 'comparison_operators' %}">comparison_operators</a></li>
+      <li><a href="{% url 'assessment_solution' %}">assessment_solution</a></li>
+      <li><a href="{% url 'assessment_solution' %}">assessment_solution</a></li>
+      <li><a href="{% url 'assessment_solution' %}">assessment_solution</a></li>
+      <li><a href="{% url 'assessment_solution' %}">assessment_solution</a></li>
+  </ul>
+</div>
+{% endblock %}
+
+
+
+home.html
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+  <h1 class="text-center fw-bold mb-4">👨‍💻 Sumon's Python Portfolio</h1>
+  <p class="text-center lead">Explore All Python Learning Sections</p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+
+    <!-- 00 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">📚 00 - Object & Data Structures</h5>
+          <a href="{% url 'numbers' %}" class="btn btn-primary btn-sm mt-2">Start</a>
+        </div>
+      
+
+  <div class="mt-5"></div></div>
+    </div>
+
+    <!-- 01 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🔍 01 - Comparison Operators</h5>
+          <a href="{% url 'comparison_operators' %}" class="btn btn-primary btn-sm mt-2">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">📄 02 - Python Statements</h5>
+          <a href="/python-statement/" class="btn btn-primary btn-sm mt-2">Learn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🧠 03 - Methods & Functions</h5>
+          <a href="{% url 'methods' %}" class="btn btn-primary btn-sm mt-2">Practice</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🧪 04 - Milestone Project 1</h5>
+          <a href="{% url 'warm_project' %}" class="btn btn-primary btn-sm mt-2">Start Project</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🏗️ 05 - OOP in Python</h5>
+          <a href="{% url 'object' %}" class="btn btn-primary btn-sm mt-2">Dive In</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">📦 06 - Modules & Packages</h5>
+          <a href="{% url 'modules_packages' %}" class="btn btn-primary btn-sm mt-2">View</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🧪 07 - Error & Exception</h5>
+          <a href="{% url 'error_hand_unit' %}" class="btn btn-primary btn-sm mt-2">Handle Errors</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🧪 08 - Milestone Project 2</h5>
+          <a href="/blackjack-walkthrough/" class="btn btn-primary btn-sm mt-2">Play Blackjack</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🚧 09 - Empty Section</h5>
+          <a href="{% url 'all_empty_all' %}" class="btn btn-primary btn-sm mt-2">Explore</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🎯 10 - Decorators</h5>
+          <a class="dropdown-item" href="{% url 'home_decorator' %}">🧠 Decorators Intro</a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🌀 11 - Generators</h5>
+          <a href="{% url 'generators_iterator' %}" class="btn btn-primary btn-sm mt-2">Generate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">⚙️ 12 - Advanced Modules</h5>
+          <a href="{% url 'pods_advanced_all_in_one' %}" class="btn btn-primary btn-sm mt-2">View</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🌐 13 - Web Scraping</h5>
+          <a href="{% url 'scraping_web' %}" class="btn btn-primary btn-sm mt-2">Scrape Web</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🖼️ 14 - Images</h5>
+          <a href="{% url 'image_working' %}" class="btn btn-primary btn-sm mt-2">View Images</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">📄 15 - PDFs & Excel</h5>
+          <a href="{% url 'some_practice' %}" class="btn btn-primary btn-sm mt-2">Access Files</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">📧 16 - Emailing</h5>
+          <a href="{% url 'emailing_python' %}" class="btn btn-primary btn-sm mt-2">Send Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🔍 17 - Advanced Python Objects</h5>
+          <a href="{% url 'advanced_solution' %}" class="btn btn-primary btn-sm mt-2">View Objects</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18 -->
+    <div class="col">
+      <div class="card h-100 shadow-sm text-center">
+        <div class="card-body">
+          <h5 class="card-title">🧩 18 - GUI Projects</h5>
+          <a href="{% url 'widget_bonus' %}" class="btn btn-primary btn-sm mt-2">Try GUI</a>
+        </div>
+      </div></div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+numbers.html for quiz
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container mt-5">
+  <h1 class="text-primary">📘 Python Numbers</h1>
+  <p class="lead">
+    In Python, numbers can be integers, floats, or complex types.
+    You can perform various arithmetic operations using operators like
+    <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>,
+    <code>%</code>, <code>//</code>, and <code>**</code>.
+  </p>
+
+  <hr>
+  <h3 class="text-success">💼 Real-World Examples</h3>
+
+  <!-- Example 1 -->
+  <h5>1️⃣ Budget Calculation</h5>
+  <pre><code>income = 3000
+expenses = 2500
+savings = income - expenses
+print(savings)  # Output: 500</code></pre>
+  <ul>
+    <li>🔹 <strong>Function Used:</strong> Basic arithmetic (-)</li>
+    <li>📘 <strong>Learned:</strong> Subtracting to find savings</li>
+    <li>♻️ <strong>Reusability:</strong> Budgeting, accounting</li>
+    <li>💬 <strong>Comments:</strong> Simple use case showing numeric operations</li>
+  </ul>
+
+  <!-- Example 2 -->
+  <h5>2️⃣ Percentage Discount</h5>
+  <pre><code>price = 120
+discount = 20
+final_price = price * ((100 - discount) / 100)
+print(final_price)  # Output: 96.0</code></pre>
+  <ul>
+    <li>🔹 <strong>Function Used:</strong> Arithmetic and float division</li>
+    <li>📘 <strong>Learned:</strong> Calculating percentage-based reductions</li>
+    <li>♻️ <strong>Reusability:</strong> Shopping apps, billing systems</li>
+    <li>💬 <strong>Comments:</strong> Watch for float division</li>
+  </ul>
+
+  <!-- Example 3 -->
+  <h5>3️⃣ Round and Absolute</h5>
+  <pre><code>print(round(7.6))   # Output: 8
+print(abs(-4))      # Output: 4</code></pre>
+  <ul>
+    <li>🔹 <strong>Function Used:</strong> round(), abs()</li>
+    <li>📘 <strong>Learned:</strong> Rounding and converting to positive</li>
+    <li>♻️ <strong>Reusability:</strong> Data cleaning, finance</li>
+    <li>💬 <strong>Comments:</strong> abs() is useful for deviations</li>
+  </ul>
+
+  <hr>
+  <h3 class="text-info">🧠 Interactive Quiz (10 Questions)</h3>
+  <div id="quizBox" class="mt-4"></div>
+  <div id="quizSummary" class="mt-4"></div>
+</div>
+
+<!-- ✅ Audio Sound Effects -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+<script>
+const quizQuestions = [
+  { question: "What is 2 * (3 + 4)?", options: ["14", "10", "7", "6"], answer: "14", hint: "Use parentheses first." },
+  { question: "Which function gives the absolute value?", options: ["abs()", "sum()", "int()", "round()"], answer: "abs()", hint: "Turns negatives into positives." },
+  { question: "What is 10 % 3?", options: ["1", "2", "3", "0"], answer: "1", hint: "Gives remainder." },
+  { question: "What is the type of 10.0?", options: ["float", "int", "bool", "str"], answer: "float", hint: "Decimal = float." },
+  { question: "Which operator is used for exponentiation?", options: ["**", "^", "//", "exp()"], answer: "**", hint: "2 ** 3 = 8" },
+  { question: "What is 9 // 2?", options: ["4", "4.5", "5", "Error"], answer: "4", hint: "Integer division" },
+  { question: "How to convert '5' to int?", options: ["int('5')", "str(5)", "float(5)", "5.toInt()"], answer: "int('5')", hint: "Use int()" },
+  { question: "Which gives a float result?", options: ["10 / 3", "10 // 3", "10 % 3", "int(10 / 3)"], answer: "10 / 3", hint: "'/' returns float" },
+  { question: "round(7.6) returns?", options: ["8", "7", "7.6", "Error"], answer: "8", hint: "Nearest integer" },
+  { question: "abs(-4) returns?", options: ["4", "-4", "Error", "0"], answer: "4", hint: "Removes minus" }
+];
+
+let currentQuestion = 0, score = 0, userAnswers = [], timerInterval;
+
+function loadQuestion() {
+  const q = quizQuestions[currentQuestion];
+  const qBox = document.getElementById('quizBox');
+
+  const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
+  document.getElementById('quizSummary').innerHTML = `
+    <div class="progress mb-2">
+      <div class="progress-bar bg-info" style="width: ${progress}%">${Math.round(progress)}%</div>
+    </div>
+    <p class="text-muted">Progress: ${currentQuestion + 1}/10 | <span id='timerDisplay'>⏱️ 15s</span></p>
+  `;
+
+  let html = `<h5><strong>Q${currentQuestion + 1}:</strong> ${q.question}</h5><form id="quizForm">`;
+  q.options.forEach((opt, idx) => {
+    html += `
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="answer" id="q${currentQuestion}_opt${idx}" value="${opt}">
+        <label class="form-check-label" for="q${currentQuestion}_opt${idx}">${opt}</label>
+      </div>`;
+  });
+
+  html += `
+    <button type="button" class="btn btn-primary mt-3" onclick="submitAnswer()">Submit</button>
+    <button type="button" class="btn btn-warning mt-3 ms-2" onclick="showHint()">💡 Hint</button>
+    <div id="hintBox" class="mt-2 text-muted"></div>
+  </form>`;
+
+  qBox.innerHTML = html;
+  setTimeout(startTimer, 50);
+  document.getElementById("quizForm").addEventListener("submit", e => e.preventDefault());
+}
+
+function showHint() {
+  const q = quizQuestions[currentQuestion];
+  document.getElementById("hintBox").innerText = "Hint: " + (q.hint || "No hint available.");
+}
+
+function startTimer() {
+  let timeLeft = 15;
+  const timerDisplay = document.getElementById("timerDisplay");
+  clearInterval(timerInterval);
+  timerDisplay.classList.remove("text-danger");
+  timerInterval = setInterval(() => {
+    timeLeft--;
+    timerDisplay.innerText = `⏱️ ${timeLeft}s`;
+
+    if (timeLeft <= 5) {
+      timerDisplay.classList.add("text-danger");
+    }
+
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      timerDisplay.innerText = "⏱️ Time's up!";
+      document.getElementById("quizBox").innerHTML += `
+        <div class="alert alert-warning mt-3">
+          ⏱️ You ran out of time!
+        </div>
+        <button class="btn btn-primary" onclick="restartQuiz()">Restart</button>
+      `;
+    }
+  }, 1000);
+}
+
+function submitAnswer() {
+  clearInterval(timerInterval);
+  const selected = document.querySelector('input[name="answer"]:checked');
+  const q = quizQuestions[currentQuestion];
+  const qBox = document.getElementById('quizBox');
+
+  if (!selected) {
+    alert("Please select an answer.");
+    return;
+  }
+
+  const userAnswer = selected.value;
+  const isCorrect = userAnswer === q.answer;
+
+  userAnswers.push({
+    question: q.question,
+    selected: userAnswer,
+    correct: q.answer,
+    result: isCorrect ? '✅ Correct' : '❌ Incorrect'
+  });
+
+  const sound = document.getElementById(isCorrect ? "correctSound" : "wrongSound");
+  sound.volume = 0.2;
+  sound.play();
+
+  document.querySelectorAll('input[name="answer"]').forEach(input => {
+    const label = input.nextElementSibling;
+    if (input.value === q.answer) label.classList.add('text-success');
+    if (input.checked && input.value !== q.answer) label.classList.add('text-danger');
+    input.disabled = true;
+  });
+
+  qBox.innerHTML += `
+    <div class="alert ${isCorrect ? 'alert-success' : 'alert-danger'} mt-3">
+      ${isCorrect ? '✅ Correct!' : '❌ Wrong!'}<br>
+      <strong>Correct Answer:</strong> ${q.answer}
+    </div>
+    <button class="btn btn-success" onclick="nextQuestion()">Next</button>
+    <button class="btn btn-outline-primary ms-2" onclick="restartQuiz()">Restart</button>
+  `;
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizQuestions.length) {
+    loadQuestion();
+  } else {
+    showFinalScore();
+  }
+}
+
+function showFinalScore() {
+  let message = score === 10 ? "🎉 Perfect Score!" :
+                score >= 7 ? "👍 Great job!" :
+                "📘 Review and try again!";
+  let result = `
+    <h4 class="text-success">Quiz Complete!</h4>
+    <p>You got <strong>${score}/10</strong> correct. ${message}</p>
+    <h5 class="mt-4">🧾 Review:</h5>
+    <ul class="list-group">`;
+
+  userAnswers.forEach((item, i) => {
+    result += `
+      <li class="list-group-item">
+        <strong>Q${i + 1}:</strong> ${item.question}<br>
+        <span class="${item.result.includes('✅') ? 'text-success' : 'text-danger'}">${item.result}</span><br>
+        <strong>Your Answer:</strong> ${item.selected}<br>
+        <strong>Correct:</strong> ${item.correct}
+      </li>`;
+  });
+
+  result += `</ul>
+    <button class="btn btn-primary mt-4" onclick="restartQuiz()">Start Again</button>
+  `;
+
+  document.getElementById('quizBox').innerHTML = result;
+  document.getElementById('quizSummary').innerHTML = '';
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  userAnswers = [];
+  loadQuestion();
+}
+
+window.addEventListener('load', loadQuestion);
+</script>
+
+{% endblock %}

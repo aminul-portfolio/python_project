@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🧠 Built-in Functions – Full Solution</h1>
+    <p class="fs-5 text-muted"><strong>This section demonstrates the use of Python built-in functions like map, reduce, filter, zip, and enumerate.</strong></p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#examplesTab">Examples <span class="badge bg-secondary" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#quizTab">Quiz <span class="badge bg-info" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examplesTab">
+      <div class="row" id="exampleCards">
+        <!-- Card 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ map Function</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code>def word_lengths(phrase):
+    return list(map(len, phrase.split()))
+
+# Example
+word_lengths('How long are the words in this phrase')</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> map</li>
+                <li>📘 <strong>What I Learn:</strong> Applying a function to every element in an iterable using map.</li>
+                <li>♻️ <strong>Reusability:</strong> Common in data processing pipelines for transforming values.</li>
+                <li>💬 <strong>Comments:</strong> Uses map and len to compute word lengths.</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ reduce Function</div>
+            <div class="card-body">
+              <pre><code>from functools import reduce
+
+def digits_to_num(digits):
+    return reduce(lambda x, y: x * 10 + y, digits)
+
+# Example
+digits_to_num([3, 4, 3, 2, 1])</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> reduce</li>
+                <li>📘 <strong>What I Learn:</strong> Aggregating values step-by-step.</li>
+                <li>♻️ <strong>Reusability:</strong> Great for sums, products, or digit combinations.</li>
+                <li>💬 <strong>Comments:</strong> Builds number from list using reduce and lambda.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-white fw-bold">3️⃣ filter Function</div>
+            <div class="card-body">
+              <pre><code>def filter_words(word_list, letter):
+    return list(filter(lambda word: word[0] == letter, word_list))
+
+# Example
+filter_words(['hello','are','cat','dog','ham','hi','go','to','heart'], 'h')</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> filter</li>
+                <li>📘 <strong>What I Learn:</strong> Filtering values based on conditions.</li>
+                <li>♻️ <strong>Reusability:</strong> Useful for data cleanup and conditional selections.</li>
+                <li>💬 <strong>Comments:</strong> Filters words that start with a specific letter.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white fw-bold">4️⃣ zip & List Comprehension</div>
+            <div class="card-body">
+              <pre><code>def concatenate(L1, L2, connector):
+    return [f"{l1}{connector}{l2}" for l1, l2 in zip(L1, L2)]
+
+# Example
+concatenate(['A','B'],['a','b'],'-')</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> zip, List Comprehension</li>
+                <li>📘 <strong>What I Learn:</strong> Pairwise combination of lists.</li>
+                <li>♻️ <strong>Reusability:</strong> Excellent for label-feature merging or string formatting.</li>
+                <li>💬 <strong>Comments:</strong> Combines two lists using zip and string formatting.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white fw-bold">5️⃣ enumerate Function</div>
+            <div class="card-body">
+              <pre><code>def d_list(lst):
+    return [(i, item) for i, item in enumerate(lst)]
+
+# Example
+d_list(['a','b','c'])</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> enumerate</li>
+                <li>📘 <strong>What I Learn:</strong> Attaching index to list items.</li>
+                <li>♻️ <strong>Reusability:</strong> Very common in loop-based tasks with counters.</li>
+                <li>💬 <strong>Comments:</strong> Generates indexed tuples from a list using enumerate.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-secondary text-white fw-bold">6️⃣ zip & Dict Comprehension</div>
+            <div class="card-body">
+              <pre><code>def count_match_index(lst):
+    return len([num for count, num in enumerate(lst) if count == num])
+
+# Example
+count_match_index([0,2,2,1,5,5,6,10])</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> zip, Dict Comprehension</li>
+                <li>📘 <strong>What I Learn:</strong> Creating dictionaries from paired data.</li>
+                <li>♻️ <strong>Reusability:</strong> Great for mapping values efficiently.</li>
+                <li>💬 <strong>Comments:</strong> Compares indexes and values using enumerate.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quizTab">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("exampleCount").innerText = document.querySelectorAll("#exampleCards .card").length;
+    loadQuizData("build_in_solution");
+  });
+</script>
+{% endblock %}

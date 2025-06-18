@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🧰 Function & Method Toolbox</h1>
+    <p class="fs-5 text-muted"><strong>A professional Python project demonstrating the use of built-in methods, functional programming, custom utilities, and best practices for function design.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="numbersTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+        <!-- Card 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">1️⃣ Custom Utility Functions</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python"># Function 1: Clean and format name
+def clean_name(name):
+    return name.strip().title()
+
+# Function 2: Calculate average from list
+def average(numbers):
+    return sum(numbers) / len(numbers) if numbers else 0
+
+# Function 3: Validate email format
+def is_valid_email(email):
+    return '@' in email and '.' in email</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> strip(), title(), sum(), len()</li>
+                <li>📘 <strong>Learned:</strong> Clean input, validate data, calculate average safely</li>
+                <li>♻️ <strong>Reusability:</strong> Common for data cleaning and form validation</li>
+                <li>💬 <strong>Comments:</strong> Combines formatting, logic, and validation in one unit</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-info text-white fw-bold">2️⃣ Built-in String & List Methods</div>
+            <div class="card-body">
+              <pre><code class="language-python">sentence = "  Welcome to Python!  "
+print(sentence.strip().upper())
+
+words = sentence.strip().split()
+print(words)
+
+shopping = ['pen', 'paper', 'laptop']
+print(shopping.index('paper'))</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> strip(), upper(), split(), index()</li>
+                <li>📘 <strong>Learned:</strong> Clean and preprocess strings, locate elements</li>
+                <li>♻️ <strong>Reusability:</strong> Input handling, preprocessing for reports or APIs</li>
+                <li>💬 <strong>Comments:</strong> Great for string manipulation and basic list search</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-warning text-dark fw-bold">3️⃣ Functional Programming</div>
+            <div class="card-body">
+              <pre><code class="language-python">nums = [1, 2, 3, 4, 5]
+squares = list(map(lambda x: x**2, nums))
+evens = list(filter(lambda x: x % 2 == 0, nums))</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> map(), filter(), lambda</li>
+                <li>📘 <strong>Learned:</strong> Transform lists using anonymous functions</li>
+                <li>♻️ <strong>Reusability:</strong> Ideal for clean one-liner transformations</li>
+                <li>💬 <strong>Comments:</strong> Preferred in data pipelines and preprocessing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold">4️⃣ *args and **kwargs</div>
+            <div class="card-body">
+              <pre><code class="language-python">def create_invoice(*items, **customer):
+    print("Customer:", customer.get('name', 'Unknown'))
+    print("Items:")
+    for item in items:
+        print("-", item)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> *args, **kwargs, get()</li>
+                <li>📘 <strong>Learned:</strong> Dynamic argument unpacking</li>
+                <li>♻️ <strong>Reusability:</strong> Useful for APIs and flexible functions</li>
+                <li>💬 <strong>Comments:</strong> Handles unknown number of inputs and keywords</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-dark text-white fw-bold">5️⃣ Scope & Nested Functions</div>
+            <div class="card-body">
+              <pre><code class="language-python">def outer_function():
+    message = "Enclosed Scope"
+    def inner_function():
+        print("Accessing:", message)
+    return inner_function</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> Closure, nested function</li>
+                <li>📘 <strong>Learned:</strong> Inner functions can access enclosing scope</li>
+                <li>♻️ <strong>Reusability:</strong> Great for decorators or encapsulated logic</li>
+                <li>💬 <strong>Comments:</strong> Enables scoped behavior and memory control</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-secondary text-white fw-bold">6️⃣ Practice & Review</div>
+            <div class="card-body">
+              <pre><code class="language-python">data = " Hello Python "
+print(data.lower().strip())
+print(data.split())
+
+tools = ['keyboard', 'mouse', 'screen']
+print(tools.index('mouse'))</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> lower(), strip(), split(), index()</li>
+                <li>📘 <strong>Learned:</strong> Basic data formatting and list handling</li>
+                <li>♻️ <strong>Reusability:</strong> Frequent in assignments and UI parsing</li>
+                <li>💬 <strong>Comments:</strong> Combines multiple methods for practical cleanup</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<audio id="correctSound" src="{% static 'audio/correct.mp3' %}"></audio>
+<audio id="wrongSound" src="{% static 'audio/wrong.mp3' %}"></audio>
+
+{% block extra_js %}
+  <script src="{% static 'js/quiz_engine.js' %}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const count = document.querySelectorAll("#exampleCards .card").length;
+      document.getElementById("exampleCount").textContent = count;
+      loadQuizData("all_in_one");
+    });
+  </script>
+{% endblock %}
+{% endblock %}

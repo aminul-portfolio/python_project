@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">⚡ Lambda Functions, Map & Filter</h1>
+  <p class="lead">Lambda expressions are anonymous functions that simplify one-line function definitions. `map()` and `filter()` are functional tools that apply logic across iterables.</p>
+
+  <!-- SECTION 1: Lambda Functions -->
+  <hr>
+  <h3 class="text-success text-center">🧪 8 Real-World Examples</h3>
+  <hr>
+
+  <div id="exampleCards">
+    <div class="card mb-3">
+      <div class="card-header bg-primary text-white fw-bold">1️⃣ Square a Number</div>
+      
+
+  <div class="mt-5"></div><div class="card-body">
+        <pre><code class="language-python">square = lambda x: x ** 2
+print(square(5))</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> lambda</li>
+          <li>📘 <strong>Learned:</strong> Define quick anonymous functions.</li>
+          <li>♻️ <strong>Reusability:</strong> Useful for simple one-liner logic.</li>
+          <li>💬 <strong>Comments:</strong> Squares the input, returns 25 for 5.</li>
+        </ul></div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-success text-white fw-bold">2️⃣ Add Two Numbers</div>
+      <div class="card-body">
+        <pre><code class="language-python">add = lambda x, y: x + y
+print(add(3, 4))</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> lambda</li>
+          <li>📘 <strong>Learned:</strong> Add two values using a lambda.</li>
+          <li>♻️ <strong>Reusability:</strong> Great for inline addition logic.</li>
+          <li>💬 <strong>Comments:</strong> Returns 7 when passed 3 and 4.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-info text-white fw-bold">3️⃣ Check if Even</div>
+      <div class="card-body">
+        <pre><code class="language-python">is_even = lambda x: x % 2 == 0
+print(is_even(6))</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> lambda, %</li>
+          <li>📘 <strong>Learned:</strong> Use lambda for condition checks.</li>
+          <li>♻️ <strong>Reusability:</strong> Handy for filtering data.</li>
+          <li>💬 <strong>Comments:</strong> Returns True if number is even.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-warning text-white fw-bold">4️⃣ Extract First Character</div>
+      <div class="card-body">
+        <pre><code class="language-python">first_char = lambda s: s[0]
+print(first_char("Sumon"))</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> lambda, indexing</li>
+          <li>📘 <strong>Learned:</strong> Access characters using lambda.</li>
+          <li>♻️ <strong>Reusability:</strong> Simplifies string tasks.</li>
+          <li>💬 <strong>Comments:</strong> Returns first character from string.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SECTION 2: map() and filter() -->
+    <div class="card mb-3">
+      <div class="card-header bg-danger text-white fw-bold">5️⃣ map(): Square List Items</div>
+      <div class="card-body">
+        <pre><code class="language-python">nums = [1, 2, 3, 4]
+squared = list(map(lambda x: x**2, nums))
+print(squared)</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> map, lambda</li>
+          <li>📘 <strong>Learned:</strong> Apply function to each item.</li>
+          <li>♻️ <strong>Reusability:</strong> Great for bulk data transforms.</li>
+          <li>💬 <strong>Comments:</strong> Returns list of squared numbers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-secondary text-white fw-bold">6️⃣ map(): Uppercase Names</div>
+      <div class="card-body">
+        <pre><code class="language-python">names = ['sumon', 'joy', 'tamim']
+uppercased = list(map(lambda x: x.upper(), names))
+print(uppercased)</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> map, lambda, upper()</li>
+          <li>📘 <strong>Learned:</strong> Change all strings to uppercase.</li>
+          <li>♻️ <strong>Reusability:</strong> Perfect for formatting tasks.</li>
+          <li>💬 <strong>Comments:</strong> Transforms each name to uppercase.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-dark text-white fw-bold">7️⃣ filter(): Keep Even Numbers</div>
+      <div class="card-body">
+        <pre><code class="language-python">nums = [1, 2, 3, 4, 5]
+evens = list(filter(lambda x: x % 2 == 0, nums))
+print(evens)</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> filter, lambda</li>
+          <li>📘 <strong>Learned:</strong> Filter elements based on condition.</li>
+          <li>♻️ <strong>Reusability:</strong> Good for cleaning datasets.</li>
+          <li>💬 <strong>Comments:</strong> Keeps only even numbers.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card mb-3">
+      <div class="card-header bg-primary text-white fw-bold">8️⃣ filter(): Filter Short Words</div>
+      <div class="card-body">
+        <pre><code class="language-python">words = ['Hi', 'Welcome', 'To', 'Python']
+short_words = list(filter(lambda w: len(w) <= 3, words))
+print(short_words)</code></pre>
+        <ul class="list-unstyled">
+          <li>🔹 <strong>Function Used:</strong> filter, lambda, len()</li>
+          <li>📘 <strong>Learned:</strong> Keep only short words.</li>
+          <li>♻️ <strong>Reusability:</strong> Useful for search/filter logic.</li>
+          <li>💬 <strong>Comments:</strong> Returns words with 3 or fewer letters.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUIZ SECTION -->
+  <hr>
+  <h3 class="text-warning text-center">🧠 Lambda, Map & Filter Quiz</h3>
+  <div id="quizBox" class="mt-4"></div>
+  <div id="quizSummary" class="mt-4"></div>
+  <p class="text-end">🔢 Total Examples: <span id="exampleCount"></span></p>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+{% load static %}
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const exampleCards = document.querySelectorAll("#exampleCards .card").length;
+  document.getElementById("exampleCount").textContent = exampleCards;
+  loadQuizData("nested_scope");
+});
+</script>
+{% endblock %}

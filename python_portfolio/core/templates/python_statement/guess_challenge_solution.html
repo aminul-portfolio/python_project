@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🎯 Guessing Game Challenge + Solution</h1>
+  <p class="lead">This game asks the user to guess a hidden number. Practice flow control, loops, and user input handling.</p>
+
+  <!-- Nav Tabs -->
+  <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="examples-tab" data-bs-toggle="tab" href="#examples" role="tab">Examples</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="quiz-tab" data-bs-toggle="tab" href="#quiz" role="tab">Quiz</a>
+    </li>
+  </ul>
+
+  <div class="tab-content mt-3">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row" id="exampleCards">
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🧪 Challenge Instructions</h5>
+              <p>Create a program that does the following:</p>
+              <ul>
+                <li>Asks Player 1 to pick a number between 1 and 100 (secretly)</li>
+                <li>Player 2 then tries to guess that number</li>
+                <li>The program should return 'Too high!' or 'Too low!' depending on the guess</li>
+                <li>When Player 2 guesses correctly, congratulate them and display the number of attempts</li>
+              </ul>
+              <pre><code class="language-python"># Ask Player 1 to enter a number between 1–100
+# Clear screen or hide the input
+# Player 2 keeps guessing until the correct number
+# Use loops and if/else conditions to give hints</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> input, while, if</li>
+                <li>📘 <strong>Learned:</strong> Loop logic and input validation.</li>
+                <li>♻️ <strong>Reusability:</strong> Good template for number guessing games.</li>
+                <li>💬 <strong>Comments:</strong> Demonstrates interactive logic-based flow.</li>
+              </ul></div>
+          
+
+  <div class="mt-5"></div></div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">✅ Full Python Solution</h5>
+              <pre><code class="language-python"># Guessing Game
+# Player 1 enters a secret number
+# Player 2 tries to guess it
+
+secret_number = int(input("Player 1, enter a number (1-100): "))
+guess = None
+attempts = 0
+
+while guess != secret_number:
+    guess = int(input("Player 2, guess the number: "))
+    attempts += 1
+    if guess < secret_number:
+        print("Too low! Try again.")
+    elif guess > secret_number:
+        print("Too high! Try again.")
+    else:
+        print(f"🎉 Correct! It took you {attempts} tries.")</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> while loop, conditional branching</li>
+                <li>📘 <strong>Learned:</strong> Real-world application of loops and conditions</li>
+                <li>♻️ <strong>Reusability:</strong> Can be used for any interactive guessing program</li>
+                <li>💬 <strong>Comments:</strong> Uses structured logic to compare input and feedback.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">🎯 Key Takeaways</h5>
+              <ul>
+                <li>Using <code>input()</code> and <code>int()</code> for user interaction</li>
+                <li>Tracking guesses with a counter variable</li>
+                <li>Controlling game logic with <code>while</code> and <code>if-elif-else</code></li>
+              </ul>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> int(), input(), print(), loop</li>
+                <li>📘 <strong>Learned:</strong> How user-driven loops function in games</li>
+                <li>♻️ <strong>Reusability:</strong> Can power multiple quiz or guessing apps</li>
+                <li>💬 <strong>Comments:</strong> Great for beginner practice with flow control.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  loadQuizData("guessing_game");
+  document.addEventListener("DOMContentLoaded", () => {
+    const exampleCards = document.querySelectorAll("#exampleCards .col-md-6").length;
+    const exampleCountEl = document.getElementById("exampleCount");
+    if (exampleCountEl) exampleCountEl.textContent = exampleCards;
+  });
+</script>
+{% endblock %}

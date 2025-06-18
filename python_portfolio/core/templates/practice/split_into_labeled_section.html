@@ -1,0 +1,198 @@
+1. Template Inheritance & Static Block
+
+{% extends "base. html" %}
+{% load static %}
+{% block content %}
+
+2. Page Container and Header
+
+<div class = "container mt- 5 p- 4 bg- white rounded shadow- sm">
+  < h 1 class = "text- primary display- 5 mb- 4 text- centre">📘 Python Numbers</h 1>
+  <p class = "lead text- centre">
+    Learn to work with integers, floats, and arithmetic operations in Python.
+  </p>
+
+3. Tabs Navigation
+
+<ul class =" nav nav- tabs mb- 4" id ="numbersTab" role = "tablist">
+  <li class = "nav- item">
+    <a class = "nav- link active" id =" examples- tab" data- bs- toggle ="tab" data- bs- target ="#examples" role ="tab" aria- controls ="examples" aria- selected ="true">
+      💼 Examples <span id = "exampleCount" class = "badge bg- primary">0</span>
+    </a>
+  </li>
+  <li class = "nav- item">
+    <a class = "nav- link" id = "quiz- tab" data- bs- toggle = "tab" data- bs- target ="#quiz" role ="tab" aria- controls ="quiz" aria- selected ="false">
+      🧠 Quiz <span id = "quizCount" class = "badge bg- success">0</span>
+    </a>
+  </li>
+</ul>
+
+4. Tab Content Wrapper
+
+<div class = "tab- content" id = "numbersTabContent">
+
+5. Examples Tab
+
+<div class = "tab- pane fade show active" id ="examples" role = "tabpanel">
+  <div class ="row row- cols- 1 row- cols- md- 2 g- 4" id ="exampleCards">
+
+    <!-- Card 1-->
+    <div class = "col">
+      <div class ="card h- 100 shadow- sm">
+        <div class = "card- body">
+          < h 5 class = "card- title fw- bold">1️⃣ Budget Calculation</h 5>
+          <pre><code class = "language- python">income = 3000
+expenses = 2500
+savings = income - expenses
+print(savings)  # Output: 500</code></pre>
+          <ul class =" list- unstyled mt- 3">
+            <li>🔹 <strong>Function Used:</strong> Basic arithmetic (-)</li>
+            <li>📘 <strong>Learned:</strong> Subtracting to find savings</li>
+            <li> ♻ <strong>Reusability:</strong> Budgeting, accounting</li>
+            <li>💬 <strong>Comments:</strong> Simple numeric operation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 and Card 3 would go here similarly-->
+
+  </div>
+</div>
+
+6. Quiz Tab
+
+<!-- Quiz-->
+<div class = "tab- pane fade" id ="quiz" role = "tabpanel">
+  <div class = "text- centre mb- 3 mt- 4">
+    <p class = "text- muted">Test your Python numbers knowledge with <span id = "quizCountText">10</span> quick questions!</p>
+  </div>
+  <div id = "quizBox" class = "mb- 4"></div>
+  <div id = "quizSummary"></div>
+</div>
+
+7. Closing Main Content and Scripts
+
+</div>
+</div>
+
+<!-- Bootstrap JS-->
+<script src = "https://cdn. jsdelivr. net/npm/bootstrap @ 5. 3. 3/dist/js/bootstrap. bundle. min. js"></script>
+
+<!-- Sounds-->
+<audio id = "correctSound" src ="{% static 'sounds/correct. mp 3' %}" preload ="auto"></audio>
+<audio id = "wrongSound" src ="{% static 'sounds/wrong. mp 3' %}" preload ="auto"></audio>
+
+{% endblock %}
+
+8. Extra JavaScript Block
+django
+
+{% block extra _ js %}
+<script src = "https://cdnjs. cloudflare. com/ajax/libs/highlight. js/11. 9. 0/highlight. min. js"></script>
+<script>hljs.highlightAll();</script>
+
+<script src ="{% static 'js/numbers _ quiz. js' %}"></script>
+{% endblock %}
+
+
+
+JAVASCRIPT
+
+
+ 🔢 1. Quiz Data Structure
+javascript
+
+const quizQuestions = [
+  { question: "What is 2 * (3 + 4)?", options: [...], answer: "14", hint: "Use parentheses first." },
+  ...
+];
+✅ Purpose: Holds all questions, options, correct answers, and hints.
+
+🧩 Reusability: Easy to extend the quiz by adding more objects.
+
+ 2. Quiz State Variables
+
+let currentQuestion = 0, score = 0, userAnswers = [], timerInterval;
+✅ Purpose: Track current quiz status, scores, answers, and timing control.
+
+🧠 3. loadQuestion()
+
+function loadQuestion() {
+  ...
+}
+✅ Purpose: Renders the current question and options dynamically into the DOM.
+
+🔗 Connected To: quizBox, quizSummary, Bootstrap tabs.
+
+💬 DOM Elements: #quizBox, #quizForm, #timerDisplay.
+
+💡 4. showHint()
+
+function showHint() {
+  ...
+}
+✅ Purpose: Displays hint associated with the current question.
+
+🔗 Connected To: #hintBox.
+
+⏱️ 5. startTimer()
+
+function startTimer() {
+  ...
+}
+
+✅ Purpose: Starts countdown timer per question.
+
+🧩 Dependencies: setInterval, #timerDisplay, quizBox for timeout message.
+
+📤 6. submitAnswer()
+
+function submitAnswer() {
+  ...
+}
+✅ Purpose: Validates user's answer, updates score, plays sound, shows feedback.
+
+🔗 Connected To: #correctSound, #wrongSound, form radio buttons, answer review UI.
+
+⏭️ 7. nextQuestion()
+
+function nextQuestion() {
+  ...
+}
+✅ Purpose: Loads next question or shows final score.
+
+🎉 8. showFinalScore()
+
+function showFinalScore() {
+  ...
+}
+✅ Purpose: Displays final quiz score and review list.
+
+🔗 Connected To: quizBox, quizSummary.
+
+🔁 9. restartQuiz()
+
+function restartQuiz() {
+  ...
+}
+
+🧩 10. window.addEventListener('load', loadQuestion)
+
+window.addEventListener('load', loadQuestion);
+✅ Purpose: Loads the first question when the page loads.
+
+📊 11. DOM Load Counters
+
+document.addEventListener("DOMContentLoaded", function () {
+  ...
+});
+✅ Purpose: Displays the count of examples and quiz questions on page load.
+
+🧪 12. Quiz Tab Activation
+
+document.addEventListener("DOMContentLoaded", () => {
+  ...
+});
+✅ Purpose: Triggers quiz load when the tab becomes visible (Bootstrap fix).
+

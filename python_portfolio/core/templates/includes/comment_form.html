@@ -1,0 +1,42 @@
+{% load humanize %}
+<div class="col">
+  <div class="card h-100 shadow border-2" style="border-color: #1a6985;">
+    <div class="card-header text-white fw-bold" style="background-color: #51abcb;">
+      📝 We Value Your Thoughts
+    </div>
+    <div class="card-body">
+
+      <form method="post" class="mb-4">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="commentBox" class="form-label fw-bold">💬 Share Your Feedback</label>
+          {{ form.text }}
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm px-4 rounded-pill shadow-sm">
+          ✨ Submit Comment
+        </button>
+      </form>
+
+      {% if comments %}
+        <div>
+          <h6 class="fw-bold mb-3">💡 Recent Comments:</h6>
+          <ul class="list-group shadow-sm">
+            {% for c in comments %}
+              <li class="list-group-item shadow-sm mb-2 rounded-3 border-0 bg-white">
+                <div class="d-flex">
+                  <div class="me-3">
+                    <i class="bi bi-chat-left-quote text-primary fs-4"></i>
+                  </div>
+                  <div>
+                    <p class="mb-1">{{ c.text|linebreaks }}</p>
+                    <small class="text-muted">🕒 {{ c.created_at|naturaltime }}</small>
+                  </div>
+                </div></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

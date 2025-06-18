@@ -1,0 +1,82 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load file_filters %}
+
+<div class="container mt-5">
+  <h1 class="display-4 fw-bold text-primary text-center">💼 All-in-One Python Project</h1>
+  <p class="fs-5 text-muted text-center"><strong>This integrated example combines multiple scripts and explanations to demonstrate Python programming in a modular and practical way.</strong></p>
+
+  <ul class="nav nav-tabs mb-4" id="contentTabs">
+    <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#examples">Examples <span class="badge bg-secondary ms-1" id="exampleCount">2</span></button></li>
+    <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#quiz">Quiz <span class="badge bg-secondary ms-1" id="quizCountText">10</span></button></li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-success text-white fw-bold">1️⃣ one.py - First Module</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">{{ one_py_code }}</code></pre>
+
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> module definition and import</li>
+              <li>📘 <strong>Learned:</strong> Modularizing code using Python files</li>
+              <li>♻️ <strong>Reusability:</strong> Easy reuse across projects by importing functions</li>
+              <li>💬 <strong>Comments:</strong> Best to group related functions inside modules</li>
+            </ul></div>
+        </div>
+
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-primary text-white fw-bold">2️⃣ two.py - Second Module</div>
+          <div class="card-body">
+            <pre><code class="language-python">{{ two_py_code }}</code></pre>
+
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> cross-module calling</li>
+              <li>📘 <strong>Learned:</strong> How to call functions from other modules</li>
+              <li>♻️ <strong>Reusability:</strong> Maintain separation of logic while keeping access</li>
+              <li>💬 <strong>Comments:</strong> Enables team collaboration on different files</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-light fw-bold">3️⃣ Explanation.txt - Usage Guide</div>
+          <div class="card-body">
+            <pre><code>{{ explanation_txt }}</code></pre>
+
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> string formatting and module explanation</li>
+              <li>📘 <strong>Learned:</strong> Clarifies how the modules interact</li>
+              <li>♻️ <strong>Reusability:</strong> Easy documentation of logic across projects</li>
+              <li>💬 <strong>Comments:</strong> Always provide usage notes for teams or future reference</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const count = document.querySelectorAll("#exampleCards .card").length;
+      document.getElementById("exampleCount").textContent = count;
+      loadQuizData("all_in_one_all");
+    });
+  </script>
+{% endblock %}

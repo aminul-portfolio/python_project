@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🔧 String & List Methods in Python</h1>
+  <p class="lead">Explore built-in methods for manipulating strings and lists in real-world Python programs.</p>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mt-4" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span></button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content mt-3">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-info text-white fw-bold">1️⃣ upper()</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">name = "sumon"
+print(name.upper())  # Output: SUMON</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> upper()</li>
+                <li>📘 <strong>Learned:</strong> Convert string to uppercase</li>
+                <li>♻️ <strong>Reusability:</strong> Formatting text</li>
+                <li>💬 <strong>Comments:</strong> Useful for consistency</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-info text-white fw-bold">2️⃣ lower()</div>
+            <div class="card-body">
+              <pre><code class="language-python">name = "SUMON"
+print(name.lower())  # Output: sumon</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> lower()</li>
+                <li>📘 <strong>Learned:</strong> Convert string to lowercase</li>
+                <li>♻️ <strong>Reusability:</strong> Normalize data</li>
+                <li>💬 <strong>Comments:</strong> Often used in search systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-info text-white fw-bold">3️⃣ split()</div>
+            <div class="card-body">
+              <pre><code class="language-python">sentence = "I love Python"
+print(sentence.split())  # Output: ['I', 'love', 'Python']</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> split()</li>
+                <li>📘 <strong>Learned:</strong> Break string into list</li>
+                <li>♻️ <strong>Reusability:</strong> Data parsing</li>
+                <li>💬 <strong>Comments:</strong> Common in text processing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-info text-white fw-bold">4️⃣ replace()</div>
+            <div class="card-body">
+              <pre><code class="language-python">text = "Hello World"
+print(text.replace("World", "Sumon"))  # Output: Hello Sumon</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> replace()</li>
+                <li>📘 <strong>Learned:</strong> Replace parts of a string</li>
+                <li>♻️ <strong>Reusability:</strong> Clean/modify text</li>
+                <li>💬 <strong>Comments:</strong> Often used in templates</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-warning text-white fw-bold">5️⃣ append()</div>
+            <div class="card-body">
+              <pre><code class="language-python">fruits = ['apple']
+fruits.append('banana')
+print(fruits)  # Output: ['apple', 'banana']</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> append()</li>
+                <li>📘 <strong>Learned:</strong> Add item to end of list</li>
+                <li>♻️ <strong>Reusability:</strong> Dynamic lists</li>
+                <li>💬 <strong>Comments:</strong> Key for growing data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-warning text-white fw-bold">6️⃣ pop()</div>
+            <div class="card-body">
+              <pre><code class="language-python">fruits = ['apple', 'banana']
+fruits.pop()
+print(fruits)  # Output: ['apple']</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> pop()</li>
+                <li>📘 <strong>Learned:</strong> Remove last item</li>
+                <li>♻️ <strong>Reusability:</strong> Undo, stack logic</li>
+                <li>💬 <strong>Comments:</strong> Returns popped value</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-warning text-white fw-bold">7️⃣ sort()</div>
+            <div class="card-body">
+              <pre><code class="language-python">nums = [3, 1, 2]
+nums.sort()
+print(nums)  # Output: [1, 2, 3]</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> sort()</li>
+                <li>📘 <strong>Learned:</strong> Sort list in place</li>
+                <li>♻️ <strong>Reusability:</strong> Ranking, leaderboard</li>
+                <li>💬 <strong>Comments:</strong> Changes original list</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-warning text-white fw-bold">8️⃣ reverse()</div>
+            <div class="card-body">
+              <pre><code class="language-python">nums = [1, 2, 3]
+nums.reverse()
+print(nums)  # Output: [3, 2, 1]</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> reverse()</li>
+                <li>📘 <strong>Learned:</strong> Reverse list items</li>
+                <li>♻️ <strong>Reusability:</strong> Timeline flip, stack</li>
+                <li>💬 <strong>Comments:</strong> In-place reversal</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div class="mt-4" id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+{% block extra_js %}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const exampleCards = document.querySelectorAll("#exampleCards .card").length;
+    document.getElementById("exampleCount").textContent = exampleCards;
+    loadQuizData("string_list_methods");
+  });
+</script>
+{% endblock %}
+{% endblock %}

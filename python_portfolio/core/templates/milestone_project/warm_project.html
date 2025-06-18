@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🔥 Warm-Up Project: Python Logic & Functions</h1>
+    <p class="fs-5 text-muted"><strong>This warm-up project demonstrates foundational Python skills using practical problem-solving examples. Ideal for interviews, assessments, and sharpening logical thinking.</strong></p>
+  </div>
+
+  <!-- Tab Navigation -->
+  <ul class="nav nav-tabs mb-4" id="tabMenu" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">🧪 Examples (<span id="exampleCount">0</span>)</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">🧠 Quiz <span id="quizCountText">0</span></button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content" id="tabContent">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel" aria-labelledby="examples-tab">
+      <div id="exampleCards" class="row row-cols-1 row-cols-md-2 g-4">
+
+        <!-- Example 1 -->
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-success text-white">1️⃣ Lesser of Two Evens</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">def lesser_of_two_evens(a, b):
+    if a % 2 == 0 and b % 2 == 0:
+        return min(a, b)
+    else:
+        return max(a, b)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> `min()`, `max()`, modulo</li>
+                <li><strong>📘 Learned:</strong> Conditional logic to compare even numbers</li>
+                <li><strong>♻️ Reusability:</strong> Used in decision-making for competitive inputs</li>
+                <li><strong>💬 Comments:</strong> Handles both even/even and mixed odd/even scenarios</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-info text-white">2️⃣ Animal Crackers</div>
+            <div class="card-body">
+              <pre><code class="language-python">def animal_crackers(text):
+    word_list = text.lower().split()
+    return word_list[0][0] == word_list[1][0]</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> `split()`, `lower()`</li>
+                <li><strong>📘 Learned:</strong> How to compare first letters of two words</li>
+                <li><strong>♻️ Reusability:</strong> Great for text pattern checks</li>
+                <li><strong>💬 Comments:</strong> Assumes input has exactly two words</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-warning text-dark">3️⃣ Makes Twenty</div>
+            <div class="card-body">
+              <pre><code class="language-python">def makes_twenty(n1, n2):
+    return (n1 + n2) == 20 or n1 == 20 or n2 == 20</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> arithmetic, boolean logic</li>
+                <li><strong>📘 Learned:</strong> Compound condition evaluation</li>
+                <li><strong>♻️ Reusability:</strong> Useful for threshold-based validations</li>
+                <li><strong>💬 Comments:</strong> Covers both sum and individual value comparisons</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-secondary text-white">4️⃣ Old MacDonald</div>
+            <div class="card-body">
+              <pre><code class="language-python">def old_macdonald(name):
+    if len(name) > 3:
+        return name[:1].capitalize() + name[1:3] + name[3:4].capitalize() + name[4:]
+    return name.capitalize()</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> string slicing, `capitalize()`</li>
+                <li><strong>📘 Learned:</strong> Capitalization of specific characters</li>
+                <li><strong>♻️ Reusability:</strong> Can apply to name formatting systems</li>
+                <li><strong>💬 Comments:</strong> Modifies first and fourth letters conditionally</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="col">
+          <div class="card">
+            <div class="card-header bg-dark text-white">5️⃣ Master Yoda</div>
+            <div class="card-body">
+              <pre><code class="language-python">def master_yoda(text):
+    return ' '.join(text.split()[::-1])</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li><strong>🔹 Function Used:</strong> `split()`, slicing</li>
+                <li><strong>📘 Learned:</strong> Reversing word order in a string</li>
+                <li><strong>♻️ Reusability:</strong> Great for string manipulation tasks</li>
+                <li><strong>💬 Comments:</strong> Used in natural language processing intros</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel" aria-labelledby="quiz-tab">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <p class="text-muted">🧠 More warm-up functions are available in the full notebook. This summary highlights five for quick review and job prep.</p>
+    <p class="text-info">📁 File: <strong>warm_project.html</strong> | 🔍 Folder: <strong>milestone_project</strong></p>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+<!-- Quiz Engine + Sound Effects -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+
+{% block extra_js %}
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const count = document.querySelectorAll("#exampleCards .card").length;
+  document.getElementById("exampleCount").textContent = count;
+  loadQuizData("warm_project");
+});
+</script>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+
+  <!-- Header -->
+
+  <div class="container-fluid">
+       <h1 class="text-primary">📘 Python Variable Assignment</h1>
+  <p class="lead">Variables are names that refer to values. Use the <code>=</code> operator to assign a value.</p>
+
+  </div>
+
+
+
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4" id="numbersTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">
+        🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span>
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">
+        🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content" id="numbersTabContent">
+
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row gy-4" id="exampleCards">
+
+        <!-- Example 1 -->
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ Budget Calculation</div>
+
+  
+
+  <div class="mt-5"></div><div class="mt-5"></div>
+            <div class="card-body">
+              <pre class="mb-3" style="white-space: pre-wrap;"><code class="language-python">income = 3000
+expenses = 2500
+savings = income - expenses
+print(savings)  # Output: 500</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> Basic arithmetic (-)</li>
+                <li>📘 <strong>Learned:</strong> Subtracting to find savings</li>
+                <li>♻️ <strong>Reusability:</strong> Budgeting, accounting</li>
+                <li>💬 <strong>Comments:</strong> Simple numeric operation</li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Percentage Discount</div>
+            <div class="card-body">
+              <pre class="mb-3" style="white-space: pre-wrap;"><code class="language-python">price = 120
+discount = 20
+final_price = price * ((100 - discount) / 100)
+print(final_price)  # Output: 96.0</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> Float division</li>
+                <li>📘 <strong>Learned:</strong> Percentage-based reduction</li>
+                <li>♻️ <strong>Reusability:</strong> Shopping, eCommerce</li>
+                <li>💬 <strong>Comments:</strong> Watch decimals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="col-12">
+          <div class="card shadow-sm">
+            <div class="card-header bg-warning text-dark fw-bold">3️⃣ Round and Absolute</div>
+            <div class="card-body">
+              <pre class="mb-3" style="white-space: pre-wrap;"><code class="language-python">print(round(7.6))   # Output: 8
+print(abs(-4))      # Output: 4</code></pre>
+              <ul class="list-unstyled">
+                <li>🔹 <strong>Function Used:</strong> round(), abs()</li>
+                <li>📘 <strong>Learned:</strong> Rounding and positive conversion</li>
+                <li>♻️ <strong>Reusability:</strong> Data cleaning, finance</li>
+                <li>💬 <strong>Comments:</strong> abs() helps track deviation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+<!-- Quiz Sound Effects -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const count = document.querySelectorAll("#exampleCards .card").length;
+    document.getElementById("exampleCount").textContent = count;
+    loadQuizData("numbers");
+  });
+</script>
+{% endblock %}
+
+{% endblock %}
+

@@ -1,0 +1,272 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container-fluid px-4 py-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🚀 OOP Challenge + Solutions + Quiz</h1>
+    <p class="fs-5 text-muted"><strong>Explore advanced real-world OOP tasks tailored for modern applications, including design principles and reusable code structures.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="tabNav" role="tablist">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">Examples <span class="badge bg-secondary" id="exampleCount">10</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">Quiz <span class="badge bg-info" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="tabContent">
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div id="exampleCards">
+
+        <!-- Card 1 -->
+        <div class="card mb-4">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ Customer Data Class with Validation</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">class Customer:
+    def __init__(self, name, email):
+        if "@" not in email:
+            raise ValueError("Invalid email")
+        self.name = name
+        self.email = email
+
+    def __str__(self):
+        return f"Customer(name={self.name}, email={self.email})"</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Constructor, __str__, validation logic</li>
+              <li>📘 Learned: Constructor validation, object string representation</li>
+              <li>♻️ Reusability: Useful in forms and database record creation</li>
+              <li>💬 Comments: Email validation inside __init__ ensures reliability</li>
+            </ul></div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card mb-4">
+          <div class="card-header bg-secondary text-white fw-bold">2️⃣ Product Inventory with Encapsulation</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Product:
+    def __init__(self, name, stock):
+        self.name = name
+        self.__stock = stock
+
+    def get_stock(self):
+        return self.__stock
+
+    def reduce_stock(self, quantity):
+        if quantity <= self.__stock:
+            self.__stock -= quantity
+
+    def __str__(self):
+        return f"{self.name} (Stock: {self.__stock})"</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Encapsulation using private attributes</li>
+              <li>📘 Learned: Use of __ to hide internal data</li>
+              <li>♻️ Reusability: Suitable for inventory management</li>
+              <li>💬 Comments: Provides controlled access to internal stock</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white fw-bold">3️⃣ Logger Singleton Class</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Logger:
+    _instance = None
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
+    def log(self, msg):
+        print(f"LOG: {msg}")</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: __new__, singleton pattern</li>
+              <li>📘 Learned: Restricting object creation to a single instance</li>
+              <li>♻️ Reusability: Logging system, configuration manager</li>
+              <li>💬 Comments: Common pattern in logging, DB connections</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card mb-4">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ Abstract Payment Gateway Interface</div>
+          <div class="card-body">
+            <pre><code class="language-python">from abc import ABC, abstractmethod
+
+class PaymentGateway(ABC):
+    @abstractmethod
+    def pay(self, amount):
+        pass
+
+class PayPal(PaymentGateway):
+    def pay(self, amount):
+        print(f"Paying ${amount} via PayPal")
+
+class Stripe(PaymentGateway):
+    def pay(self, amount):
+        print(f"Paying ${amount} via Stripe")</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Abstract base class</li>
+              <li>📘 Learned: Interface enforcement in OOP</li>
+              <li>♻️ Reusability: Frameworks for third-party integration</li>
+              <li>💬 Comments: Provides a unified API across providers</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Cards 5 to 10 -->
+        <div class="card mb-4">
+          <div class="card-header bg-warning text-dark fw-bold">5️⃣ Employee Manager Using Class Composition</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Address:
+    def __init__(self, city):
+        self.city = city
+
+class Employee:
+    def __init__(self, name, address):
+        self.name = name
+        self.address = address
+
+    def info(self):
+        return f"{self.name} from {self.address.city}"</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Class composition</li>
+              <li>📘 Learned: Objects can contain other objects</li>
+              <li>♻️ Reusability: Suitable for user profiles or orders</li>
+              <li>💬 Comments: Helps organize complex structures</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-info text-white fw-bold">6️⃣ Inheritance-Based Access Control</div>
+          <div class="card-body">
+            <pre><code class="language-python">class User:
+    def access(self):
+        return "Basic Access"
+
+class Admin(User):
+    def access(self):
+        return "Admin Access"</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Method overriding</li>
+              <li>📘 Learned: Subclasses can modify parent behavior</li>
+              <li>♻️ Reusability: Role-based access control</li>
+              <li>💬 Comments: Inheritance makes access scalable</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-dark text-white fw-bold">7️⃣ Method Chaining via return self</div>
+          <div class="card-body">
+            <pre><code class="language-python">class QueryBuilder:
+    def __init__(self):
+        self.query = ""
+
+    def select(self, table):
+        self.query += f"SELECT * FROM {table} "
+        return self
+
+    def where(self, condition):
+        self.query += f"WHERE {condition}"
+        return self</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Fluent interface</li>
+              <li>📘 Learned: return self enables chaining</li>
+              <li>♻️ Reusability: Query builder, config builder</li>
+              <li>💬 Comments: Improves code readability</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-light fw-bold">8️⃣ Property Decorator for Safe Access</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Account:
+    def __init__(self, balance):
+        self._balance = balance
+
+    @property
+    def balance(self):
+        return max(0, self._balance)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: @property decorator</li>
+              <li>📘 Learned: Read-only controlled access</li>
+              <li>♻️ Reusability: Used in APIs for safe attributes</li>
+              <li>💬 Comments: Ensures balance never shows negative</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-secondary text-white fw-bold">9️⃣ Polymorphism via Duck Typing</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Dog:
+    def speak(self):
+        return "Woof!"
+
+class Cat:
+    def speak(self):
+        return "Meow!"
+
+def make_sound(animal):
+    return animal.speak()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Duck typing</li>
+              <li>📘 Learned: Dynamic compatibility of interfaces</li>
+              <li>♻️ Reusability: Replaceable components</li>
+              <li>💬 Comments: No need for shared superclass</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-header bg-success text-white fw-bold">🔟 Custom Exceptions</div>
+          <div class="card-body">
+            <pre><code class="language-python">class ValidationError(Exception):
+    pass
+
+def validate_age(age):
+    if age < 18:
+        raise ValidationError("Must be at least 18")</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 Function Used: Custom exception</li>
+              <li>📘 Learned: Domain-specific error handling</li>
+              <li>♻️ Reusability: Form validation, API errors</li>
+              <li>💬 Comments: Clearer error intent</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div id="quizBox" class="mt-3"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const exampleCount = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').textContent = exampleCount;
+    loadQuizData("oop_che_sol");
+  });
+</script>
+{% endblock %}

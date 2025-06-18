@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">Python: Data Structures Assessment</h1>
+  <p class="lead">Test your understanding of Python basics — numbers, strings, lists, dictionaries, sets, and booleans. No hints. 10 straight questions. Ready? Go!</p>
+
+  <hr>
+  <h3 class="text-info">🧪 Assessment Quiz (10 Questions)</h3>
+  <div id="quizBox" class="mt-4"></div>
+  <div id="quizSummary" class="mt-4"></div>
+</div>
+
+<script>
+const quizQuestions = [
+  {
+    question: "What is the result of: 2 ** 3?",
+    options: ["6", "8", "9", "Error"],
+    answer: "8"
+  },
+  {
+    question: "What will len('Hello World') return?",
+    options: ["10", "11", "12", "None"],
+    answer: "11"
+  },
+  {
+    question: "What is the output of 'hello'[1]?",
+    options: ["e", "h", "l", "o"],
+    answer: "e"
+  },
+  {
+    question: "Which of these creates a list?",
+    options: ["(1,2,3)", "{1,2,3}", "[1,2,3]", "list{1,2,3}"],
+    answer: "[1,2,3]"
+  },
+  {
+    question: "Which method adds an item to a list?",
+    options: ["add()", "insert()", "append()", "push()"],
+    answer: "append()"
+  },
+  {
+    question: "What will {'a':10, 'b':20}['b'] return?",
+    options: ["10", "20", "b", "Error"],
+    answer: "20"
+  },
+  {
+    question: "Which returns all keys from a dictionary?",
+    options: ["values()", "keys()", "items()", "get()"],
+    answer: "keys()"
+  },
+  {
+    question: "What is the result of set([1,1,2,3])?",
+    options: ["{1,1,2,3}", "{1,2,3}", "[1,2,3]", "Error"],
+    answer: "{1,2,3}"
+  },
+  {
+    question: "What is the output of bool(0)?",
+    options: ["True", "False", "None", "Error"],
+    answer: "False"
+  },
+  {
+    question: "Which is a valid boolean expression?",
+    options: ["5 > 3", "True or False", "'a' in 'cat'", "All of the above"],
+    answer: "All of the above"
+  }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let userAnswers = [];
+
+function loadQuestion() {
+  const qBox = document.getElementById('quizBox');
+  const q = quizQuestions[currentQuestion];
+
+  let html = `<h5><strong>Q${currentQuestion + 1}/10:</strong> ${q.question}</h5><form id="quizForm">`;
+
+  q.options.forEach((opt, idx) => {
+    html += `
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="answer" id="q${currentQuestion}_opt${idx}" value="${opt}">
+        <label class="form-check-label" for="q${currentQuestion}_opt${idx}">${opt}</label>
+      </div>
+    `;
+  });
+
+  html += `<button type="button" class="btn btn-primary mt-3" onclick="submitAnswer()">Submit</button></form>`;
+  qBox.innerHTML = html;
+  document.getElementById('quizSummary').innerHTML = `<p class="text-muted">Progress: ${currentQuestion + 1}/10</p>`;
+}
+
+function submitAnswer() {
+  const selected = document.querySelector('input[name="answer"]:checked');
+  const q = quizQuestions[currentQuestion];
+  const qBox = document.getElementById('quizBox');
+
+  if (!selected) {
+    alert("Please select an answer before submitting.");
+    return;
+  }
+
+  const userAnswer = selected.value;
+  const isCorrect = userAnswer === q.answer;
+
+  userAnswers.push({
+    question: q.question,
+    selected: userAnswer,
+    correct: q.answer,
+    result: isCorrect ? '✅ Correct' : '❌ Incorrect'
+  });
+
+  if (isCorrect) score++;
+
+  let resultHtml = `
+    <div class="alert ${isCorrect ? 'alert-success' : 'alert-danger'} mt-3">
+      ${isCorrect ? '✅ Correct!' : `❌ Wrong!`} <br>
+      <strong>Correct Answer:</strong> ${q.answer}
+    </div>
+  `;
+  resultHtml += `<button class="btn btn-success" onclick="nextQuestion()">Next</button>`;
+  qBox.innerHTML = resultHtml;
+}
+
+function nextQuestion() {
+  currentQuestion++;
+  if (currentQuestion < quizQuestions.length) {
+    loadQuestion();
+  } else {
+    showFinalScore();
+  }
+}
+
+function showFinalScore() {
+  let result = `<h4 class="text-success">🎉 Assessment Complete!</h4>`;
+  result += `<p>You got <strong>${score}/10</strong> correct.</p>`;
+  result += `<h5 class="mt-4">🧾 Review:</h5><ul class="list-group">`;
+
+  userAnswers.forEach((item, i) => {
+    result += `
+      <li class="list-group-item">
+        <strong>Q${i + 1}:</strong> ${item.question}<br>
+        <span class="${item.result.includes('✅') ? 'text-success' : 'text-danger'}">${item.result}</span><br>
+        <strong>Your Answer:</strong> ${item.selected} <br>
+        <strong>Correct Answer:</strong> ${item.correct}
+      </li>`;
+  });
+
+  result += `</ul>
+    <button class="btn btn-primary mt-4" onclick="restartQuiz()">Try Again</button>
+  `;
+  document.getElementById('quizBox').innerHTML = result;
+  document.getElementById('quizSummary').innerHTML = '';
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+  score = 0;
+  userAnswers = [];
+  loadQuestion();
+}
+
+window.onload = loadQuestion;
+</script>
+{% endblock %}

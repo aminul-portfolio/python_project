@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">Assessment Solutions</h1>
+  <p class="lead">Review all correct answers with explanations for the Python data structure assessment.</p>
+
+  <hr>
+  <h3 class="text-success">🧾 Question-by-Question Solutions</h3>
+  <ol class="mt-4">
+
+    <li>
+      <strong>Q1:</strong> What is the result of <code>2 ** 3</code>?<br>
+      ✅ <strong>Answer:</strong> <code>8</code><br>
+      📘 <em>Explanation:</em> <code>**</code> is the exponent operator. 2<sup>3</sup> = 8.
+    </li><br>
+
+    <li>
+      <strong>Q2:</strong> What will <code>len("Hello World")</code> return?<br>
+      ✅ <strong>Answer:</strong> <code>11</code><br>
+      📘 <em>Explanation:</em> It counts all characters including the space.
+    </li><br>
+
+    <li>
+      <strong>Q3:</strong> What is the output of <code>"hello"[1]</code>?<br>
+      ✅ <strong>Answer:</strong> <code>"e"</code><br>
+      📘 <em>Explanation:</em> Indexing starts at 0. "hello"[1] → "e".
+    </li><br>
+
+    <li>
+      <strong>Q4:</strong> Which of these creates a list?<br>
+      ✅ <strong>Answer:</strong> <code>[1,2,3]</code><br>
+      📘 <em>Explanation:</em> Square brackets define a list. Tuples use parentheses, sets use curly braces.
+    </li><br>
+
+    <li>
+      <strong>Q5:</strong> Which method adds an item to a list?<br>
+      ✅ <strong>Answer:</strong> <code>append()</code><br>
+      📘 <em>Explanation:</em> <code>append()</code> adds a single item to the end of a list.
+    </li><br>
+
+    <li>
+      <strong>Q6:</strong> What will <code>{'a':10, 'b':20}['b']</code> return?<br>
+      ✅ <strong>Answer:</strong> <code>20</code><br>
+      📘 <em>Explanation:</em> Access dictionary values using keys. Here, key <code>'b'</code> → value 20.
+    </li><br>
+
+    <li>
+      <strong>Q7:</strong> Which returns all keys from a dictionary?<br>
+      ✅ <strong>Answer:</strong> <code>keys()</code><br>
+      📘 <em>Explanation:</em> <code>.keys()</code> returns all keys from a dictionary object.
+    </li><br>
+
+    <li>
+      <strong>Q8:</strong> What is the result of <code>set([1,1,2,3])</code>?<br>
+      ✅ <strong>Answer:</strong> <code>{1,2,3}</code><br>
+      📘 <em>Explanation:</em> Sets automatically remove duplicates.
+    </li><br>
+
+    <li>
+      <strong>Q9:</strong> What is the output of <code>bool(0)</code>?<br>
+      ✅ <strong>Answer:</strong> <code>False</code><br>
+      📘 <em>Explanation:</em> Zero is considered False in boolean context.
+    </li><br>
+
+    <li>
+      <strong>Q10:</strong> Which is a valid boolean expression?<br>
+      ✅ <strong>Answer:</strong> <code>All of the above</code><br>
+      📘 <em>Explanation:</em> <code>5 > 3</code>, <code>'a' in 'cat'</code>, and <code>True or False</code> are all valid.
+    </li>
+
+  </ol>
+
+  <hr>
+  <a href="{% url 'assessment_test' %}" class="btn btn-primary">⬅️ Try the Assessment Again</a>
+</div>
+{% endblock %}

@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid my-5">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🎮 Warmup Project: Simple War Game</h1>
+    <p class="fs-5 text-muted"><strong>This project simulates a simplified version of the card game "War" using Object-Oriented Programming (OOP) in Python.</strong></p>
+  </div>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mb-4 justify-content-center" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button">🧪 Examples <span class="badge bg-secondary ms-1" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button">🧠 Quiz <span class="badge bg-secondary ms-1" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples">
+      <div id="exampleCards">
+        <!-- Example 1 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-primary text-white fw-bold">1️⃣ Card Class</div>
+          
+
+  <div class="mt-5"></div><div class="card-body">
+            <pre><code class="language-python">class Card:
+    def __init__(self, suit, rank):
+        self.suit = suit
+        self.rank = rank
+        self.value = values[rank]
+
+    def __str__(self):
+        return f"{self.rank} of {self.suit}"</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>__init__, __str__</code></li>
+              <li>📘 <strong>Learned:</strong> How to initialize object attributes and display objects</li>
+              <li>♻️ <strong>Reusability:</strong> Use in any card-based or object-representation logic</li>
+              <li>💬 <strong>Comments:</strong> Represents a single playing card with suit, rank, and value</li>
+            </ul></div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-success text-white fw-bold">2️⃣ Deck Class</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Deck:
+    def __init__(self):
+        self.all_cards = [Card(suit, rank) for suit in suits for rank in ranks]
+
+    def shuffle(self):
+        random.shuffle(self.all_cards)
+
+    def deal_one(self):
+        return self.all_cards.pop()</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>list comprehension, pop(), shuffle()</code></li>
+              <li>📘 <strong>Learned:</strong> How to manage collections and randomness in OOP</li>
+              <li>♻️ <strong>Reusability:</strong> Deck shuffling and dealing in card or queue-based systems</li>
+              <li>💬 <strong>Comments:</strong> Creates and manages a full deck of cards</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-warning text-white fw-bold">3️⃣ Player Class</div>
+          <div class="card-body">
+            <pre><code class="language-python">class Player:
+    def __init__(self, name):
+        self.name = name
+        self.all_cards = []
+
+    def remove_one(self):
+        return self.all_cards.pop(0)
+
+    def add_cards(self, new_cards):
+        if isinstance(new_cards, list):
+            self.all_cards.extend(new_cards)
+        else:
+            self.all_cards.append(new_cards)</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>append(), extend(), pop(0)</code></li>
+              <li>📘 <strong>Learned:</strong> Managing player inventory with lists</li>
+              <li>♻️ <strong>Reusability:</strong> Handling turn-based game actions or inventory systems</li>
+              <li>💬 <strong>Comments:</strong> Handles a player’s cards and gameplay actions</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-danger text-white fw-bold">4️⃣ Game Setup</div>
+          <div class="card-body">
+            <pre><code class="language-python">player_one = Player("One")
+player_two = Player("Two")
+new_deck = Deck()
+new_deck.shuffle()
+
+for _ in range(26):
+    player_one.add_cards(new_deck.deal_one())
+    player_two.add_cards(new_deck.deal_one())</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>range(), shuffle(), deal_one(), add_cards()</code></li>
+              <li>📘 <strong>Learned:</strong> Simulating equal distribution of resources</li>
+              <li>♻️ <strong>Reusability:</strong> Game setups or resource allocation logic</li>
+              <li>💬 <strong>Comments:</strong> Initializes the game and evenly distributes cards</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Example 5 -->
+        <div class="card mb-4 shadow">
+          <div class="card-header bg-secondary text-white fw-bold">5️⃣ War Game Logic</div>
+          <div class="card-body">
+            <pre><code class="language-python">while game_on:
+    if len(player_one.all_cards) == 0 or len(player_two.all_cards) == 0:
+        break
+
+    player_one_cards = [player_one.remove_one()]
+    player_two_cards = [player_two.remove_one()]
+
+    at_war = True
+    while at_war:
+        if player_one_cards[-1].value > player_two_cards[-1].value:
+            player_one.add_cards(player_one_cards + player_two_cards)
+            at_war = False
+        elif player_two_cards[-1].value > player_one_cards[-1].value:
+            player_two.add_cards(player_one_cards + player_two_cards)
+            at_war = False
+        else:
+            if len(player_one.all_cards) < 5 or len(player_two.all_cards) < 5:
+                game_on = False
+                break
+            for _ in range(5):
+                player_one_cards.append(player_one.remove_one())
+                player_two_cards.append(player_two.remove_one())</code></pre>
+            <ul class="list-unstyled mt-3">
+              <li>🔹 <strong>Function Used:</strong> <code>loops, append(), list indexing, break</code></li>
+              <li>📘 <strong>Learned:</strong> Game logic, conflict resolution, nested loop control</li>
+              <li>♻️ <strong>Reusability:</strong> Any interactive or competitive simulation logic</li>
+              <li>💬 <strong>Comments:</strong> Controls game rounds, win conditions, and WAR scenarios</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+  {% include 'includes/comment_form.html' %}
+
+  <!-- Quiz Script & Counter -->
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const count = document.querySelectorAll('#exampleCards .card').length;
+    document.getElementById('exampleCount').textContent = count;
+    loadQuizData("warmup_intro_project");
+  });
+</script>
+{% endblock %}

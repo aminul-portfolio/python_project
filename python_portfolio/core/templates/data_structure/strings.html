@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🧵 Python Strings</h1>
+  <p class="lead">Strings in Python are sequences of characters enclosed in quotes. They support powerful operations and methods.</p>
+
+  <!-- Tabs -->
+  <ul class="nav nav-tabs mt-4" id="stringsTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button" role="tab">🧪 Examples <span class="badge bg-secondary" id="exampleCount">0</span></button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button" role="tab">🧠 Quiz <span class="badge bg-success" id="quizCountText">0</span>
+
+</button>
+    </li>
+  </ul>
+
+  <!-- Tab Contents -->
+  <div class="tab-content mt-3" id="stringsTabContent">
+    <!-- Examples Tab -->
+    <div class="tab-pane fade show active" id="examples" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-2 g-4" id="exampleCards">
+
+        <!-- Example 1 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">1️⃣ Email Username Extractor</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+              <pre><code class="language-python">email = "sumon@example.com"
+username = email.split("@")[0]
+print("Username:", username)  # Output: sumon</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> split()</li>
+                <li>📘 <strong>Learned:</strong> Extract username from email</li>
+                <li>♻️ <strong>Reusability:</strong> Login systems, parsing</li>
+                <li>💬 <strong>Comments:</strong> Useful in email automation</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <!-- Example 2 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Password Masking</div>
+            <div class="card-body">
+              <pre><code class="language-python">password = "mysecret123"
+masked = "*" * len(password)
+print("Masked Password:", masked)  # Output: ***********</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> len(), *</li>
+                <li>📘 <strong>Learned:</strong> Hiding password length</li>
+                <li>♻️ <strong>Reusability:</strong> Login UI</li>
+                <li>💬 <strong>Comments:</strong> Security-related display</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 3 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">3️⃣ Name Formatting</div>
+            <div class="card-body">
+              <pre><code class="language-python">name = "sumon islam"
+formatted = name.title()
+print(formatted)  # Output: Sumon Islam</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> title()</li>
+                <li>📘 <strong>Learned:</strong> Capitalizing each word</li>
+                <li>♻️ <strong>Reusability:</strong> Clean names in forms</li>
+                <li>💬 <strong>Comments:</strong> Ensures clean display</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example 4 -->
+        <div class="col">
+          <div class="card h-100 shadow-sm">
+            <div class="card-header bg-success text-white fw-bold">4️⃣ Word Counter</div>
+            <div class="card-body">
+              <pre><code class="language-python">sentence = "Python is easy to learn"
+word_count = len(sentence.split())
+print("Words:", word_count)  # Output: 5</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> split(), len()</li>
+                <li>📘 <strong>Learned:</strong> Count number of words</li>
+                <li>♻️ <strong>Reusability:</strong> Analytics, text processing</li>
+                <li>💬 <strong>Comments:</strong> Accurate for whitespace-split</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+        {% include 'includes/comment_form.html' %}
+    </div>
+
+    <!-- Quiz Tab -->
+    <div class="tab-pane fade" id="quiz" role="tabpanel">
+      <div class="mt-4" id="quizBox"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Quiz Engine -->
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+
+{% block extra_js %}
+<script>
+
+    loadQuizData("strings");
+
+
+
+</script>
+{% endblock %}
+{% endblock %}

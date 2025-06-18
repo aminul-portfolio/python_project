@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+
+  <h2 class="mb-4">🖼️ Working with Images in Python</h2>
+
+  <!-- Sample Image Preview Section -->
+  <div class="row text-center mb-4">
+    <h5 class="col-12 mb-3">📸 Sample Images</h5>
+    <div class="col-md-3">
+      <img src="{% static 'images/example.jpg' %}" class="img-thumbnail" alt="example.jpg">
+      <p class="mt-2">example.jpg</p>
+    </div>
+    
+
+  <div class="mt-5"></div><div class="col-md-3">
+      <img src="{% static 'images/purple.png' %}" class="img-thumbnail" alt="purple.png">
+      <p class="mt-2">purple.png</p>
+    </div>
+    <div class="col-md-3">
+      <img src="{% static 'images/mask.png' %}" class="img-thumbnail" alt="mask.png">
+      <p class="mt-2">mask.png</p>
+    </div>
+    <div class="col-md-3">
+      <img src="{% static 'images/pencils.jpg' %}" class="img-thumbnail" alt="pencils.jpg">
+      <p class="mt-2">pencils.jpg</p>
+    </div>
+  </div><!-- Example Cards -->
+  <div class="card mb-4">
+    <div class="card-header bg-primary text-white fw-bold">1️⃣ 📂 Load and Show Image</div>
+    <div class="card-body">
+      <pre><code>from PIL import Image
+image = Image.open("example.jpg")
+image.show()</code></pre>
+      <ul class="list-unstyled mt-3">
+        <li>🔹 <strong>Function Used:</strong> Image.open(), image.show()</li>
+        <li>📘 <strong>Learned:</strong> Open and view images using PIL.</li>
+        <li>♻️ <strong>Reusability:</strong> Base for most image processing pipelines.</li>
+        <li>💬 <strong>Comments:</strong> Simple image visualization with PIL.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header bg-success text-white fw-bold">2️⃣ 🎨 Apply Color Filter</div>
+    <div class="card-body">
+      <pre><code>r, g, b = image.split()
+purple = Image.merge("RGB", (r, g, b))</code></pre>
+      <ul class="list-unstyled mt-3">
+        <li>🔹 <strong>Function Used:</strong> split(), merge()</li>
+        <li>📘 <strong>Learned:</strong> Work with RGB channels individually.</li>
+        <li>♻️ <strong>Reusability:</strong> Great for building filters and effects.</li>
+        <li>💬 <strong>Comments:</strong> Color channels manipulation.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header bg-warning text-white fw-bold">3️⃣ 🎭 Masking Images</div>
+    <div class="card-body">
+      <pre><code>mask = Image.open("mask.png")
+image.paste(purple, (0, 0), mask)</code></pre>
+      <ul class="list-unstyled mt-3">
+        <li>🔹 <strong>Function Used:</strong> paste()</li>
+        <li>📘 <strong>Learned:</strong> Overlay one image onto another with masking.</li>
+        <li>♻️ <strong>Reusability:</strong> Used in layering and compositing images.</li>
+        <li>💬 <strong>Comments:</strong> Transparency through masking.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <div class="card-header bg-danger text-white fw-bold">4️⃣ ✏️ Annotate with Text</div>
+    <div class="card-body">
+      <pre><code>from PIL import ImageDraw
+img = Image.open("pencils.jpg")
+draw = ImageDraw.Draw(img)
+draw.text((20, 20), "Hello!", fill="white")</code></pre>
+      <ul class="list-unstyled mt-3">
+        <li>🔹 <strong>Function Used:</strong> ImageDraw.Draw(), draw.text()</li>
+        <li>📘 <strong>Learned:</strong> Add text directly to images.</li>
+        <li>♻️ <strong>Reusability:</strong> Create instructional diagrams or watermarks.</li>
+        <li>💬 <strong>Comments:</strong> Adds text annotations easily.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Quiz Section -->
+  <div class="card mt-5">
+    <div class="card-header bg-info text-white fw-bold">🧪 Test Your Knowledge</div>
+    <div class="card-body">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  loadQuizData("image_working");
+</script>
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}"></audio>
+{% endblock %}

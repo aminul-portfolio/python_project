@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid">
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-primary">🔹 Python Decorators (Lecture + Homework)</h1>
+    <p class="fs-5 text-muted"><strong>Decorators allow you to modify the behavior of a function without changing its code. They are used for logging, access control, performance measurement, caching, and more.</strong></p>
+  </div>
+
+  <ul class="nav nav-tabs mb-4" id="contentTabs">
+    <li class="nav-item">
+      <button class="nav-link active" id="examples-tab" data-bs-toggle="tab" data-bs-target="#examples" type="button">Examples <span class="badge bg-secondary" id="exampleCount"></span></button>
+    </li>
+    <li class="nav-item">
+      <button class="nav-link" id="quiz-tab" data-bs-toggle="tab" data-bs-target="#quiz" type="button">Quiz <span class="badge bg-secondary" id="quizCountText">10</span></button>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane fade show active" id="examples">
+      <div class="row" id="exampleCards">
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-primary text-white fw-bold">1️⃣ Basic Function Decorator</div>
+            
+
+  <div class="mt-5"></div><div class="card-body">
+<pre><code class="language-python"># Define a decorator function that accepts another function as an argument
+def decorator_function(original_function):
+    def wrapper_function():
+        print("Wrapper executed before {}".format(original_function.__name__))
+        return original_function()
+    return wrapper_function
+
+@decorator_function
+def display():
+    print("Display function ran")
+
+display()</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> @decorator_function</li>
+                <li>📘 <strong>What I Learn:</strong> How to wrap functionality around another function.</li>
+                <li>♻️ <strong>Reusability:</strong> Reuse the wrapper logic for multiple functions.</li>
+                <li>💬 Wrapper adds logic before the original function executes.</li>
+              </ul></div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-success text-white fw-bold">2️⃣ Decorators with Arguments</div>
+            <div class="card-body">
+<pre><code class="language-python">def decorator_with_args(func):
+    def wrapper(*args, **kwargs):
+        print(f"Arguments were: {args}, {kwargs}")
+        return func(*args, **kwargs)
+    return wrapper
+
+@decorator_with_args
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Sumon")</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> @decorator_with_args</li>
+                <li>📘 <strong>What I Learn:</strong> Decorators can handle arguments using *args and **kwargs.</li>
+                <li>♻️ <strong>Reusability:</strong> Apply this to any parameterized function.</li>
+                <li>💬 Adds dynamic input handling to the wrapper.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-warning text-white fw-bold">3️⃣ Timing Function Execution</div>
+            <div class="card-body">
+<pre><code class="language-python">import time
+
+def timer_decorator(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        result = func(*args, **kwargs)
+        end = time.time()
+        print(f"Function took {end - start} seconds to execute.")
+        return result
+    return wrapper
+
+@timer_decorator
+def long_function():
+    time.sleep(2)
+    print("Finished sleeping")
+
+long_function()</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> @timer_decorator</li>
+                <li>📘 <strong>What I Learn:</strong> How to measure performance using decorators.</li>
+                <li>♻️ <strong>Reusability:</strong> Great for profiling any function’s runtime.</li>
+                <li>💬 Wraps code execution with timing logic.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-danger text-white fw-bold">4️⃣ Logging with functools.wraps</div>
+            <div class="card-body">
+<pre><code class="language-python">import functools
+
+def log_function_call(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        print(f"[LOG] Calling {func.__name__} with args: {args} kwargs: {kwargs}")
+        result = func(*args, **kwargs)
+        print(f"[LOG] {func.__name__} returned: {result}")
+        return result
+    return wrapper
+
+@log_function_call
+def add(a, b):
+    return a + b
+
+add(5, 3)</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> @log_function_call with functools.wraps</li>
+                <li>📘 <strong>What I Learn:</strong> How to log function calls while preserving metadata.</li>
+                <li>♻️ <strong>Reusability:</strong> Apply this to any debug-targeted function.</li>
+                <li>💬 Preserves original metadata while logging inputs/outputs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+          <div class="card h-100">
+            <div class="card-header bg-info text-white fw-bold">5️⃣ Access Control Example</div>
+            <div class="card-body">
+<pre><code class="language-python">user_authenticated = False
+
+def require_login(func):
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        if not user_authenticated:
+            print("Access Denied: Please log in.")
+            return None
+        return func(*args, **kwargs)
+    return wrapper
+
+@require_login
+def view_dashboard():
+    print("Welcome to your dashboard!")
+
+view_dashboard()</code></pre>
+              <ul class="list-unstyled mt-3">
+                <li>🔹 <strong>Function Used:</strong> @require_login</li>
+                <li>📘 <strong>What I Learn:</strong> Enforce permissions using decorators.</li>
+                <li>♻️ <strong>Reusability:</strong> Excellent for login checks or protected APIs.</li>
+                <li>💬 Applies conditional access control logic.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- end #exampleCards -->
+    </div>
+
+    <div class="tab-pane fade" id="quiz">
+      <div id="quizBox" class="mt-4"></div>
+      <div id="quizSummary" class="mt-4"></div>
+    </div>
+  </div>
+</div>
+  {% include 'includes/comment_form.html' %}
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const count = document.querySelectorAll('#exampleCards .card').length;
+  document.getElementById('exampleCount').textContent = count;
+  loadQuizData("home_decorator");
+});
+</script>
+{% endblock %}

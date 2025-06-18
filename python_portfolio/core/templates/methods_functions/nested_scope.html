@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-primary">🌀 Nested Functions and Variable Scope</h1>
+  <p class="lead">Understanding how Python handles variable scope using nested functions and the LEGB rule (Local, Enclosing, Global, Built-in).</p>
+
+  <!-- Example Cards Wrapper -->
+  <div id="exampleCards" class="row">
+
+    <!-- 1. Basic Nested Function -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-light">1️⃣ Basic Nested Function</div>
+        
+
+  <div class="mt-5"></div><div class="card-body">
+<pre><code class="language-python">def outer():
+    print("Outer function")
+
+    def inner():
+        print("Inner function")
+
+    inner()
+
+outer()</code></pre>
+          <ul class="list-unstyled">
+            <li>🔹 <strong>Function Used:</strong> Nested Function</li>
+            <li>📘 <strong>Learned:</strong> How inner functions can be defined and called inside outer functions.</li>
+            <li>♻️ <strong>Reusability:</strong> Common in closures and decorators.</li>
+            <li>💬 <strong>Comments:</strong> Demonstrates that the inner function is scoped inside the outer function.</li>
+          </ul></div>
+      </div>
+    </div>
+
+    <!-- 2. Return from Inner Function -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-light">2️⃣ Return from Inner Function</div>
+        <div class="card-body">
+<pre><code class="language-python">def greet(name):
+    def format_name(n):
+        return n.capitalize()
+    return f"Hello, {format_name(name)}"
+
+print(greet("sumon"))</code></pre>
+          <ul class="list-unstyled">
+            <li>🔹 <strong>Function Used:</strong> Inner function returning processed value</li>
+            <li>📘 <strong>Learned:</strong> Using inner functions for encapsulating small tasks.</li>
+            <li>♻️ <strong>Reusability:</strong> Promotes clean code and logic encapsulation.</li>
+            <li>💬 <strong>Comments:</strong> Inner function is used to transform the input.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Closure Example -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-light">3️⃣ Inner Using Outer Variable</div>
+        <div class="card-body">
+<pre><code class="language-python">def multiply_by(factor):
+    def inner(number):
+        return number * factor
+    return inner
+
+double = multiply_by(2)
+print(double(10))</code></pre>
+          <ul class="list-unstyled">
+            <li>🔹 <strong>Function Used:</strong> Closure</li>
+            <li>📘 <strong>Learned:</strong> Inner function accessing enclosing scope variable.</li>
+            <li>♻️ <strong>Reusability:</strong> Excellent for creating customized logic like multipliers or filters.</li>
+            <li>💬 <strong>Comments:</strong> This is an example of a closure in Python.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Global vs Local -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-light">4️⃣ Global vs Local</div>
+        <div class="card-body">
+<pre><code class="language-python">x = "global"
+
+def test():
+    x = "local"
+    print(x)
+
+test()
+print(x)</code></pre>
+          <ul class="list-unstyled">
+            <li>🔹 <strong>Function Used:</strong> Variable scope assignment</li>
+            <li>📘 <strong>Learned:</strong> Distinction between local and global variables.</li>
+            <li>♻️ <strong>Reusability:</strong> Important in large applications to avoid scope bugs.</li>
+            <li>💬 <strong>Comments:</strong> Shows how local scope does not affect global scope.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Enclosing Scope -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-light">5️⃣ Enclosing Scope Example</div>
+        <div class="card-body">
+<pre><code class="language-python">def outer():
+    msg = "enclosed"
+    def inner():
+        print(msg)
+    inner()
+
+outer()</code></pre>
+          <ul class="list-unstyled">
+            <li>🔹 <strong>Function Used:</strong> Nested function with enclosing variable</li>
+            <li>📘 <strong>Learned:</strong> LEGB rule in action with enclosing variable access.</li>
+            <li>♻️ <strong>Reusability:</strong> Useful for data hiding and modular functions.</li>
+            <li>💬 <strong>Comments:</strong> Demonstrates 'E' in LEGB—Enclosing scope.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Use of global keyword -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-light">6️⃣ Use global Keyword</div>
+        <div class="card-body">
+<pre><code class="language-python">x = "global"
+
+def modify():
+    global x
+    x = "modified"
+
+modify()
+print(x)</code></pre>
+          <ul class="list-unstyled">
+            <li>🔹 <strong>Function Used:</strong> global keyword</li>
+            <li>📘 <strong>Learned:</strong> How to modify global variables from inside functions.</li>
+            <li>♻️ <strong>Reusability:</strong> Useful in scripting where global state must be updated.</li>
+            <li>💬 <strong>Comments:</strong> Avoid overuse; can lead to hard-to-track bugs.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Built-in Shadowing -->
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-header bg-light">7️⃣ Built-in Shadowing</div>
+        <div class="card-body">
+<pre><code class="language-python">str = "Not a function"
+print(str(123))</code></pre>
+          <ul class="list-unstyled">
+            <li>🔹 <strong>Function Used:</strong> Variable overriding built-in name</li>
+            <li>📘 <strong>Learned:</strong> Risks of shadowing built-in functions.</li>
+            <li>♻️ <strong>Reusability:</strong> Avoid such practice to prevent runtime errors.</li>
+            <li>💬 <strong>Comments:</strong> Highlights importance of not naming variables after built-ins.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- End of exampleCards -->
+
+  <hr>
+  <h3 class="text-warning text-center">🧠 Quiz: Nested Functions and Scope</h3>
+  <div id="quizBox" class="mt-4"></div>
+  <div id="quizSummary" class="mt-4"></div>
+
+</div>
+  {% include 'includes/comment_form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<audio id="correctSound" src="{% static 'sounds/correct.mp3' %}" preload="auto"></audio>
+<audio id="wrongSound" src="{% static 'sounds/wrong.mp3' %}" preload="auto"></audio>
+<script src="{% static 'js/quiz_engine.js' %}"></script>
+<script>
+  loadQuizData("nested_scope");
+  document.addEventListener("DOMContentLoaded", () => {
+    const exampleCards = document.querySelectorAll("#exampleCards .col-md-6").length;
+    const exampleCountEl = document.getElementById("exampleCount");
+    if (exampleCountEl) exampleCountEl.textContent = exampleCards;
+  });
+</script>
+{% endblock %}
