@@ -1,26 +1,22 @@
-"""
-Django settings for python_portfolio project.
-"""
-
 from pathlib import Path
 import os
 import dj_database_url
 
-# ✅ Base directory of your project
+# Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ✅ Secret Key from Environment (or fallback)
+# Secret Key (fallback for local dev)
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-fallback-key")
 
-# ✅ Debug Mode (Turn off in production!)
+# Debug mode
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
-# ✅ Hosts allowed to serve the app
-ALLOWED_HOSTS = ['*']  # Change to specific domain in production
+# Allowed hosts
+ALLOWED_HOSTS = ['*']  # Update for production
 
-# ✅ Installed applications
+# Installed apps
 INSTALLED_APPS = [
-    "core",  # Your app
+    "core",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -30,10 +26,10 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
 ]
 
-# ✅ Middleware (includes WhiteNoise for static files)
+# Middleware
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # static files
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -44,7 +40,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "python_portfolio.urls"
 
-# ✅ Template settings
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -63,17 +58,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "python_portfolio.wsgi.application"
 
-# ✅ Default to SQLite, switch to Postgres if DATABASE_URL is found
+# Database
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
 if "DATABASE_URL" in os.environ:
     DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-# ✅ Password validation
+# Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
     {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
@@ -81,19 +77,17 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
-# ✅ Internationalization
+# Internationalization
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
 
-# ✅ Static files config for production (WhiteNoise compatible)
+# Static files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'python_portfolio' / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# ✅ Recommended settings for WhiteNoise
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# ✅ Default auto field
+# Auto field
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
